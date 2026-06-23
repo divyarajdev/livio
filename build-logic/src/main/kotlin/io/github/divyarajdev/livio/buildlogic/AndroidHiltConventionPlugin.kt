@@ -13,9 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.github.divyarajdev.livio.buildlogic
 
-plugins {
-    base
-    id("livio.spotless")
-    id("livio.detekt")
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+class AndroidHiltConventionPlugin : Plugin<Project> {
+    override fun apply(target: Project) {
+        with(target) {
+            pluginManager.apply(pluginId("hilt"))
+            pluginManager.apply(pluginId("ksp"))
+
+            dependencies.add("implementation", library("hilt-android"))
+            dependencies.add("ksp", library("hilt-compiler"))
+        }
+    }
 }

@@ -15,8 +15,6 @@
  */
 
 pluginManagement {
-    includeBuild("build-logic")
-
     repositories {
         google()
         mavenCentral()
@@ -37,7 +35,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
 }
 
-rootProject.name = "Livio"
+rootProject.name = "livio-build-logic"

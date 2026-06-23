@@ -13,31 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.github.divyarajdev.livio.buildlogic
 
-pluginManagement {
-    includeBuild("build-logic")
+import com.android.build.api.dsl.LibraryExtension
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
 
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
+class AndroidLibraryConventionPlugin : Plugin<Project> {
+    override fun apply(target: Project) {
+        with(target) {
+            pluginManager.apply(pluginId("android-library"))
+            pluginManager.apply(pluginId("kotlin-android"))
 
-    plugins {
-        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-    }
-}
-
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention")
-}
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
+            extensions.configure<LibraryExtension> {
+                configureAndroidLibrary(this)
+            }
+            configureKotlinAndroid()
+        }
     }
 }
-
-rootProject.name = "Livio"
