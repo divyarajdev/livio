@@ -24,9 +24,9 @@ import org.gradle.kotlin.dsl.configure
 class AndroidComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(pluginId("kotlin-compose"))
+            pluginManager.apply(pluginId(CatalogPlugins.KOTLIN_COMPOSE))
 
-            pluginManager.withPlugin(pluginId("android-application")) {
+            pluginManager.withPlugin(pluginId(CatalogPlugins.ANDROID_APPLICATION)) {
                 extensions.configure<ApplicationExtension> {
                     buildFeatures {
                         compose = true
@@ -35,7 +35,7 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
                 configureComposeDependencies()
             }
 
-            pluginManager.withPlugin(pluginId("android-library")) {
+            pluginManager.withPlugin(pluginId(CatalogPlugins.ANDROID_LIBRARY)) {
                 extensions.configure<LibraryExtension> {
                     buildFeatures {
                         compose = true
@@ -47,23 +47,41 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
     }
 
     private fun Project.configureComposeDependencies() {
-        dependencies.add("implementation", dependencies.platform(library("androidx-compose-bom")))
-        dependencies.add("implementation", library("androidx-compose-ui"))
-        dependencies.add("implementation", library("androidx-compose-ui-graphics"))
-        dependencies.add("implementation", library("androidx-compose-ui-tooling-preview"))
-        dependencies.add("implementation", library("androidx-compose-foundation"))
-        dependencies.add("implementation", library("androidx-compose-material3"))
-        dependencies.add("implementation", library("androidx-compose-material3-window-size"))
-        dependencies.add("implementation", library("androidx-compose-material3-adaptive"))
-        dependencies.add("implementation", library("androidx-compose-material3-adaptive-layout"))
         dependencies.add(
             "implementation",
-            library("androidx-compose-material3-adaptive-navigation"),
+            dependencies.platform(library(CatalogLibraries.ANDROIDX_COMPOSE_BOM)),
+        )
+        dependencies.add("implementation", library(CatalogLibraries.ANDROIDX_COMPOSE_UI))
+        dependencies.add("implementation", library(CatalogLibraries.ANDROIDX_COMPOSE_UI_GRAPHICS))
+        dependencies.add(
+            "implementation",
+            library(CatalogLibraries.ANDROIDX_COMPOSE_UI_TOOLING_PREVIEW),
+        )
+        dependencies.add("implementation", library(CatalogLibraries.ANDROIDX_COMPOSE_FOUNDATION))
+        dependencies.add("implementation", library(CatalogLibraries.ANDROIDX_COMPOSE_MATERIAL3))
+        dependencies.add(
+            "implementation",
+            library(CatalogLibraries.ANDROIDX_COMPOSE_MATERIAL3_WINDOW_SIZE),
         )
         dependencies.add(
             "implementation",
-            library("androidx-compose-material3-adaptive-navigation-suite"),
+            library(CatalogLibraries.ANDROIDX_COMPOSE_MATERIAL3_ADAPTIVE),
         )
-        dependencies.add("debugImplementation", library("androidx-compose-ui-tooling"))
+        dependencies.add(
+            "implementation",
+            library(CatalogLibraries.ANDROIDX_COMPOSE_MATERIAL3_ADAPTIVE_LAYOUT),
+        )
+        dependencies.add(
+            "implementation",
+            library(CatalogLibraries.ANDROIDX_COMPOSE_MATERIAL3_ADAPTIVE_NAVIGATION),
+        )
+        dependencies.add(
+            "implementation",
+            library(CatalogLibraries.ANDROIDX_COMPOSE_MATERIAL3_ADAPTIVE_NAVIGATION_SUITE),
+        )
+        dependencies.add(
+            "debugImplementation",
+            library(CatalogLibraries.ANDROIDX_COMPOSE_UI_TOOLING),
+        )
     }
 }

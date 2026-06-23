@@ -24,8 +24,8 @@ import org.gradle.kotlin.dsl.configure
 class SpotlessConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(pluginId("spotless"))
-            val ktfmtVersion = versionString("ktfmt")
+            pluginManager.apply(pluginId(CatalogPlugins.SPOTLESS))
+            val ktfmtVersion = versionString(CatalogVersions.KTFMT)
 
             extensions.configure<SpotlessExtension> {
                 lineEndings = LineEnding.UNIX
