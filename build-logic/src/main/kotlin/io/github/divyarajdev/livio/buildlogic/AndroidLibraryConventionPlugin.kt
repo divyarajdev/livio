@@ -23,13 +23,11 @@ import org.gradle.kotlin.dsl.configure
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(pluginId("android-library"))
-            pluginManager.apply(pluginId("kotlin-android"))
+            pluginManager.apply(pluginId(CatalogPlugins.ANDROID_LIBRARY))
 
             extensions.configure<LibraryExtension> {
                 configureAndroidLibrary(this)
             }
-            configureKotlinAndroid()
         }
     }
 }

@@ -21,7 +21,7 @@ import org.gradle.api.Project
 class KotlinJvmConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(pluginId("kotlin-jvm"))
+            pluginManager.apply(pluginId(CatalogPlugins.KOTLIN_JVM))
             configureKotlinJvm()
         }
     }

@@ -21,11 +21,11 @@ import org.gradle.api.Project
 class AndroidHiltConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(pluginId("hilt"))
-            pluginManager.apply(pluginId("ksp"))
+            pluginManager.apply(pluginId(CatalogPlugins.HILT))
+            pluginManager.apply(pluginId(CatalogPlugins.KSP))
 
-            dependencies.add("implementation", library("hilt-android"))
-            dependencies.add("ksp", library("hilt-compiler"))
+            dependencies.add("implementation", library(CatalogLibraries.HILT_ANDROID))
+            dependencies.add("ksp", library(CatalogLibraries.HILT_COMPILER))
         }
     }
 }

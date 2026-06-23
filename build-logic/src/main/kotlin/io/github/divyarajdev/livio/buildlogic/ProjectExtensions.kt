@@ -26,7 +26,6 @@ import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
 internal val Project.libs: VersionCatalog
@@ -58,10 +57,10 @@ internal fun Project.versionString(alias: String): String =
         .requiredVersion
 
 internal fun Project.configureAndroidApplication(extension: ApplicationExtension) {
-    extension.compileSdk = versionInt("compileSdk")
+    extension.compileSdk = versionInt(CatalogVersions.COMPILE_SDK)
     extension.defaultConfig {
-        minSdk = versionInt("minSdk")
-        targetSdk = versionInt("targetSdk")
+        minSdk = versionInt(CatalogVersions.MIN_SDK)
+        targetSdk = versionInt(CatalogVersions.TARGET_SDK)
     }
     extension.compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -70,21 +69,13 @@ internal fun Project.configureAndroidApplication(extension: ApplicationExtension
 }
 
 internal fun Project.configureAndroidLibrary(extension: LibraryExtension) {
-    extension.compileSdk = versionInt("compileSdk")
+    extension.compileSdk = versionInt(CatalogVersions.COMPILE_SDK)
     extension.defaultConfig {
-        minSdk = versionInt("minSdk")
+        minSdk = versionInt(CatalogVersions.MIN_SDK)
     }
     extension.compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-}
-
-internal fun Project.configureKotlinAndroid() {
-    extensions.configure<KotlinAndroidProjectExtension> {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
-        }
     }
 }
 

@@ -23,7 +23,7 @@ import org.gradle.kotlin.dsl.configure
 class DetektConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(pluginId("detekt"))
+            pluginManager.apply(pluginId(CatalogPlugins.DETEKT))
 
             extensions.configure<DetektExtension> {
                 buildUponDefaultConfig.set(true)

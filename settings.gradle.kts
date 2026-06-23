@@ -41,3 +41,60 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Livio"
+
+include(":app")
+
+include(
+    ":core:common",
+    ":core:config",
+    ":core:model",
+    ":core:mvi",
+    ":core:domain",
+    ":core:data",
+    ":core:network",
+    ":core:database",
+    ":core:datastore",
+    ":core:sync",
+    ":core:backup",
+    ":core:designsystem",
+    ":core:ui",
+    ":core:navigation",
+    ":core:media",
+    ":core:localization",
+    ":core:permissions",
+    ":core:analytics",
+    ":core:accessibility",
+    ":core:logging",
+    ":core:crash",
+    ":core:observability",
+    ":core:diagnostics",
+    ":core:performance",
+    ":core:security",
+    ":core:privacy",
+    ":core:featureflag",
+    ":core:update",
+    ":core:integrity",
+    ":core:notifications",
+    ":core:legal",
+    ":core:testing",
+)
+
+include(
+    ":feature:onboarding",
+    ":feature:auth",
+    ":feature:home",
+    ":feature:profile",
+    ":feature:settings",
+    ":feature:search",
+    ":feature:saved",
+    ":feature:users",
+    ":feature:products",
+    ":feature:carts",
+    ":feature:orders",
+    ":feature:recipes",
+    ":feature:posts",
+    ":feature:comments",
+    ":feature:todos",
+    ":feature:quotes",
+    ":feature:developer",
+)
