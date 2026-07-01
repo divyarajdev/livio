@@ -1,0 +1,55 @@
+# Copyright (C) 2026 Divyaraj D
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# GitHub CODEOWNERS for Livio.
+# Last matching pattern wins. Keep the catch-all owner active.
+
+* @divyarajdev
+
+# Repository governance
+/README.md @divyarajdev
+/CONTRIBUTING.md @divyarajdev
+/SECURITY.md @divyarajdev
+/LICENSE @divyarajdev
+/.gitattributes @divyarajdev
+
+# GitHub configuration
+/.github/ @divyarajdev
+/.github/workflows/ @divyarajdev
+/.github/dependabot.yml @divyarajdev
+/.github/CODEOWNERS @divyarajdev
+
+# Build and quality configuration
+/settings.gradle.kts @divyarajdev
+/build.gradle.kts @divyarajdev
+/gradle.properties @divyarajdev
+/gradle/ @divyarajdev
+/build-logic/ @divyarajdev
+/config/ @divyarajdev
+
+# Documentation
+/docs/ @divyarajdev
+
+# Android modules
+/app/ @divyarajdev
+/core/ @divyarajdev
+/feature/ @divyarajdev
+
+# Security-sensitive core modules
+/core/security/ @divyarajdev
+/core/privacy/ @divyarajdev
+/core/integrity/ @divyarajdev
+/core/legal/ @divyarajdev
+/core/crash/ @divyarajdev
+/core/observability/ @divyarajdev
