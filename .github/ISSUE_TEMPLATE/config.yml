@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: 🔐 Security Vulnerability
+    url: https://github.com/divyarajdev/livio/security/advisories/new
+    about: Privately report security vulnerabilities through GitHub Security Advisories. Do not disclose security vulnerabilities in public issues.
+
+  - name: 💬 Support & Questions
+    url: https://github.com/divyarajdev/livio/discussions
+    about: Ask questions, get help, and discuss usage or troubleshooting in Discussions.
+
+  - name: 💡 Ideas & Discussion
+    url: https://github.com/divyarajdev/livio/discussions/categories/ideas
+    about: Discuss early ideas and proposals before opening a formal feature request.
