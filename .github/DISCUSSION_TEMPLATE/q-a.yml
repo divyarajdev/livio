@@ -24,7 +24,7 @@ body:
         - 🔎 Search existing Discussions for related questions.
         - 📚 Check the current documentation before submitting.
         - 🎯 Clearly describe what you are trying to accomplish.
-        - 🧪 Explain what you have already tried and what happened.
+        - 🧪 Explain what you have already tried and what happened when relevant.
         - 🤖 Provide Android-specific details when they affect the question.
         - 🔍 Include relevant errors or unexpected behavior when applicable.
         - 📎 Attach relevant screenshots, recordings, logs, or files when useful.
@@ -45,14 +45,6 @@ body:
         - label: I searched existing Discussions and did not find a sufficient answer.
           required: true
         - label: I checked the current documentation before submitting.
-          required: true
-        - label: I clearly described my question, context, and goal.
-          required: true
-        - label: I explained what I have already tried and what happened.
-          required: true
-        - label: I provided relevant Android environment information.
-          required: true
-        - label: This is a question or request for guidance, not a confirmed bug or feature request.
           required: true
         - label: This discussion does not publicly disclose a security vulnerability.
           required: true
@@ -108,14 +100,14 @@ body:
     attributes:
       label: Goal
       description: |
-        Describe what you are trying to accomplish and what a
+        Optional. Describe what you are trying to accomplish and what a
         successful outcome would look like.
       placeholder: |
         Example:
         I want backups to be stored in the selected location
         without granting unnecessary permissions.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # WHAT YOU TRIED
@@ -128,7 +120,7 @@ body:
 
         ## 2. 🧪 What you tried
 
-        Explain what you have already attempted.
+        Explain what you have already attempted when relevant.
 
         This helps avoid repeating approaches that did not work.
 
@@ -137,12 +129,10 @@ body:
     attributes:
       label: What have you tried?
       description: |
-        Describe the documentation, settings, commands, configuration
-        changes, or other approaches you have already tried.
+        Optional. Describe the documentation, settings, commands,
+        configuration changes, or other approaches you have already tried.
 
         Include the result of each relevant attempt.
-
-        If you have not tried anything yet, state that explicitly.
       placeholder: |
         Example:
         1. Checked the storage documentation.
@@ -152,7 +142,7 @@ body:
         Result:
         The application still cannot access the selected location.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # APPLICATION ENVIRONMENT
@@ -166,22 +156,22 @@ body:
         ## 3. 📦 Application environment
 
         Provide the application version and installation source
-        used when the question or behavior occurred.
+        when they are relevant to the question or behavior.
 
   - type: input
     id: app-version
     attributes:
       label: App version
-      description: Provide the exact application version.
+      description: Optional. Provide the exact application version when relevant.
       placeholder: "Example: 1.4.2 (142)"
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: installation-source
     attributes:
       label: Installation source
-      description: Where did you install the application from?
+      description: Optional. Where did you install the application from?
       options:
         - Google Play
         - F-Droid
@@ -190,7 +180,7 @@ body:
         - Local build
         - Unknown
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # ANDROID ENVIRONMENT
@@ -221,10 +211,10 @@ body:
     id: android-version
     attributes:
       label: Android version
-      description: Provide the Android version and API level when known.
+      description: Optional. Provide the Android version and API level when known.
       placeholder: "Example: Android 16 (API 36)"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: manufacturer-rom
@@ -322,7 +312,6 @@ body:
         to access the selected location.
 
         If there is an error message, include the exact text when possible.
-      render: text
     validations:
       required: false
 
