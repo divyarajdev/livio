@@ -1,14 +1,39 @@
+# =============================================================================
+# 🧭 ISSUE TEMPLATE CHOOSER
+# =============================================================================
+#
+# Routes contributors to the appropriate reporting or discussion channel.
+#
+# Public blank issues are disabled so contributors are encouraged to use the
+# structured Bug Report, Feature Request, and Documentation templates.
+#
+# Maintainers with sufficient repository permissions may still be offered the
+# "Blank issue" option by GitHub.
+# =============================================================================
+
 blank_issues_enabled: false
 
 contact_links:
-  - name: 🔐 Security Vulnerability
-    url: https://github.com/divyarajdev/livio/security/advisories/new
-    about: Privately report security vulnerabilities through GitHub's private vulnerability reporting. Do not disclose security vulnerabilities in public Issues or Discussions.
+  # ===========================================================================
+  # 🔐 SECURITY
+  # ===========================================================================
 
-  - name: 💬 Support & Questions
-    url: https://github.com/divyarajdev/livio/discussions/categories/q-a
-    about: Ask questions, get help, and discuss usage or troubleshooting in Discussions.
+  - name: "🔐 Security Vulnerability"
+    url: "https://github.com/divyarajdev/livio/security/advisories/new"
+    about: "Privately report suspected security vulnerabilities through GitHub's private vulnerability reporting. Do not disclose security vulnerabilities in public Issues or Discussions."
 
-  - name: 💡 Ideas & Discussion
-    url: https://github.com/divyarajdev/livio/discussions/categories/ideas
-    about: Discuss early ideas and proposals before opening a formal feature request.
+  # ===========================================================================
+  # 💬 SUPPORT & QUESTIONS
+  # ===========================================================================
+
+  - name: "💬 Support & Questions"
+    url: "https://github.com/divyarajdev/livio/discussions/categories/q-a"
+    about: "Ask usage questions, get help, and discuss troubleshooting in the Q&A section of GitHub Discussions."
+
+  # ===========================================================================
+  # 💡 IDEAS & EARLY PROPOSALS
+  # ===========================================================================
+
+  - name: "💡 Ideas & Discussion"
+    url: "https://github.com/divyarajdev/livio/discussions/categories/ideas"
+    about: "Discuss early ideas, explore possible solutions, and gather feedback before opening a formal Feature Request."
