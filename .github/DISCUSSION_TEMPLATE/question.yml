@@ -1,5 +1,3 @@
-name: 💬 Question
-description: Ask for help, clarification, or guidance about the Android application.
 title: "[Question]: "
 labels:
   - question
