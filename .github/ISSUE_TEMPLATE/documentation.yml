@@ -1,113 +1,137 @@
-name: 📚 Documentation
-description: Report missing, incorrect, unclear, outdated, or incomplete documentation.
+name: "📚 Documentation"
+description: "Report missing, incorrect, unclear, outdated, incomplete, or broken documentation."
 title: "[Docs]: "
 labels:
-  - documentation
+  - "documentation"
 
 body:
-  # ---------------------------------------------------------------------------
-  # BEFORE YOU SUBMIT
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 📚 INTRODUCTION
+  # ===========================================================================
 
   - type: markdown
     attributes:
       value: |
-        ## 📚 Documentation
+        # 📚 Documentation Report
 
-        Use this form to report missing, incorrect, unclear, outdated,
-        incomplete, or broken documentation.
+        Thanks for helping keep the project's documentation accurate,
+        understandable, and useful! 💙
 
-        Please provide enough information to identify the documentation
-        problem, verify the reported issue, determine the expected
-        correction, and validate the improvement.
+        Use this form to report documentation that is **missing, incorrect,
+        unclear, outdated, incomplete, inconsistent, or broken**.
 
-        ### Before you submit
+        A useful documentation report identifies **where the problem is**,
+        explains **what is wrong or missing**, and describes **what the
+        documentation should communicate instead**.
 
-        - 🔎 Search existing Issues and Discussions for related reports.
-        - 📚 Check the current documentation before submitting.
-        - 🎯 Identify the relevant documentation location or topic.
-        - 🧪 Explain how the documentation problem can be verified when relevant.
-        - 🔗 Provide authoritative sources for factual or technical corrections.
-        - 📱 Include Android-specific details when they affect the documentation.
-        - 📎 Attach relevant screenshots or other evidence when useful.
-        - 🔐 Remove passwords, tokens, private keys, personal information,
-          and other sensitive data.
-        - 🛡️ Do not publicly disclose security vulnerabilities.
-        - 🐛 Use the Bug Report for confirmed reproducible application defects.
-        - ✨ Use the Feature Request for new functionality or improvements.
-        - 💬 Use Q&A for questions, guidance, or troubleshooting.
+        ### 🧭 Before you submit
+
+        Please make sure that you:
+
+        - 🔎 **Search existing Issues and Discussions** for related reports.
+        - 📚 **Check the current documentation** before submitting.
+        - 📍 **Identify the affected page, file, section, topic, or feature**.
+        - 🎯 **Explain the documentation problem clearly**.
+        - 🧪 **Provide verification or evidence** when it helps confirm the issue.
+        - 🔗 **Prefer authoritative sources** for factual or technical corrections.
+        - 🤖 **Include Android-specific details** only when they affect the documentation.
+        - 📎 **Attach screenshots or supporting material** when useful.
+        - 🐛 Use the **Bug Report** for reproducible application defects.
+        - ✨ Use the **Feature Request** for new functionality or improvements.
+        - 💬 Use **Q&A** for questions, guidance, or troubleshooting.
+
+        > [!TIP]
+        > ### 💡 Be specific
+        >
+        > A precise file path, heading, URL, screenshot, or short quotation can
+        > make a documentation problem much faster to locate and verify.
+
+        > [!WARNING]
+        > ### 🔐 Security vulnerabilities
+        >
+        > **Do not disclose security vulnerabilities in a public issue.**
+        > Follow the private disclosure process described in `SECURITY.md`.
+
+        > [!IMPORTANT]
+        > ### 🛡️ Protect sensitive information
+        >
+        > Issues and attachments are normally **publicly visible**.
+        > Remove passwords, authentication tokens, API keys, private keys,
+        > personal information, account details, and other sensitive data
+        > before submitting.
 
   - type: checkboxes
     id: preflight
     attributes:
-      label: Pre-submission checks
-      description: Please confirm these items before submitting.
+      label: "✅ Pre-submission checks"
+      description: "Confirm that this documentation report is ready for review."
       options:
-        - label: I searched existing Issues and Discussions and did not find a duplicate.
+        - label: "I searched existing Issues and Discussions and did not find a duplicate."
           required: true
-        - label: I checked the current documentation before submitting.
-          required: true
-        - label: This report does not publicly disclose a security vulnerability.
-          required: true
-    validations:
-      required: true
 
-  # ---------------------------------------------------------------------------
-  # DOCUMENTATION LOCATION
-  # ---------------------------------------------------------------------------
+        - label: "I checked the current documentation before submitting."
+          required: true
+
+        - label: "This is a documentation issue, not a confirmed application bug, feature request, or support question."
+          required: true
+
+        - label: "This report does not publicly disclose a security vulnerability."
+          required: true
+
+  # ===========================================================================
+  # 1️⃣ DOCUMENTATION LOCATION
+  # ===========================================================================
 
   - type: markdown
     attributes:
       value: |
         ---
 
-        ## 1. 🔍 Documentation location
+        ## 1. 📍 Documentation location
 
-        Identify where the documentation problem exists, or the topic
-        where documentation is missing or needs improvement.
+        Help us identify **where the documentation problem exists**.
+
+        If documentation is completely missing, identify the feature,
+        workflow, concept, or topic that should be documented.
 
   - type: input
     id: documentation-location
     attributes:
-      label: Documentation location / topic
+      label: "📍 Documentation location / topic"
       description: |
-        Provide the URL, repository file path, section, heading,
-        page, topic, affected feature, or other relevant location.
+        Provide the URL, repository file path, section, heading, page,
+        feature, topic, or another precise location.
 
-        If the documentation is completely missing, identify the
-        topic or feature that should be documented.
-      placeholder: |
-        Example:
-        docs/setup.md — "Installation" section
-
-        Or:
-        Backup encryption documentation
+        If no documentation currently exists, name the subject that
+        should be documented.
+      placeholder: "Example: docs/setup.md — Installation section"
     validations:
       required: true
 
   - type: dropdown
     id: issue-type
     attributes:
-      label: Documentation issue type
-      description: Select the type that best describes the problem.
+      label: "🧭 Documentation issue type"
+      description: "Select the category that best describes the problem."
       options:
-        - Missing information
-        - Incorrect information
-        - Outdated information
-        - Unclear or confusing information
-        - Incomplete information
-        - Broken link or reference
-        - Typographical or grammatical error
-        - Incomplete example
-        - Poor organization or discoverability
-        - Inconsistent information
-        - Other
+        - "Missing information"
+        - "Incorrect information"
+        - "Outdated information"
+        - "Unclear or confusing information"
+        - "Incomplete information"
+        - "Broken link or reference"
+        - "Typographical or grammatical error"
+        - "Incorrect or incomplete example"
+        - "Poor organization or discoverability"
+        - "Inconsistent or conflicting information"
+        - "Accessibility issue"
+        - "Other"
     validations:
       required: true
 
-  # ---------------------------------------------------------------------------
-  # DOCUMENTATION PROBLEM
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 2️⃣ DOCUMENTATION PROBLEM
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -116,47 +140,46 @@ body:
 
         ## 2. 🎯 Documentation problem
 
-        Describe what is wrong, missing, unclear, inconsistent,
-        or outdated.
+        Explain **what is wrong, missing, unclear, inconsistent, or outdated**
+        and why the current documentation is insufficient.
 
   - type: textarea
     id: problem
     attributes:
-      label: Problem
+      label: "🎯 Problem"
       description: |
-        Explain the documentation problem clearly.
+        Clearly describe the documentation issue.
 
-        Describe what is wrong, missing, unclear, inconsistent,
-        or outdated and why the current documentation is insufficient.
+        Explain what a reader may misunderstand, be unable to find,
+        or be unable to accomplish because of the current documentation.
       placeholder: |
         Example:
-        The installation instructions do not explain the required
-        Android permissions for a fresh installation.
+        The installation instructions explain how to install the application
+        but do not document the permission required for the described
+        storage workflow.
     validations:
       required: true
 
   - type: textarea
     id: current-content
     attributes:
-      label: Current content
+      label: "📖 Current content"
       description: |
-        Optional. Quote or summarize the relevant documentation when
-        existing content is available.
+        Optional. Quote a short relevant excerpt or summarize what the
+        documentation currently says.
 
-        Keep quotations reasonably short and do not include
-        passwords, tokens, private keys, personal information,
-        or other sensitive data.
+        Keep quotations focused and review all content for sensitive
+        information before submitting.
       placeholder: |
         Example:
-        The documentation explains how to install the application
-        but does not mention the permission required for the
-        documented storage workflow.
+        The current installation section describes the storage workflow,
+        but it does not mention that an Android permission may be required.
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # VERIFICATION
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 3️⃣ VERIFICATION
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -165,50 +188,52 @@ body:
 
         ## 3. 🧪 Verification
 
-        Provide evidence when it helps the maintainer verify
-        the documentation problem.
+        Provide evidence when it helps us **confirm the documentation problem
+        or reproduce the documented workflow**.
+
+        > [!NOTE]
+        > Editorial issues such as spelling or wording usually do not require
+        > extensive verification.
 
   - type: textarea
     id: verification
     attributes:
-      label: Verification / evidence
+      label: "🧪 Verification / evidence"
       description: |
         Optional. Explain how the documentation problem can be verified.
 
-        Include observed behavior, reproducible checks, screenshots,
-        command output, official platform information, or other
-        supporting evidence when relevant.
+        Include observed behavior, reproducible checks, command output,
+        platform documentation, or other focused evidence when relevant.
       placeholder: |
         Examples:
-        - The documented command no longer works.
+        - The documented command no longer produces the described result.
         - The behavior differs on Android 16.
-        - The official Android documentation describes different behavior.
-        - The referenced page no longer exists.
-        - The screenshot no longer matches the current UI.
+        - The linked page returns an error.
+        - The screenshot no longer matches the current application.
+        - Official Android documentation describes different behavior.
     validations:
       required: false
 
   - type: textarea
     id: affected-context
     attributes:
-      label: Affected context
+      label: "🧩 Affected context"
       description: |
-        Optional. Identify the application version, documentation version,
-        platform version, workflow, or conditions in which the
-        documentation problem applies.
+        Optional. Identify versions, platforms, configurations, workflows,
+        or other conditions under which the documentation issue applies.
       placeholder: |
         Examples:
         - Current documentation
         - App version: 1.4.2
-        - Android 16
-        - New installation workflow
-        - Documentation introduced in a specific release
+        - Android 16 (API 36)
+        - Fresh installation workflow
+        - Documentation introduced in version 1.3.0
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # EXPECTED DOCUMENTATION
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 4️⃣ EXPECTED DOCUMENTATION
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -217,58 +242,66 @@ body:
 
         ## 4. ✏️ Expected documentation
 
-        Describe what the documentation should communicate
-        and what the reader should be able to understand or do.
+        Describe **what the corrected documentation should communicate**
+        and what the reader should be able to understand or accomplish.
 
   - type: textarea
     id: expected-content
     attributes:
-      label: Expected content
+      label: "✨ Expected content"
       description: |
-        Describe the information, correction, clarification,
+        Describe the correction, clarification, missing information,
         example, or guidance that should be provided.
+
+        Focus on the intended documentation outcome rather than requiring
+        exact wording.
       placeholder: |
         Example:
         The documentation should explain which permissions are required,
-        when they are requested, and what happens if they are denied.
+        when they are requested, why they are needed, and what behavior
+        to expect when permission is denied.
     validations:
       required: true
 
   - type: textarea
     id: acceptance-criteria
     attributes:
-      label: Acceptance criteria
+      label: "✅ Acceptance criteria"
       description: |
         Optional. Define observable conditions that should be true when
-        the documentation change is considered complete.
+        the documentation improvement is complete.
 
         Keep each criterion clear, specific, and verifiable.
       placeholder: |
         Example:
-        - The required permissions are documented accurately.
-        - The instructions match current Android behavior.
+        - Required permissions are documented accurately.
+        - Instructions match current Android behavior.
         - Relevant API-level differences are explained.
-        - Referenced links are valid.
-        - The documented steps can be followed successfully.
-        - Examples match the current application behavior.
+        - Referenced links resolve successfully.
+        - The documented workflow can be followed successfully.
+        - Examples match current application behavior.
+        - Accessibility considerations are documented where relevant.
     validations:
       required: false
 
   - type: textarea
     id: suggested-wording
     attributes:
-      label: Suggested wording
+      label: "✍️ Suggested wording"
       description: |
-        Optional. Provide proposed replacement text when you
-        have a clear and accurate wording suggestion.
+        Optional. Provide proposed wording when you already have a concise
+        and accurate correction.
+
+        Suggested text may be adapted to match the project's documentation
+        style and terminology.
       placeholder: |
-        Provide suggested documentation text here.
+        Add suggested documentation text here.
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # REFERENCES & SOURCES
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 5️⃣ REFERENCES & SOURCES
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -277,42 +310,49 @@ body:
 
         ## 5. 🔗 References & sources
 
-        Provide sources or references that help verify the
-        documentation and determine the correct information.
+        Provide sources that help establish **what the documentation should
+        say and why**.
+
+        For factual or technical corrections, authoritative sources are
+        especially valuable.
 
   - type: textarea
     id: authoritative-source
     attributes:
-      label: Authoritative source
+      label: "🏛️ Authoritative source"
       description: |
-        Optional for editorial changes.
+        Optional for editorial changes; strongly recommended for factual
+        or technical corrections.
 
-        Strongly recommended for factual or technical corrections.
         Prefer official Android documentation, Android API references,
-        project documentation, specifications, or other authoritative
-        sources.
+        project documentation, standards, specifications, or other
+        primary sources.
       placeholder: |
         Example:
-        Official Android documentation or API reference supporting
-        the proposed correction.
+        Official Android API documentation describing the relevant behavior.
     validations:
       required: false
 
   - type: textarea
     id: references
     attributes:
-      label: Related references
+      label: "🔗 Related references"
       description: |
-        Optional. Include related Issues, Discussions, project files,
-        examples, specifications, or other useful references.
+        Optional. Include related Issues, Discussions, pull requests,
+        project files, examples, specifications, or other useful references.
+
+        Use descriptive link text when possible.
       placeholder: |
-        Add relevant references here.
+        Examples:
+        - Related issue: #123
+        - Related discussion: ...
+        - Relevant project file: ...
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # ANDROID CONTEXT
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 6️⃣ ANDROID CONTEXT
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -321,34 +361,36 @@ body:
 
         ## 6. 🤖 Android context
 
-        Provide Android-specific information only when it affects
-        the documentation problem.
+        Include Android-specific information **only when platform behavior
+        affects the documentation issue or correction**.
 
   - type: textarea
     id: android-context
     attributes:
-      label: Android-specific context
+      label: "🤖 Android-specific context"
       description: |
-        Optional. Include relevant Android API levels, permissions,
-        storage behavior, lifecycle behavior, background execution,
-        notifications, accessibility, device behavior, or platform
-        restrictions.
+        Optional. Include relevant Android platform behavior, API levels,
+        permissions, lifecycle rules, storage restrictions, background
+        execution, notifications, accessibility, form factors, or
+        manufacturer-specific behavior.
       placeholder: |
         Examples:
         - Android/API level
         - Runtime permissions
-        - Scoped storage
-        - Background execution
+        - Scoped storage behavior
+        - Background execution restrictions
         - Notification behavior
-        - Android lifecycle behavior
-        - Accessibility behavior
+        - Activity or process lifecycle behavior
+        - TalkBack or accessibility behavior
+        - Font scaling or display-size behavior
+        - Tablet, foldable, or large-screen behavior
         - Device/manufacturer-specific behavior
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # TECHNICAL CONTEXT
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 7️⃣ TECHNICAL CONTEXT
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -357,13 +399,13 @@ body:
 
         ## 7. 🔧 Technical context
 
-        Add technical information only when it is relevant
-        to verifying or correcting the documentation.
+        Include implementation-oriented information only when it helps
+        **verify or correct the documentation**.
 
   - type: textarea
     id: technical-context
     attributes:
-      label: Technical considerations
+      label: "🔧 Technical considerations"
       description: |
         Optional. Include relevant APIs, commands, configuration,
         dependencies, compatibility requirements, build behavior,
@@ -371,7 +413,7 @@ body:
       placeholder: |
         Examples:
         - Android API or framework behavior
-        - Gradle/build configuration
+        - Gradle or build configuration
         - Required commands
         - API usage
         - External dependencies
@@ -380,36 +422,54 @@ body:
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # ADDITIONAL CONTEXT
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 8️⃣ SUPPORTING MATERIAL
+  # ===========================================================================
 
   - type: markdown
     attributes:
       value: |
         ---
 
-        ## 8. 📝 Additional context
+        ## 8. 🖼️ Supporting material
 
-        Provide any additional information that may help verify
-        or improve the documentation.
+        Add focused evidence that helps explain or verify the documentation
+        problem.
+
+        > [!CAUTION]
+        > Review every uploaded file before submitting it.
+        > Remove personal, identifying, confidential, or otherwise sensitive
+        > information.
+
+  - type: upload
+    id: supporting-material
+    attributes:
+      label: "🖼️ Screenshots / supporting files"
+      description: |
+        Optional. Attach screenshots, diagrams, recordings, or a PDF when
+        they help demonstrate the documentation issue.
+
+        Keep uploads directly relevant to this report.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.mp4,.mov,.webm,.pdf"
 
   - type: textarea
     id: additional-context
     attributes:
-      label: Additional context
+      label: "📝 Additional context"
       description: |
-        Optional. Include screenshots, examples, related Discussions,
-        design notes, or other information that may help verify
-        or improve the documentation.
+        Optional. Add examples, edge cases, design notes, historical context,
+        related discussions, or anything else useful to understanding or
+        correcting the documentation.
       placeholder: |
         Add any additional relevant information here.
     validations:
       required: false
 
-  # ---------------------------------------------------------------------------
-  # CONTRIBUTION
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 9️⃣ CONTRIBUTION
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -418,21 +478,26 @@ body:
 
         ## 9. 🤝 Contribution
 
-        Documentation improvements are welcome when they follow
-        the project's documentation standards.
+        Documentation contributions are welcome when they follow the project's
+        documentation and contribution standards.
+
+        > [!NOTE]
+        > Offering to contribute does not require you to implement the change
+        > and does not guarantee that a proposed correction will be accepted
+        > without revision.
 
   - type: checkboxes
     id: contribution
     attributes:
-      label: Contribution
-      description: Optional.
+      label: "🤝 Contribution"
+      description: "Optional — indicate whether you may be interested in contributing."
       options:
-        - label: I am willing to submit a documentation change if this report is accepted.
+        - label: "I am willing to submit a documentation change if this report is accepted."
           required: false
 
-  # ---------------------------------------------------------------------------
-  # PRIVACY & SECURITY
-  # ---------------------------------------------------------------------------
+  # ===========================================================================
+  # 🔟 PRIVACY & SECURITY
+  # ===========================================================================
 
   - type: markdown
     attributes:
@@ -441,40 +506,63 @@ body:
 
         ## 10. 🔐 Privacy & security
 
-        Issues are normally public.
+        ### 🌐 Remember: this report is public
 
-        Review all text, links, screenshots, examples, logs,
-        and attachments before submitting.
+        Issues and their attachments are normally visible to anyone who
+        can access the repository.
+
+        Before submitting, review:
+
+        - 📝 Issue text and quoted documentation
+        - 🔗 Links and references
+        - 💻 Commands and terminal output
+        - 🖼️ Screenshots and diagrams
+        - 🎥 Screen recordings
+        - 📄 Documents
+        - 📎 Other attachments
+
+        > [!IMPORTANT]
+        > If this documentation issue reveals or depends on a **security
+        > vulnerability**, do not submit it publicly. Follow the private
+        > reporting process described in `SECURITY.md`.
 
   - type: checkboxes
     id: privacy
     attributes:
-      label: Public issue confirmation
-      description: Confirm that this report is safe to disclose publicly.
+      label: "🛡️ Public issue confirmation"
+      description: "Confirm that this report is appropriate for public disclosure."
       options:
-        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
+        - label: "I reviewed this report and its attachments and removed passwords, authentication tokens, API keys, private keys, personal information, and other sensitive data."
           required: true
-        - label: I am not publicly disclosing a security vulnerability.
-          required: true
-    validations:
-      required: true
 
-  # ---------------------------------------------------------------------------
-  # FINAL GUIDANCE
-  # ---------------------------------------------------------------------------
+        - label: "I am not publicly disclosing a security vulnerability."
+          required: true
+
+  # ===========================================================================
+  # 🏁 FINAL GUIDANCE
+  # ===========================================================================
 
   - type: markdown
     attributes:
       value: |
         ---
 
-        ### 💡 What makes a useful documentation report?
+        ## 🏁 Ready to submit?
 
-        **Where is the problem? → What is wrong or missing? → What is the**
-        **current content? → How can it be verified? → What should the**
-        **documentation communicate? → What sources support the correction?**
-        **→ How can the improvement be validated?**
+        ### 💡 A strong documentation report answers these questions
 
-        Thank you for providing clear, relevant, and verifiable information
-        that helps keep the project's documentation accurate, understandable,
-        and useful.
+        | | Question | Why it matters |
+        |:---:|---|---|
+        | 📍 | **Where is the problem?** | Locates the affected documentation |
+        | 🎯 | **What is wrong or missing?** | Defines the documentation gap |
+        | 📖 | **What does it say today?** | Establishes the current state |
+        | 🧪 | **How can it be verified?** | Confirms the reported problem |
+        | ✨ | **What should it communicate?** | Defines the desired correction |
+        | 🔗 | **What sources support it?** | Establishes technical accuracy |
+        | ✅ | **How can the improvement be validated?** | Makes completion verifiable |
+        | 🔐 | **Can it be discussed safely?** | Protects users and the project |
+
+        > **Precise location → verified problem → authoritative correction → useful documentation.** 🚀
+
+        Thank you for taking the time to help keep the project's
+        documentation accurate, accessible, and dependable. 💙
