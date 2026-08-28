@@ -46,12 +46,6 @@ body:
       options:
         - label: I searched existing Issues and Discussions and did not find a duplicate.
           required: true
-        - label: I checked the current documentation and existing features before submitting.
-          required: true
-        - label: I clearly described the problem or need this request is intended to address.
-          required: true
-        - label: I described the desired outcome rather than requiring a specific implementation.
-          required: true
         - label: This is a feature request or improvement, not a confirmed bug, documentation issue, or Q&A question.
           required: true
         - label: This request does not publicly disclose a security vulnerability.
@@ -121,10 +115,10 @@ body:
         - Related requests or user feedback indicate the same need.
         - The current workaround requires several additional steps.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
-  # PROPOSED SOLUTION
+  # DESIRED OUTCOME
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -132,7 +126,7 @@ body:
       value: |
         ---
 
-        ## 2. 💡 Proposed solution
+        ## 2. 💡 Desired outcome
 
         Describe the capability or outcome you would like to see.
 
@@ -140,13 +134,13 @@ body:
         prescribing a specific implementation.
 
   - type: textarea
-    id: proposal
+    id: desired-outcome
     attributes:
-      label: Proposed solution
+      label: Desired outcome
       description: |
         Describe what the application should be able to do,
         what the user should be able to accomplish, and how
-        the proposed change would address the identified problem.
+        the change would address the identified problem.
       placeholder: |
         Example:
         Allow users to select multiple items and perform the same
@@ -169,7 +163,7 @@ body:
         which is practical for a small number of items but inefficient
         for larger collections.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # EXPECTED USER EXPERIENCE
@@ -203,7 +197,7 @@ body:
         4. The selected items are updated.
         5. The result is clearly communicated to the user.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: acceptance-criteria
@@ -223,10 +217,10 @@ body:
         - The result is clearly communicated to the user.
         - The feature does not expose private or sensitive data.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
-  # VALUE & SCOPE
+  # VALUE
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -234,7 +228,7 @@ body:
       value: |
         ---
 
-        ## 4. 📊 Value & scope
+        ## 4. 📊 Value
 
         Provide information that helps evaluate usefulness,
         priority, impact, and potential scope.
@@ -250,7 +244,7 @@ body:
         Example:
         Users who frequently manage large collections.
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: usage-frequency
@@ -265,21 +259,7 @@ body:
         - Rarely
         - Unsure
     validations:
-      required: true
-
-  - type: dropdown
-    id: scope
-    attributes:
-      label: Change scope
-      description: Select the closest description of the requested change.
-      options:
-        - Small improvement
-        - New functionality
-        - Major UX or workflow change
-        - New integration
-        - Unsure
-    validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # ANDROID CONTEXT
