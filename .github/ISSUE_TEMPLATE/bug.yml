@@ -23,7 +23,7 @@ body:
 
         - 🔎 Search existing Issues for duplicates.
         - 🔄 Test the latest supported version when possible.
-        - 🧪 Confirm that the problem is reproducible.
+        - 🧪 Try to reproduce the problem and describe the result.
         - 🔐 Remove passwords, tokens, private keys, personal information,
           and other sensitive data.
         - 🛡️ Do not report security vulnerabilities here.
