@@ -1,14 +1,11 @@
 name: 🐛 Bug Report
-description: Report a reproducible problem with the application.
+description: Report a reproducible or observable problem with the application.
 title: "[Bug]: "
 labels:
   - bug
+assignees: []
 
 body:
-  # ---------------------------------------------------------------------------
-  # BEFORE YOU REPORT
-  # ---------------------------------------------------------------------------
-
   - type: markdown
     attributes:
       value: |
@@ -23,14 +20,13 @@ body:
 
         - 🔎 Search existing Issues for duplicates.
         - 🔄 Test the latest supported version when possible.
-        - 🧪 Confirm that the problem is reproducible.
+        - 🧪 Try to reproduce the problem and describe the result.
         - 🔐 Remove passwords, tokens, private keys, personal information,
           and other sensitive data.
         - 🛡️ Do not report security vulnerabilities here.
         - ✨ Use the Feature Request for new functionality or improvements.
         - 💬 Use Q&A for questions, guidance, or troubleshooting.
-        - 📚 Use the Documentation report for missing, incorrect, unclear,
-          or outdated documentation.
+        - 📚 Use the Documentation report for documentation problems.
 
   - type: checkboxes
     id: preflight
@@ -44,14 +40,10 @@ body:
           required: true
         - label: I tested the latest supported version, or I cannot update for a valid reason.
           required: true
-        - label: I confirmed that the problem is reproducible.
+        - label: I attempted to reproduce the problem and described the result below.
           required: true
     validations:
       required: true
-
-  # ---------------------------------------------------------------------------
-  # PROBLEM
-  # ---------------------------------------------------------------------------
 
   - type: markdown
     attributes:
@@ -82,14 +74,14 @@ body:
       label: Steps to reproduce
       description: |
         Provide the smallest reliable sequence of steps that reproduces
-        the problem.
+        the problem. If it is intermittent, describe what you tried.
       placeholder: |
         1. Open the application.
         2. Open Settings.
         3. Select Backup & Restore.
         4. Restore an existing backup.
         5. Return to Settings.
-        6. Observe the crash.
+        6. Observe the problem.
     validations:
       required: true
 
@@ -127,10 +119,6 @@ body:
     validations:
       required: true
 
-  # ---------------------------------------------------------------------------
-  # ENVIRONMENT
-  # ---------------------------------------------------------------------------
-
   - type: markdown
     attributes:
       value: |
@@ -149,6 +137,17 @@ body:
       placeholder: "Example: 1.4.2 (142)"
     validations:
       required: true
+
+  - type: input
+    id: build-identifier
+    attributes:
+      label: Build / commit
+      description: |
+        Optional. For development or local builds, provide the commit SHA,
+        branch, or other build identifier.
+      placeholder: "Example: 8f3c21a / main"
+    validations:
+      required: false
 
   - type: dropdown
     id: installation-source
@@ -192,13 +191,9 @@ body:
       description: |
         Optional. Provide the ROM, firmware, or manufacturer software
         when relevant.
-      placeholder: "Example: One UI 8 / GrapheneOS / LineageOS"
+      placeholder: "Example: One UI / GrapheneOS / LineageOS"
     validations:
       required: false
-
-  # ---------------------------------------------------------------------------
-  # REGRESSION
-  # ---------------------------------------------------------------------------
 
   - type: markdown
     attributes:
@@ -206,9 +201,6 @@ body:
         ---
 
         ## 3. 🔄 Regression
-
-        This information helps maintainers identify when the problem
-        may have been introduced.
 
   - type: dropdown
     id: regression
@@ -226,16 +218,10 @@ body:
     id: last-working-version
     attributes:
       label: Last known working version
-      description: |
-        Optional. If this is a regression, provide the latest version
-        known to work correctly.
+      description: Optional. If this is a regression, provide the latest known working version.
       placeholder: "Example: 1.3.0"
     validations:
       required: false
-
-  # ---------------------------------------------------------------------------
-  # DIAGNOSTICS
-  # ---------------------------------------------------------------------------
 
   - type: markdown
     attributes:
@@ -255,8 +241,9 @@ body:
     attributes:
       label: Logs / stack trace
       description: |
-        Optional. Include relevant Logcat output, crash information,
-        exception messages, or a stack trace.
+        Optional. Include the smallest relevant Logcat excerpt, crash
+        information, exception message, or stack trace needed to investigate
+        the problem. Review diagnostic output before submitting it.
       placeholder: |
         Paste relevant diagnostic output here.
       render: text
@@ -267,9 +254,7 @@ body:
     id: screenshots
     attributes:
       label: Screenshots / screen recording
-      description: |
-        Optional. Attach visual evidence when it helps demonstrate
-        the problem.
+      description: Optional. Attach visual evidence when it helps demonstrate the problem.
       placeholder: |
         Drag and drop screenshots or a screen recording here.
     validations:
@@ -279,27 +264,11 @@ body:
     id: workaround
     attributes:
       label: Workaround
-      description: |
-        Optional. Describe anything that temporarily avoids, reduces,
-        or resolves the problem.
+      description: Optional. Describe anything that temporarily avoids or reduces the problem.
       placeholder: |
-        Example:
         Restarting the application temporarily resolves the issue.
     validations:
       required: false
-
-  # ---------------------------------------------------------------------------
-  # ADDITIONAL CONTEXT
-  # ---------------------------------------------------------------------------
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 5. 📝 Additional context
-
-        Include any other information that may help with investigation.
 
   - type: textarea
     id: additional-context
@@ -307,55 +276,27 @@ body:
       label: Additional context
       description: |
         Optional. Include relevant configuration, recent changes,
-        related Issues, unusual circumstances, or anything else
-        that may help with investigation.
-      placeholder: |
-        Add any additional information that may be relevant.
+        related Issues, or unusual circumstances.
     validations:
       required: false
-
-  # ---------------------------------------------------------------------------
-  # PRIVACY & SECURITY
-  # ---------------------------------------------------------------------------
 
   - type: markdown
     attributes:
       value: |
         ---
 
-        ## 6. 🔐 Privacy & security
+        ## 5. 🔐 Privacy & security
 
         This issue will normally be public.
-
-        Review all text, logs, screenshots, recordings, and attachments
-        before submitting.
 
   - type: checkboxes
     id: privacy
     attributes:
       label: Public issue confirmation
-      description: Confirm that this report is safe to disclose publicly.
       options:
         - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
           required: true
-        - label: This report does not contain a security vulnerability that should be privately disclosed.
+        - label: I am not publicly disclosing a security vulnerability.
           required: true
     validations:
       required: true
-
-  # ---------------------------------------------------------------------------
-  # FINAL GUIDANCE
-  # ---------------------------------------------------------------------------
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ### 💡 What makes a useful bug report?
-
-        **What happened? → How can we reproduce it? → What should happen? →**
-        **What actually happened? → Which environment is affected? → Can we**
-        **investigate it safely?**
-
-        Thank you for providing clear and reproducible information.
