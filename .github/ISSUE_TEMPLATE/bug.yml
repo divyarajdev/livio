@@ -342,7 +342,7 @@ body:
         Do not upload full device dumps or unrelated files.
     validations:
       required: false
-      accept: ".log,.txt,.json,.csv,.zip,.gz,.tar.gz"
+      accept: ".log,.txt,.json,.csv,.zip,.gz"
 
   - type: textarea
     id: workaround
