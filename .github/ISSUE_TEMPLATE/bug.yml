@@ -25,8 +25,7 @@ body:
         - 🔄 Test the latest supported version when possible.
         - 🧪 Confirm that the problem is reproducible.
         - 🔐 Remove passwords, tokens, private keys, and personal information.
-        - 🛡️ Do not report security vulnerabilities here. Follow the project's
-          security policy for private security reports.
+        - 🛡️ Do not report security vulnerabilities here.
 
   - type: checkboxes
     id: preflight
@@ -342,8 +341,8 @@ body:
 
         ### 💡 What makes a useful bug report?
 
-        **What happened? → How can we reproduce it? → What should happen? →  
-        What actually happened? → Which environment is affected? → Can we
-        investigate it safely?**
+        **What happened? → How can we reproduce it? → What should happen? →**
+        **What actually happened? → Which environment is affected? → Can we**
+        **investigate it safely?**
 
         Thank you for providing clear and reproducible information.
