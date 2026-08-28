@@ -1,10 +1,11 @@
 title: "[Idea]: "
+
 labels:
   - "idea"
 
 body:
   # ===========================================================================
-  # 💡 INTRODUCTION
+  # 💡 WELCOME
   # ===========================================================================
 
   - type: markdown
@@ -12,82 +13,69 @@ body:
       value: |
         # 💡 Idea
 
-        Thanks for helping explore ways to improve the project! 💙
+        Thanks for helping explore ways to make the project better! 💙
 
-        Use this Discussion for an **early idea, concept, opportunity, or
-        potential improvement** that would benefit from exploration before
-        becoming a formal Feature Request.
+        Use this Discussion for an **early idea, opportunity, concept, or
+        potential improvement** that would benefit from community exploration
+        before becoming a formal Feature Request.
 
-        Ideas do not need to define a final implementation. They should,
-        however, provide enough context to understand the **underlying need**,
-        discuss the **potential value**, and evaluate possible directions,
-        trade-offs, and constraints.
+        You do **not** need a complete design or implementation plan.
 
-        ### 🧭 Before you submit
+        A useful idea simply connects:
+
+        **🎯 Need → 💡 Direction → ✨ Outcome → 💬 Discussion**
+
+        ---
+
+        ### 🧭 Before you begin
 
         Please make sure that you:
 
-        - 🔎 **Search existing Issues and Discussions** for related ideas.
-        - 📚 **Check the current documentation and existing features** first.
-        - 🎯 **Describe the problem, opportunity, or unmet need** clearly.
-        - 💡 **Explain the idea and intended outcome** without requiring a final implementation.
-        - 📊 **Describe who may benefit and why** when known.
-        - 🔄 **Consider existing approaches or workarounds** when relevant.
-        - 🎨 **Describe a possible user experience** when interaction or UI matters.
-        - ❓ **Identify important uncertainties or trade-offs** when known.
-        - 🤖 **Include Android-specific details** only when they affect the idea.
-        - 🔧 **Include technical constraints** only when they affect feasibility or scope.
-        - 📎 **Attach screenshots, mockups, diagrams, examples, or evidence** when useful.
-        - ✨ Use the **Feature Request** when the proposal is sufficiently defined
-          for formal evaluation.
-        - 🐛 Use the **Bug Report** for confirmed reproducible application defects.
-        - 💬 Use **Q&A** for questions, guidance, or troubleshooting.
-        - 📚 Use the **Documentation Report** for incorrect, unclear, missing,
-          or outdated documentation.
-
-        > [!TIP]
-        > ### 🌱 Early ideas are welcome
-        >
-        > You do not need to have every detail resolved. A useful idea identifies
-        > a meaningful problem or opportunity and leaves room for alternative
-        > approaches during discussion.
+        - 🔎 **Search existing Issues and Discussions** for similar ideas.
+        - 📚 **Check current features and documentation** first.
+        - 🎯 Explain the **problem, opportunity, or unmet need**.
+        - 💡 Describe the **direction worth exploring**, not necessarily a final solution.
+        - ✨ Explain **what should improve** if the idea succeeds.
+        - 📊 Add evidence or impact information when it helps establish value.
+        - 🎨 Describe possible UX only when interaction or behavior matters.
+        - ❓ Leave room for **alternatives, questions, and trade-offs**.
+        - 🤖 Add Android-specific details only when platform behavior matters.
+        - 🔧 Add technical constraints only when they affect feasibility or scope.
+        - ✨ Use **Feature Request** when the proposal is sufficiently defined for formal evaluation.
+        - 🐛 Use **Bug Report** for reproducible application defects.
+        - 💬 Use **Q&A** for questions, help, and troubleshooting.
+        - 📚 Use **Documentation Report** for documentation problems.
 
         > [!WARNING]
-        > ### 🔐 Security vulnerabilities
-        >
-        > **Do not disclose security vulnerabilities in a public Discussion.**
-        > Follow the private disclosure process described in `SECURITY.md`.
+        > **Do not publicly disclose security vulnerabilities or sensitive information.**
+        > Security-sensitive findings belong in the private reporting process
+        > described in `SECURITY.md`. Remove passwords, tokens, API keys,
+        > personal information, and other secrets from everything you submit.
 
-        > [!IMPORTANT]
-        > ### 🛡️ Protect sensitive information
-        >
-        > Discussions and their attachments are normally **publicly visible**.
-        > Remove passwords, authentication tokens, API keys, private keys,
-        > personal information, account details, and other sensitive data
-        > before submitting.
+  # ===========================================================================
+  # ✅ PRE-FLIGHT
+  # ===========================================================================
 
   - type: checkboxes
     id: preflight
     attributes:
-      label: "✅ Pre-submission checks"
+      label: "✅ Pre-submission checklist"
       description: "Confirm that this idea is ready for community discussion."
       options:
         - label: "I searched existing Issues and Discussions and did not find a duplicate."
           required: true
 
-        - label: "I checked the current documentation and existing features before submitting."
+        - label: "I checked the current features and documentation before submitting."
           required: true
 
-        - label: "This is an early idea or proposal, not a confirmed bug, support question, or documentation report."
+        - label: "This is an exploratory idea, not a confirmed bug, support question, or documentation report."
           required: true
 
-        - label: "This Discussion does not publicly disclose a security vulnerability."
+        - label: "I am not publicly disclosing a security vulnerability."
           required: true
-    validations:
-      required: true
 
   # ===========================================================================
-  # 1️⃣ PROBLEM / OPPORTUNITY
+  # 1️⃣ PROBLEM & IDEA
   # ===========================================================================
 
   - type: markdown
@@ -95,27 +83,31 @@ body:
       value: |
         ---
 
-        ## 1. 🎯 Problem / opportunity
+        ## 1️⃣ 💡 Problem & idea
 
-        Start with **why this idea is worth discussing**.
+        **What is worth improving, and what direction should we explore?**
 
-        Explain the underlying problem, unmet need, limitation, friction,
-        or opportunity without assuming a particular implementation.
+        Start with the underlying need or opportunity, then describe the idea.
+
+        > [!TIP]
+        > Early ideas are welcome. You do not need to resolve every detail.
+        > A strong starting point identifies something meaningful to improve
+        > while leaving room for alternative solutions.
 
   - type: dropdown
     id: idea-type
     attributes:
       label: "🧭 Idea type"
-      description: "Which category best describes the direction you want to explore?"
+      description: "Which direction best describes the idea?"
       options:
-        - "New capability"
-        - "Improvement to an existing feature"
-        - "User experience improvement"
-        - "Accessibility improvement"
-        - "Performance or efficiency improvement"
-        - "Compatibility or integration improvement"
-        - "Workflow improvement"
-        - "Other idea"
+        - "✨ New capability"
+        - "🛠️ Existing feature improvement"
+        - "🎨 User experience improvement"
+        - "♿ Accessibility improvement"
+        - "⚡ Performance or efficiency improvement"
+        - "🔗 Compatibility or integration improvement"
+        - "🔄 Workflow improvement"
+        - "💡 Other idea"
     validations:
       required: true
 
@@ -124,64 +116,31 @@ body:
     attributes:
       label: "🎯 Problem / opportunity"
       description: |
-        Describe what is currently difficult, missing, inefficient,
-        inaccessible, limiting, confusing, or worth improving.
+        Explain what is difficult, missing, inefficient, inaccessible,
+        confusing, limiting, or otherwise worth improving.
 
         Focus on the underlying need rather than prescribing a solution.
       placeholder: |
         Example:
-        Users who frequently manage large collections may need a faster
+        Users who regularly manage large collections may need a faster
         and less repetitive way to organize related items.
     validations:
       required: true
-
-  - type: textarea
-    id: use-case
-    attributes:
-      label: "🧩 Use case"
-      description: |
-        Optional. Describe the workflow, scenario, or situation in which
-        the problem or opportunity appears.
-
-        Explain who may be affected, when the need arises, and what the
-        user is trying to accomplish.
-      placeholder: |
-        Example:
-        A user managing a large collection may need to reorganize many
-        related items during routine maintenance.
-    validations:
-      required: false
-
-  # ===========================================================================
-  # 2️⃣ IDEA
-  # ===========================================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 2. 💡 Idea
-
-        Describe the **concept or direction** you would like the project
-        and community to explore.
-
-        The idea can remain open to alternative designs and implementations.
 
   - type: textarea
     id: idea
     attributes:
       label: "💡 Idea"
       description: |
-        Describe the proposed concept, capability, workflow, behavior,
-        or general direction.
+        Describe the concept, capability, workflow, behavior, or direction
+        you think is worth exploring.
 
-        It does not need to define the final implementation, but it should
-        be specific enough for meaningful discussion.
+        It should be specific enough for meaningful discussion without
+        requiring a final implementation.
       placeholder: |
         Example:
-        Explore a way for users to group related items and perform common
-        organizational actions more efficiently.
+        Explore a way for users to work with related items as a group
+        when performing common organizational actions.
     validations:
       required: true
 
@@ -190,19 +149,20 @@ body:
     attributes:
       label: "✨ Intended outcome"
       description: |
-        Describe what should improve if the idea is eventually adopted.
+        Explain what should become easier, clearer, faster, safer, or
+        otherwise better if the idea succeeds.
 
-        Focus on the user or project outcome rather than implementation details.
+        Focus on the outcome rather than implementation details.
       placeholder: |
         Example:
-        Users should be able to complete common organizational workflows
+        Users should be able to complete common organization workflows
         with fewer repetitive actions while retaining clear control over
-        what changes are applied.
+        the affected items.
     validations:
       required: true
 
   # ===========================================================================
-  # 3️⃣ VALUE & IMPACT
+  # 2️⃣ USE CASE & VALUE
   # ===========================================================================
 
   - type: markdown
@@ -210,48 +170,56 @@ body:
       value: |
         ---
 
-        ## 3. 📈 Value & impact
+        ## 2️⃣ 🧩 Use case & value
 
-        Help the community understand **who could benefit and why this
-        direction may be valuable**.
+        **Who might benefit, when would it matter, and why is it useful?**
 
-        Evidence is welcome, but early ideas do not require a complete
-        business case or formal prioritization analysis.
+        This section is intentionally optional. Early ideas do not need a
+        formal business case or prioritization analysis.
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: "🧩 Use case"
+      description: |
+        Optional. Describe a workflow or situation where the idea would help.
+
+        Explain who may encounter the need, when it appears, and what they
+        are trying to accomplish.
+      placeholder: |
+        Example:
+        A user maintaining a large collection may periodically need to
+        reorganize many related items during routine maintenance.
 
   - type: textarea
     id: beneficiaries
     attributes:
-      label: "👥 Beneficiaries"
+      label: "👥 Who could benefit?"
       description: |
-        Optional. Identify the users, workflows, scenarios, or use cases
-        that may benefit from this idea.
+        Optional. Identify users, workflows, environments, or scenarios
+        that may benefit from this direction.
       placeholder: |
         Example:
         Users who frequently organize or maintain large collections.
-    validations:
-      required: false
 
   - type: textarea
     id: evidence-impact
     attributes:
-      label: "📊 Evidence / impact"
+      label: "📊 Evidence / potential impact"
       description: |
-        Optional. Include evidence that helps establish the need or
-        potential impact.
+        Optional. Add context that helps demonstrate the need or possible value.
 
-        Useful context may include frequency, workflow cost, user feedback,
-        related requests, examples, or existing limitations.
+        Useful examples include frequency, workflow cost, community feedback,
+        related requests, observed friction, or current limitations.
       placeholder: |
         Examples:
-        - The current workflow requires many repetitive steps.
-        - This affects an operation performed frequently.
-        - Related Discussions describe similar needs.
-        - Users have reported difficulty with the current workflow.
-    validations:
-      required: false
+        - The current workflow requires many repetitive actions.
+        - This task occurs frequently.
+        - Other Discussions describe a similar need.
+        - The limitation becomes significant with larger collections.
 
   # ===========================================================================
-  # 4️⃣ EXPECTED USER EXPERIENCE
+  # 3️⃣ EXPERIENCE, ALTERNATIVES & QUESTIONS
   # ===========================================================================
 
   - type: markdown
@@ -259,83 +227,62 @@ body:
       value: |
         ---
 
-        ## 4. 🎨 Expected user experience
+        ## 3️⃣ 🎨 Experience, alternatives & open questions
 
-        If you already have an interaction model in mind, describe **how the
-        idea could work from the user's perspective**.
+        **What might this look like, and what still needs exploration?**
 
-        This is exploratory — the final design may change substantially
-        during discussion.
+        Ideas are more useful when the community can compare possible
+        approaches instead of converging too early on one implementation.
 
   - type: textarea
     id: expected-ux
     attributes:
-      label: "🎨 Expected UX"
+      label: "🎨 Possible user experience"
       description: |
-        Optional. Describe a possible user flow, interaction, feedback,
-        states, navigation, or other observable behavior.
+        Optional. Describe one possible user flow, interaction model,
+        navigation pattern, feedback mechanism, or observable behavior.
 
-        Consider important confirmation, loading, empty, unavailable,
-        success, and error states when relevant.
+        This is exploratory and may change substantially during discussion.
       placeholder: |
         Example:
-        1. Select multiple related items.
-        2. Choose an organizational action.
-        3. Review the affected items.
-        4. Confirm the action when necessary.
-        5. The application clearly communicates the result.
-    validations:
-      required: false
-
-  # ===========================================================================
-  # 5️⃣ ALTERNATIVES & OPEN QUESTIONS
-  # ===========================================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 5. 🔄 Alternatives & open questions
-
-        Ideas become more useful when discussion can compare **different
-        approaches, limitations, risks, and unresolved decisions**.
+        1. Select related items.
+        2. Choose an available group action.
+        3. Review what will be affected.
+        4. Confirm when necessary.
+        5. Receive clear feedback about the result.
 
   - type: textarea
     id: alternatives
     attributes:
-      label: "🔀 Alternatives considered"
+      label: "🔀 Alternatives / existing approaches"
       description: |
         Optional. Describe existing features, workarounds, alternative ideas,
-        or other approaches you considered.
+        or other approaches worth comparing.
 
-        Include their advantages, limitations, or unresolved problems.
+        Include advantages or limitations when known.
       placeholder: |
         Example:
-        The existing workflow works well for individual items but does
-        not scale efficiently when many items need the same action.
-    validations:
-      required: false
+        Processing each item individually already works, but it becomes
+        inefficient when the same action must be repeated many times.
 
   - type: textarea
     id: open-questions
     attributes:
       label: "❓ Open questions / trade-offs"
       description: |
-        Optional. Identify questions, uncertainties, trade-offs, risks,
-        or design decisions that would benefit from community discussion.
+        Optional. Identify uncertainties, risks, competing priorities, or
+        design decisions that would benefit from community discussion.
       placeholder: |
         Examples:
-        - Should this capability apply to every item type?
-        - Which actions should require explicit confirmation?
-        - What should happen when only part of a selection can be processed?
-        - Are there accessibility concerns to resolve?
-        - Are there Android platform restrictions to consider?
-    validations:
-      required: false
+        - Which item types should support this?
+        - Which actions should require confirmation?
+        - What happens if only part of an operation succeeds?
+        - How should this behave with accessibility services?
+        - Are there Android platform restrictions?
+        - Would this introduce meaningful complexity for occasional users?
 
   # ===========================================================================
-  # 6️⃣ ANDROID CONTEXT
+  # 4️⃣ PLATFORM & TECHNICAL CONTEXT
   # ===========================================================================
 
   - type: markdown
@@ -343,77 +290,61 @@ body:
       value: |
         ---
 
-        ## 6. 🤖 Android context
+        ## 4️⃣ 🤖 Platform & technical context
 
-        Include Android-specific information only when **platform behavior
-        materially affects the idea, experience, or feasibility**.
+        **Are there constraints that materially affect this idea?**
+
+        Platform and implementation details are welcome when they help
+        understand feasibility, compatibility, performance, privacy,
+        security, accessibility, or scope.
+
+        They are **context**, not a requirement to design the final architecture.
 
   - type: textarea
     id: android-context
     attributes:
       label: "🤖 Android-specific context"
       description: |
-        Optional. Include relevant Android platform requirements,
-        behaviors, limitations, or compatibility considerations.
+        Optional. Add Android requirements or limitations only when they
+        materially affect the idea.
 
-        Useful examples include API levels, permissions, lifecycle behavior,
-        storage restrictions, background execution, notifications,
-        accessibility, form factors, and manufacturer-specific behavior.
+        Relevant areas include API levels, permissions, lifecycle behavior,
+        storage, background execution, notifications, accessibility,
+        system integrations, form factors, and manufacturer behavior.
       placeholder: |
         Examples:
-        - Android/API level requirements
+        - Minimum Android/API requirements
         - Runtime permissions
-        - Scoped storage behavior
+        - Scoped storage
         - Background execution restrictions
         - Notification behavior
         - Activity or process lifecycle
-        - TalkBack or accessibility requirements
-        - Font scaling or display-size behavior
+        - TalkBack behavior
+        - Font or display scaling
         - Tablet, foldable, or large-screen behavior
-        - Device/manufacturer-specific limitations
-    validations:
-      required: false
-
-  # ===========================================================================
-  # 7️⃣ TECHNICAL CONTEXT
-  # ===========================================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 7. 🔧 Technical context
-
-        Add implementation-oriented information only when it helps evaluate
-        **feasibility, compatibility, performance, security, privacy, or scope**.
-
-        > [!NOTE]
-        > Technical suggestions are useful context, but an early idea does not
-        > need to prescribe the final architecture or implementation.
+        - Manufacturer-specific limitations
 
   - type: textarea
     id: technical-context
     attributes:
       label: "🔧 Technical considerations"
       description: |
-        Optional. Describe known APIs, dependencies, architectural constraints,
-        compatibility requirements, performance considerations, storage,
-        networking, integrations, migration concerns, or other technical factors.
+        Optional. Add known technical factors that may help the discussion.
+
+        Possible areas include APIs, architecture, dependencies, integrations,
+        compatibility, storage, networking, migrations, memory, or performance.
       placeholder: |
         Examples:
         - Relevant Android or platform APIs
         - Existing application components
-        - External dependencies or integrations
+        - External integrations
         - Backward compatibility
+        - Data migration implications
         - Performance or memory considerations
         - Network or storage requirements
-        - Data migration implications
-    validations:
-      required: false
 
   # ===========================================================================
-  # 8️⃣ REFERENCES & SUPPORTING MATERIAL
+  # 5️⃣ REFERENCES & SUPPORTING MATERIAL
   # ===========================================================================
 
   - type: markdown
@@ -421,57 +352,58 @@ body:
       value: |
         ---
 
-        ## 8. 🔗 References & supporting material
+        ## 5️⃣ 🔗 References & supporting material
 
-        Provide material that helps others **understand, evaluate, compare,
-        or visualize the idea**.
+        **Is there anything that makes the idea easier to understand,
+        compare, or visualize?**
+
+        Useful material can include related discussions, existing issues,
+        platform documentation, research, screenshots, diagrams, mockups,
+        or examples from comparable workflows.
 
   - type: textarea
     id: references
     attributes:
       label: "🔗 References"
       description: |
-        Optional. Include related Issues, Discussions, documentation,
-        specifications, research, examples, or other useful sources.
+        Optional. Include related Issues, Discussions, project documentation,
+        Android documentation, specifications, research, or other useful sources.
 
-        Use descriptive link text where possible.
+        Prefer descriptive link text where practical.
       placeholder: |
         Examples:
-        - Related issue: #123
         - Related discussion: ...
+        - Related issue: #123
         - Relevant Android documentation: ...
         - Supporting specification or research: ...
-    validations:
-      required: false
 
   - type: upload
     id: supporting-files
     attributes:
       label: "🖼️ Mockups / screenshots / supporting files"
       description: |
-        Optional. Attach screenshots, mockups, diagrams, recordings,
-        documents, or other material that directly helps explain the idea.
+        Optional. Upload focused screenshots, mockups, diagrams, recordings,
+        or documents that help explain or visualize the idea.
 
         Review every file for personal, identifying, confidential, or
-        otherwise sensitive information before uploading it.
+        sensitive information before uploading.
     validations:
       required: false
+      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.mp4,.mov,.webm,.pdf"
 
   - type: textarea
     id: additional-context
     attributes:
       label: "📝 Additional context"
       description: |
-        Optional. Add design notes, assumptions, edge cases, research,
-        historical context, or anything else that may help the community
-        understand and evaluate the idea.
+        Optional. Add assumptions, edge cases, historical context, research,
+        design notes, or anything else that may help the community explore
+        the idea constructively.
       placeholder: |
         Add any additional relevant context here.
-    validations:
-      required: false
 
   # ===========================================================================
-  # 9️⃣ CONTRIBUTION
+  # 6️⃣ COMMUNITY PARTICIPATION
   # ===========================================================================
 
   - type: markdown
@@ -479,27 +411,28 @@ body:
       value: |
         ---
 
-        ## 9. 🤝 Contribution
+        ## 6️⃣ 🤝 Community participation
 
-        Contributions are welcome when an idea is accepted for further
-        exploration or development and follows the project's architecture,
-        testing, accessibility, privacy, security, and contribution standards.
+        **Interested in helping if this direction moves forward?**
+
+        Ideas may evolve substantially through discussion before any
+        implementation begins.
 
         > [!NOTE]
-        > Offering to contribute does not guarantee that the idea will be
-        accepted or implemented in its current form.
+        > Offering to help is not a commitment and does not imply that the
+        > idea will be accepted or implemented in its current form.
 
   - type: checkboxes
     id: contribution
     attributes:
-      label: "🤝 Contribution"
-      description: "Optional — indicate how you may be interested in helping."
+      label: "🤝 Contribution interest"
+      description: "Optional — indicate whether you may be interested in helping."
       options:
-        - label: "I am willing to help refine, design, implement, test, or document this idea if it moves forward."
+        - label: "I may be willing to help refine, design, implement, test, or document this idea if it moves forward."
           required: false
 
   # ===========================================================================
-  # 🔟 PRIVACY & SECURITY
+  # 7️⃣ PRIVACY & SECURITY
   # ===========================================================================
 
   - type: markdown
@@ -507,14 +440,11 @@ body:
       value: |
         ---
 
-        ## 10. 🔐 Privacy & security
+        ## 7️⃣ 🔐 Privacy & security
 
-        ### 🌐 Remember: this Discussion is public
+        ### 🌐 Assume everything submitted here is public
 
-        Discussions and their attachments are normally visible to anyone
-        who can access the repository.
-
-        Before submitting, review:
+        Before posting, review **every part of the Discussion**:
 
         - 📝 Discussion text
         - 🔗 Links and references
@@ -522,26 +452,26 @@ body:
         - 🎨 Diagrams and design material
         - 🎥 Screen recordings
         - 📄 Documents
-        - 📎 Other attachments
+        - 📎 Other uploaded files
+
+        Remove anything that should not be publicly disclosed.
 
         > [!IMPORTANT]
         > If this idea reveals, demonstrates, or depends on a **security
-        > vulnerability**, do not submit it publicly. Follow the private
+        > vulnerability**, do not post it publicly. Follow the private
         > reporting process described in `SECURITY.md`.
 
   - type: checkboxes
     id: privacy
     attributes:
       label: "🛡️ Public discussion confirmation"
-      description: "Confirm that this idea is appropriate for public disclosure."
+      description: "Confirm that this idea is safe and appropriate for public discussion."
       options:
         - label: "I reviewed this Discussion and its attachments and removed passwords, authentication tokens, API keys, private keys, personal information, and other sensitive data."
           required: true
 
-        - label: "I am not publicly disclosing a security vulnerability."
+        - label: "This Discussion does not publicly disclose a security vulnerability."
           required: true
-    validations:
-      required: true
 
   # ===========================================================================
   # 🏁 FINAL GUIDANCE
@@ -552,25 +482,33 @@ body:
       value: |
         ---
 
-        ## 🏁 Ready to discuss?
+        # 🏁 Ready to discuss?
 
-        ### 💡 A useful idea explores these questions
+        A useful idea gives the community enough context to explore a direction
+        without pretending every decision has already been made:
 
-        | | Question | Why it matters |
+        | | Question | What it establishes |
         |:---:|---|---|
-        | 🎯 | **What problem or opportunity exists?** | Establishes why the idea matters |
-        | 🧩 | **Who or what is affected?** | Defines the relevant use case |
-        | 💡 | **What direction should be explored?** | Establishes the core concept |
-        | ✨ | **What outcome could it provide?** | Describes the potential benefit |
-        | 📊 | **What evidence supports the need?** | Helps assess potential impact |
-        | 🎨 | **How might it work for users?** | Makes the concept easier to evaluate |
-        | 🔄 | **What alternatives exist?** | Encourages solution exploration |
-        | ❓ | **What questions or trade-offs remain?** | Identifies areas for discussion |
-        | 🤖 | **What Android constraints matter?** | Surfaces platform considerations |
-        | 🔧 | **What technical factors matter?** | Helps assess feasibility and scope |
-        | 🔐 | **Can it be discussed safely?** | Protects users and the project |
+        | 🎯 | **What could be improved?** | The underlying need |
+        | 💡 | **What direction is worth exploring?** | The core idea |
+        | ✨ | **What could become better?** | The intended outcome |
+        | 🧩 | **When would it matter?** | The real-world use case |
+        | 📊 | **Why might it be valuable?** | Potential impact |
+        | 🎨 | **How might it work?** | One possible experience |
+        | 🔀 | **What alternatives exist?** | Solution space |
+        | ❓ | **What remains unresolved?** | Discussion opportunities |
+        | 🤖 | **What platform constraints matter?** | Android considerations |
+        | 🔧 | **What technical factors matter?** | Feasibility context |
+        | 🔐 | **Is it safe to discuss publicly?** | Community protection |
 
-        > **Meaningful problem → promising idea → open discussion → informed direction.** 🚀
+        ### 🌱 Idea journey
 
-        Thank you for contributing a thoughtful idea and helping the community
-        explore improvements constructively. 💙
+        **Meaningful need** → **Promising direction** → **Open discussion** →
+        **Refined proposal** → **Formal Feature Request** 🚀
+
+        ---
+
+        ### 💙 Thank you
+
+        Thank you for bringing an idea to the community and leaving room
+        for others to question, refine, expand, or improve it.
