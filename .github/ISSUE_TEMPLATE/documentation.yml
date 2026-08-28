@@ -151,20 +151,6 @@ body:
       required: false
 
   # ---------------------------------------------------------------------------
-  # CONTEXT
-  # ---------------------------------------------------------------------------
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 3. 🎯 Context
-
-        Provide any additional context that helps maintainers
-        understand or verify the documentation issue.
-
-  # ---------------------------------------------------------------------------
   # REFERENCES & EXAMPLES
   # ---------------------------------------------------------------------------
 
@@ -173,7 +159,7 @@ body:
       value: |
         ---
 
-        ## 4. 🔗 References & examples
+        ## 3. 🔗 References & examples
 
         Provide relevant material that can help verify or improve
         the documentation.
@@ -211,7 +197,7 @@ body:
       value: |
         ---
 
-        ## 5. 🔧 Technical context
+        ## 4. 🔧 Technical context
 
         Add technical information only when it is relevant
         to the documentation.
@@ -256,7 +242,7 @@ body:
       value: |
         ---
 
-        ## 6. 🤝 Contribution
+        ## 5. 🤝 Contribution
 
         Documentation improvements are welcome when they follow
         the project's documentation standards.
@@ -279,7 +265,7 @@ body:
       value: |
         ---
 
-        ## 7. 🔐 Privacy & security
+        ## 6. 🔐 Privacy & security
 
         This issue will normally be public.
 
