@@ -1,21 +1,3 @@
-# =============================================================================
-# 💬 Q&A — DISCUSSION CATEGORY FORM
-# =============================================================================
-#
-# This file must match the slug of the GitHub Discussions category:
-#
-#   Category: Q&A
-#   Slug:     q-a
-#   File:     .github/DISCUSSION_TEMPLATE/q-a.yml
-#
-# Discussion category forms support:
-#   - title
-#   - labels
-#   - body
-#
-# They do not use the Issue Form top-level "name" or "description" keys.
-# =============================================================================
-
 title: "[Question]: "
 labels:
   - "question"
