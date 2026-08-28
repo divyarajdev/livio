@@ -339,7 +339,7 @@ body:
         Review every uploaded file for sensitive or identifying information.
     validations:
       required: false
-      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.mp4,.mov,.webm,.log,.txt,.json,.csv,.pdf,.zip,.gz,.tar.gz"
+      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.mp4,.mov,.webm,.log,.txt,.json,.csv,.pdf,.zip,.gz"
 
   # ===========================================================================
   # 5️⃣ REFERENCES
