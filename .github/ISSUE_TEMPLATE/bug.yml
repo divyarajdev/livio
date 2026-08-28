@@ -21,24 +21,33 @@ body:
 
         ### Before you report
 
-        - 🔎 Search existing issues for duplicates.
+        - 🔎 Search existing Issues for duplicates.
         - 🔄 Test the latest supported version when possible.
         - 🧪 Confirm that the problem is reproducible.
-        - 🔐 Remove passwords, tokens, private keys, and personal information.
+        - 🔐 Remove passwords, tokens, private keys, personal information,
+          and other sensitive data.
         - 🛡️ Do not report security vulnerabilities here.
+        - ✨ Use the Feature Request for new functionality or improvements.
+        - 💬 Use Q&A for questions, guidance, or troubleshooting.
+        - 📚 Use the Documentation report for missing, incorrect, unclear,
+          or outdated documentation.
 
   - type: checkboxes
     id: preflight
     attributes:
       label: Pre-submission checks
-      description: Please confirm all items before submitting.
+      description: Please confirm these items before submitting.
       options:
-        - label: I searched existing issues and did not find a duplicate.
+        - label: I searched existing Issues and did not find a duplicate.
           required: true
         - label: I am reporting a bug, not a feature request or support question.
           required: true
-        - label: I tested the latest available version, or I cannot update for a valid reason.
+        - label: I tested the latest supported version, or I cannot update for a valid reason.
           required: true
+        - label: I confirmed that the problem is reproducible.
+          required: true
+    validations:
+      required: true
 
   # ---------------------------------------------------------------------------
   # PROBLEM
@@ -290,13 +299,15 @@ body:
 
         ## 5. 📝 Additional context
 
+        Include any other information that may help with investigation.
+
   - type: textarea
     id: additional-context
     attributes:
       label: Additional context
       description: |
         Optional. Include relevant configuration, recent changes,
-        related issues, unusual circumstances, or anything else
+        related Issues, unusual circumstances, or anything else
         that may help with investigation.
       placeholder: |
         Add any additional information that may be relevant.
@@ -329,6 +340,8 @@ body:
           required: true
         - label: This report does not contain a security vulnerability that should be privately disclosed.
           required: true
+    validations:
+      required: true
 
   # ---------------------------------------------------------------------------
   # FINAL GUIDANCE
