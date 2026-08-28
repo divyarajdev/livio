@@ -273,22 +273,44 @@ body:
       required: false
 
   # ---------------------------------------------------------------------------
-  # EVIDENCE
+  # EVIDENCE & LINKS
   # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 4. 🔍 Evidence & links
+
+        If your question involves something not working as expected,
+        describe exactly what you observed and provide relevant evidence
+        using links.
+
+        You can provide links to screenshots, logs, recordings, command
+        output, code snippets, or other relevant material.
+
+        Please make sure the linked content is publicly accessible and
+        does not contain sensitive information.
 
   - type: textarea
     id: evidence
     attributes:
-      label: Evidence
+      label: Evidence links
       description: |
-        Optional. Attach relevant screenshots, logs, recordings,
+        Optional. Provide links to relevant screenshots, logs, recordings,
         command output, code snippets, or other evidence that helps
         explain the question.
-        
-        Remove sensitive information before submitting.
+
+        Remove sensitive information before sharing.
       placeholder: |
-        Add relevant screenshots, logs, command output, or other evidence here.
-      render: text
+        Examples:
+
+        https://gist.github.com/...
+        https://github.com/...
+        https://...
+
+        Briefly describe what each link contains when necessary.
     validations:
       required: false
 
