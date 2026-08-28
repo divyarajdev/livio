@@ -2,350 +2,340 @@ name: ✨ Feature Request
 description: Propose a new feature or improvement.
 title: "[Feature]: "
 labels:
-
-enhancement
+  - enhancement
+assignees: []
 
 body:
-
----------------------------------------------------------------------------
-BEFORE YOU REPORT
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
-## ✨ Feature Request
-
-Thanks for helping improve the project.
-
-Please provide enough information for a maintainer to understand,
-evaluate, and prioritize the proposed feature or improvement.
-
-### Before you report
-
-- 🔎 Search existing issues and discussions for related requests.
-- 💡 Keep the request focused on the problem and desired outcome.
-- 🔐 Remove passwords, tokens, private keys, and personal information.
-- 🛡️ Do not report security vulnerabilities here. Follow the project's
-  security policy for private security reports.
-
-
-type: checkboxes
-id: preflight
-attributes:
-label: Pre-submission checks
-description: Please confirm all items before submitting.
-options:
-- label: I searched existing issues and discussions and did not find a duplicate.
-required: true
-- label: I am proposing a feature or improvement, not reporting a bug or asking a support question.
-required: true
-
----------------------------------------------------------------------------
-PROBLEM
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 1. 🎯 Problem
-
-Describe what is missing, difficult, inefficient, or limiting today.
-
-
-type: textarea
-id: problem
-attributes:
-label: Problem
-description: |
-What is difficult, unavailable, or inefficient today?
-Describe the impact on your workflow or experience.
-placeholder: |
-Example:
-There is currently no way to export selected items without
-exporting the entire collection.
-validations:
-required: true
-
-type: textarea
-id: use-case
-attributes:
-label: Use case
-description: |
-Describe the workflow, scenario, or users affected.
-placeholder: |
-Example:
-Users who manage large collections may need to export
-only a specific group of items.
-validations:
-required: true
-
----------------------------------------------------------------------------
-PROPOSED SOLUTION
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 2. 💡 Proposed solution
-
-Describe the capability or outcome you would like to see.
-
-
-type: textarea
-id: proposal
-attributes:
-label: Proposed solution
-description: |
-Describe the desired capability or behavior from the user's
-perspective. Focus on the outcome rather than implementation details.
-placeholder: |
-Example:
-Add an option that allows users to select specific items
-and export only the selected items.
-validations:
-required: true
-
-type: textarea
-id: alternatives
-attributes:
-label: Alternatives considered
-description: |
-Describe existing features, workarounds, or alternative approaches.
-placeholder: |
-Example:
-I currently export the entire collection and remove
-unwanted items manually.
-validations:
-required: false
-
----------------------------------------------------------------------------
-USER EXPERIENCE
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 3. 🎨 User experience
-
-Add UI or interaction details when relevant.
-
-
-type: textarea
-id: expected-experience
-attributes:
-label: Expected user experience
-description: |
-Describe the expected user flow or interaction.
-placeholder: |
-Describe how the feature should work from the user's perspective.
-validations:
-required: false
-
-type: textarea
-id: examples
-attributes:
-label: Examples / references
-description: |
-Add relevant links, screenshots, mockups, or examples.
-placeholder: |
-Add references or visual examples here.
-validations:
-required: false
-
----------------------------------------------------------------------------
-VALUE & SCOPE
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 4. 📊 Value & scope
-
-Provide information that may help maintainers evaluate
-and prioritize the proposed change.
-
-
-type: textarea
-id: beneficiaries
-attributes:
-label: Who benefits?
-description: |
-Identify the users or workflows that would benefit.
-placeholder: |
-Example:
-Users managing large collections.
-validations:
-required: false
-
-type: dropdown
-id: usage-frequency
-attributes:
-label: Usage frequency
-description: How frequently would this feature be used?
-options:
-- Several times a day
-- Daily
-- Weekly
-- Occasionally
-- Rarely
-- Unsure
-validations:
-required: false
-
-type: dropdown
-id: scope
-attributes:
-label: Change scope
-description: Select the closest description of the requested change.
-options:
-- Small improvement
-- New functionality
-- Major UX or workflow change
-- New integration
-- Unsure
-validations:
-required: false
-
----------------------------------------------------------------------------
-TECHNICAL CONTEXT
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 5. 🔧 Technical context
-
-Add technical information only when relevant.
-
-
-type: textarea
-id: technical-context
-attributes:
-label: Technical considerations
-description: |
-Optional. Include compatibility requirements, constraints,
-dependencies, permissions, or performance considerations.
-placeholder: |
-Examples:
-- Android/API requirements
-- Required permissions
-- Backward compatibility
-- External dependencies
-- Performance considerations
-- Device/platform limitations
-validations:
-required: false
-
----------------------------------------------------------------------------
-ADDITIONAL CONTEXT
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 6. 📝 Additional context
-
-
-type: textarea
-id: additional-context
-attributes:
-label: Additional context
-description: |
-Optional. Include relevant configuration, related issues,
-discussions, design notes, or anything else that may help
-with evaluation.
-placeholder: |
-Add any additional information that may be relevant.
-validations:
-required: false
-
-type: textarea
-id: screenshots
-attributes:
-label: Screenshots / mockups
-description: |
-Optional. Attach visual references when they help explain
-the proposed feature.
-placeholder: |
-Drag and drop screenshots, mockups, diagrams, or other files here.
-validations:
-required: false
-
----------------------------------------------------------------------------
-CONTRIBUTION
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 7. 🤝 Contribution
-
-Let maintainers know if you are interested in helping
-implement the proposed change.
-
-
-type: checkboxes
-id: contribution
-attributes:
-label: Contribution
-description: Optional.
-options:
-- label: I am willing to work on this feature if it is accepted.
-required: false
-
----------------------------------------------------------------------------
-PRIVACY & SECURITY
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-## 8. 🔐 Privacy & security
-
-This issue will normally be public.
-
-Review all text, screenshots, recordings, and attachments
-before submitting.
-
-
-type: checkboxes
-id: privacy
-attributes:
-label: Public issue confirmation
-description: Confirm that this report is safe to disclose publicly.
-options:
-- label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
-required: true
-
----------------------------------------------------------------------------
-FINAL GUIDANCE
----------------------------------------------------------------------------
-
-type: markdown
-attributes:
-value: |
----
-
-### 💡 What makes a useful feature request?
-
-**What is the problem? → Who is affected? → What outcome is wanted? →  
-Why is it useful? → What constraints or considerations matter?**
-
-Thank you for providing a clear and focused proposal.
+  # ---------------------------------------------------------------------------
+  # BEFORE YOU REPORT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+
+        Thanks for helping improve the project.
+
+        Please provide enough information for a maintainer to understand,
+        evaluate, and prioritize the proposed feature or improvement.
+
+        ### Before you report
+
+        - 🔎 Search existing issues and discussions for related requests.
+        - 💡 Keep the request focused on the problem and desired outcome.
+        - 🔐 Remove passwords, tokens, private keys, and personal information.
+        - 🛡️ Do not report security vulnerabilities here. Follow the project's
+          security policy for private security reports.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-submission checks
+      description: Please confirm all items before submitting.
+      options:
+        - label: I searched existing issues and discussions and did not find a duplicate.
+          required: true
+        - label: I am proposing a feature or improvement, not reporting a bug or asking a support question.
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # PROBLEM
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 1. 🎯 Problem
+
+        Describe what is missing, difficult, inefficient, or limiting today.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: |
+        What is difficult, unavailable, or inefficient today?
+        Describe the impact on your workflow or experience.
+      placeholder: |
+        Example:
+        There is currently no way to export selected items without
+        exporting the entire collection.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: |
+        Describe the workflow, scenario, or users affected.
+      placeholder: |
+        Example:
+        Users who manage large collections may need to export
+        only a specific group of items.
+    validations:
+      required: true
+
+  # ---------------------------------------------------------------------------
+  # PROPOSED SOLUTION
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 2. 💡 Proposed solution
+
+        Describe the capability or outcome you would like to see.
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: |
+        Describe the desired capability or behavior from the user's
+        perspective. Focus on the outcome rather than implementation details.
+      placeholder: |
+        Example:
+        Add an option that allows users to select specific items
+        and export only the selected items.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: |
+        Describe existing features, workarounds, or alternative approaches.
+      placeholder: |
+        Example:
+        I currently export the entire collection and remove
+        unwanted items manually.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # USER EXPERIENCE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 3. 🎨 User experience
+
+        Add UI or interaction details when relevant.
+
+  - type: textarea
+    id: expected-experience
+    attributes:
+      label: Expected user experience
+      description: |
+        Describe the expected user flow or interaction.
+      placeholder: |
+        Describe how the feature should work from the user's perspective.
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples / references
+      description: |
+        Add relevant links, screenshots, mockups, or examples.
+      placeholder: |
+        Add references or visual examples here.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # VALUE & SCOPE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 4. 📊 Value & scope
+
+        Provide information that may help maintainers evaluate
+        and prioritize the proposed change.
+
+  - type: textarea
+    id: beneficiaries
+    attributes:
+      label: Who benefits?
+      description: |
+        Identify the users or workflows that would benefit.
+      placeholder: |
+        Example:
+        Users managing large collections.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: usage-frequency
+    attributes:
+      label: Usage frequency
+      description: How frequently would this feature be used?
+      options:
+        - Several times a day
+        - Daily
+        - Weekly
+        - Occasionally
+        - Rarely
+        - Unsure
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Change scope
+      description: Select the closest description of the requested change.
+      options:
+        - Small improvement
+        - New functionality
+        - Major UX or workflow change
+        - New integration
+        - Unsure
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # TECHNICAL CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 5. 🔧 Technical context
+
+        Add technical information only when relevant.
+
+  - type: textarea
+    id: technical-context
+    attributes:
+      label: Technical considerations
+      description: |
+        Optional. Include compatibility requirements, constraints,
+        dependencies, permissions, or performance considerations.
+      placeholder: |
+        Examples:
+        - Android/API requirements
+        - Required permissions
+        - Backward compatibility
+        - External dependencies
+        - Performance considerations
+        - Device/platform limitations
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ADDITIONAL CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 6. 📝 Additional context
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Optional. Include relevant configuration, related issues,
+        discussions, design notes, or anything else that may help
+        with evaluation.
+      placeholder: |
+        Add any additional information that may be relevant.
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / mockups
+      description: |
+        Optional. Attach visual references when they help explain
+        the proposed feature.
+      placeholder: |
+        Drag and drop screenshots, mockups, diagrams, or other files here.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # CONTRIBUTION
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 7. 🤝 Contribution
+
+        Let maintainers know if you are interested in helping
+        implement the proposed change.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Optional.
+      options:
+        - label: I am willing to work on this feature if it is accepted.
+          required: false
+
+  # ---------------------------------------------------------------------------
+  # PRIVACY & SECURITY
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 8. 🔐 Privacy & security
+
+        This issue will normally be public.
+
+        Review all text, screenshots, recordings, and attachments
+        before submitting.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue confirmation
+      description: Confirm that this report is safe to disclose publicly.
+      options:
+        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # FINAL GUIDANCE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### 💡 What makes a useful feature request?
+
+        **What is the problem? → Who is affected? → What outcome is wanted? →  
+        Why is it useful? → What constraints or considerations matter?**
+
+        Thank you for providing a clear and focused proposal.
