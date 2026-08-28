@@ -30,7 +30,7 @@ body:
         - 💡 Describe the idea and intended outcome without requiring a specific implementation.
         - 📊 Explain the expected value, impact, or affected users when possible.
         - 🎨 Describe the expected user experience when relevant.
-        - 📱 Include Android-specific details when they affect the idea.
+        - 🤖 Include Android-specific details when they affect the idea.
         - 🔧 Include technical considerations only when relevant.
         - 📎 Attach screenshots, mockups, diagrams, examples, or other evidence when useful.
         - 🔐 Remove passwords, tokens, private keys, personal information,
@@ -254,7 +254,7 @@ body:
       required: false
 
   # ---------------------------------------------------------------------------
-  # ALTERNATIVES
+  # ALTERNATIVES & CONSIDERATIONS
   # ---------------------------------------------------------------------------
 
   - type: markdown
