@@ -1,10 +1,11 @@
 title: "[Question]: "
+
 labels:
   - "question"
 
 body:
   # ===========================================================================
-  # 💬 INTRODUCTION
+  # 💬 WELCOME
   # ===========================================================================
 
   - type: markdown
@@ -12,73 +13,62 @@ body:
       value: |
         # 💬 Q&A
 
-        Thanks for reaching out! 💙
+        Thanks for reaching out to the community! 💙
 
-        Use this discussion when you need help **understanding, using,
+        Use this discussion to ask for help **understanding, using,
         configuring, building, or troubleshooting the application**.
 
-        A useful question clearly explains **what you are trying to accomplish**,
-        provides the relevant context, and describes what you have already
-        tried when applicable.
+        A useful question connects four things:
 
-        ### 🧭 Before you submit
+        **❓ Question → 🎯 Goal → 🧩 Context → 🧪 What you tried**
+
+        ---
+
+        ### 🧭 Before you begin
 
         Please make sure that you:
 
         - 🔎 **Search existing Discussions** for related questions and answers.
-        - 📚 **Check the current documentation** before submitting.
-        - 🎯 **Clearly describe what you are trying to accomplish**.
-        - 🧪 **Explain what you have already tried** when relevant.
-        - 🤖 **Include Android-specific details** only when they affect the question.
-        - 🔍 **Include relevant errors or unexpected behavior** when applicable.
-        - 📎 **Attach focused screenshots, recordings, logs, or files** when useful.
-        - 🐛 Use the **Bug Report** for confirmed reproducible application defects.
-        - ✨ Use the **Feature Request** for new functionality or improvements.
-        - 📚 Use the **Documentation Report** for incorrect, unclear, missing,
-          or outdated documentation.
-
-        > [!TIP]
-        > ### 💡 Ask about the goal, not only the symptom
-        >
-        > Explaining **what you ultimately want to accomplish** often makes it
-        > easier for others to suggest the safest and simplest solution.
+        - 📚 **Check the current documentation** first.
+        - ❓ **State the question clearly** and keep it focused.
+        - 🎯 Explain **what you ultimately want to accomplish**.
+        - 🧪 Describe **what you have already tried** when relevant.
+        - 📱 Add application or Android details only when they affect the answer.
+        - 🔍 Include focused errors, logs, screenshots, or other evidence when useful.
+        - 🐛 Use **Bug Report** for a reproducible application defect.
+        - ✨ Use **Feature Request** for a proposed capability or improvement.
+        - 📚 Use **Documentation Report** for missing, incorrect, or unclear documentation.
 
         > [!WARNING]
-        > ### 🔐 Security vulnerabilities
-        >
-        > **Do not disclose security vulnerabilities in a public Discussion.**
-        > Follow the private disclosure process described in `SECURITY.md`.
+        > **Do not publicly disclose security vulnerabilities or sensitive information.**
+        > Security-sensitive findings belong in the private reporting process
+        > described in `SECURITY.md`. Remove passwords, tokens, API keys,
+        > personal information, and other secrets from everything you submit.
 
-        > [!IMPORTANT]
-        > ### 🛡️ Protect sensitive information
-        >
-        > Discussions and their attachments are normally **publicly visible**.
-        > Remove passwords, authentication tokens, API keys, private keys,
-        > personal information, account details, and other sensitive data
-        > before submitting.
+  # ===========================================================================
+  # ✅ PRE-FLIGHT
+  # ===========================================================================
 
   - type: checkboxes
     id: preflight
     attributes:
-      label: "✅ Pre-submission checks"
+      label: "✅ Pre-submission checklist"
       description: "Confirm that this question is ready for the community."
       options:
         - label: "I searched existing Discussions and did not find a sufficient answer."
           required: true
 
-        - label: "I checked the current documentation before submitting."
+        - label: "I checked the current documentation before asking."
           required: true
 
         - label: "This is a question or troubleshooting request, not a confirmed bug, feature request, or documentation report."
           required: true
 
-        - label: "This discussion does not publicly disclose a security vulnerability."
+        - label: "I am not publicly disclosing a security vulnerability."
           required: true
-    validations:
-      required: true
 
   # ===========================================================================
-  # 1️⃣ QUESTION
+  # 1️⃣ QUESTION & GOAL
   # ===========================================================================
 
   - type: markdown
@@ -86,43 +76,30 @@ body:
       value: |
         ---
 
-        ## 1. ❓ Question
+        ## 1️⃣ ❓ Question & goal
 
-        Tell us **what you want to understand, accomplish, configure,
-        build, or troubleshoot**.
+        **What do you need help with, and what are you trying to accomplish?**
 
-        Keep the primary question focused so other community members can
-        quickly understand what kind of help you need.
+        Start with the primary question. Then give enough context for someone
+        unfamiliar with your setup to understand why you are asking.
+
+        > [!TIP]
+        > Describing the **goal behind the question** can reveal simpler or
+        > safer approaches than troubleshooting only the immediate symptom.
 
   - type: textarea
     id: question
     attributes:
       label: "❓ Question"
       description: |
-        State your question clearly and specifically.
+        State the question as clearly and specifically as possible.
 
-        If you have multiple closely related questions, explain how they
-        connect to the same goal or problem.
+        If several closely related questions are involved, explain how they
+        connect to the same goal.
       placeholder: |
         Example:
-        How can I configure the application to use a user-selected
-        storage location on Android?
-    validations:
-      required: true
-
-  - type: textarea
-    id: context
-    attributes:
-      label: "🧩 Context"
-      description: |
-        Describe the situation or background that led to the question.
-
-        Include only information that helps others understand the
-        relevant workflow or conditions.
-      placeholder: |
-        Example:
-        I am configuring the application on a new Android device and
-        want backups to be stored in a location selected by the user.
+        How can I configure the application to use a location selected by
+        the user for backups on Android?
     validations:
       required: true
 
@@ -131,14 +108,30 @@ body:
     attributes:
       label: "🎯 Goal"
       description: |
-        Optional. Describe what you ultimately want to accomplish and
-        what a successful outcome would look like.
+        Describe what you ultimately want to accomplish and what a successful
+        outcome would look like.
       placeholder: |
         Example:
-        I want backups to use the selected location without granting
-        permissions that are unnecessary for the workflow.
+        I want backups to be stored in a user-selected location while
+        requesting only the permissions required for that workflow.
     validations:
-      required: false
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "🧩 Context"
+      description: |
+        Provide the background needed to understand the question.
+
+        Include the relevant workflow, situation, or constraints without
+        adding unrelated details.
+      placeholder: |
+        Example:
+        I am setting up the application on a new Android device and want
+        users to choose where backups are stored.
+    validations:
+      required: true
 
   # ===========================================================================
   # 2️⃣ WHAT YOU TRIED
@@ -149,35 +142,35 @@ body:
       value: |
         ---
 
-        ## 2. 🧪 What you tried
+        ## 2️⃣ 🧪 What you tried
 
-        Tell us about approaches you have already attempted when relevant.
+        **What approaches have you already tested?**
 
-        This helps avoid repeating suggestions that you already tested
-        and provides useful clues about the problem.
+        This prevents repeated suggestions and often provides the most useful
+        clues for troubleshooting.
+
+        Skip this section when the question is purely conceptual.
 
   - type: textarea
     id: what-tried
     attributes:
       label: "🧪 What have you tried?"
       description: |
-        Optional. Describe the documentation, settings, commands,
-        configuration changes, or other approaches you already tried.
+        Optional. Describe relevant documentation, settings, commands,
+        configuration changes, searches, or other approaches you attempted.
 
-        Include the result of each relevant attempt.
+        Include the result of each meaningful attempt.
       placeholder: |
         Example:
-        1. Checked the storage documentation.
-        2. Changed the application's storage setting.
-        3. Granted the requested Android permission.
+        1. Read the storage documentation.
+        2. Selected a different storage location.
+        3. Granted the permission requested by Android.
 
         Result:
-        The application still cannot access the selected location.
-    validations:
-      required: false
+        The selected location is still unavailable to the application.
 
   # ===========================================================================
-  # 3️⃣ APPLICATION ENVIRONMENT
+  # 3️⃣ ENVIRONMENT & CONFIGURATION
   # ===========================================================================
 
   - type: markdown
@@ -185,73 +178,55 @@ body:
       value: |
         ---
 
-        ## 3. 📦 Application environment
+        ## 3️⃣ 📱 Environment & configuration
 
-        Provide application details when the **version, build, or
-        distribution source** may affect the answer.
+        **Does your application, Android, device, or configuration affect the question?**
+
+        Environment information is optional for general questions but valuable
+        when behavior differs by version, distribution, device, ROM, permission,
+        build configuration, or Android API level.
 
   - type: input
     id: app-version
     attributes:
       label: "📦 App version"
       description: |
-        Optional. Provide the exact application version when it may
-        be relevant to the question.
+        Optional. Provide the exact application version when it may affect
+        the answer.
       placeholder: "Example: 1.4.2 (142)"
-    validations:
-      required: false
 
   - type: input
     id: build-identifier
     attributes:
       label: "🔨 Build / commit"
       description: |
-        Optional. For development, nightly, or local builds, provide
-        the branch, commit SHA, tag, or another useful build identifier.
-      placeholder: "Example: 8f3c21a / main"
-    validations:
-      required: false
+        Optional. For development, nightly, preview, or local builds, provide
+        the commit SHA, branch, tag, or another useful identifier.
+      placeholder: "Example: 8f3c21a / main / v1.4.2"
 
   - type: dropdown
     id: installation-source
     attributes:
       label: "📥 Installation source"
-      description: "Optional. Where was the application installed from?"
+      description: "Optional. Where was the affected application build obtained?"
       options:
-        - "Google Play"
-        - "F-Droid"
-        - "GitHub Releases"
-        - "Other official distribution"
-        - "Local build"
-        - "Unknown"
-    validations:
-      required: false
-
-  # ===========================================================================
-  # 4️⃣ ANDROID ENVIRONMENT
-  # ===========================================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 4. 🤖 Android environment
-
-        Include Android environment information when **platform behavior,
-        device software, or API-level differences** may affect the answer.
+        - "🛍️ Google Play"
+        - "🤖 F-Droid"
+        - "🐙 GitHub Releases"
+        - "📦 Other official distribution"
+        - "🛠️ Local build"
+        - "❓ Unknown"
 
   - type: input
     id: device
     attributes:
-      label: "📱 Device"
+      label: "📲 Device"
       description: |
-        Optional. Provide the manufacturer and model.
+        Optional. Provide the manufacturer and model when device-specific
+        behavior may matter.
 
-        For an emulator, provide the emulator or virtual device profile.
+        For an emulator, provide the virtual device profile.
       placeholder: "Example: Google Pixel 9"
-    validations:
-      required: false
 
   - type: input
     id: android-version
@@ -260,80 +235,42 @@ body:
       description: |
         Optional. Provide the Android version and API level when known.
       placeholder: "Example: Android 16 (API 36)"
-    validations:
-      required: false
 
   - type: input
     id: manufacturer-rom
     attributes:
       label: "🧩 ROM / manufacturer software"
       description: |
-        Optional. Provide the ROM, firmware, Android skin, or manufacturer
-        software when it may affect the question.
-      placeholder: "Example: One UI / GrapheneOS / LineageOS"
-    validations:
-      required: false
-
-  - type: textarea
-    id: android-context
-    attributes:
-      label: "🤖 Android-specific context"
-      description: |
-        Optional. Include platform details that may influence the answer,
-        such as permissions, storage behavior, lifecycle rules, background
-        execution, notifications, intents, accessibility, form factors,
-        or manufacturer-specific restrictions.
-      placeholder: |
-        Examples:
-        - Runtime permission state
-        - Scoped storage behavior
-        - Background execution restrictions
-        - Notification settings
-        - Activity or service lifecycle
-        - Intent or URI behavior
-        - TalkBack or accessibility behavior
-        - Font scaling or display-size behavior
-        - Tablet, foldable, or large-screen behavior
-        - Device or manufacturer restrictions
-    validations:
-      required: false
-
-  # ===========================================================================
-  # 5️⃣ CONFIGURATION & CONDITIONS
-  # ===========================================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 5. ⚙️ Configuration & conditions
-
-        Include configuration details only when they help explain
-        **why the question or behavior occurs in your environment**.
+        Optional. Provide the ROM, firmware, manufacturer skin, or system
+        software when it may affect the answer.
+      placeholder: "Example: One UI 8 / GrapheneOS / LineageOS"
 
   - type: textarea
     id: configuration-conditions
     attributes:
-      label: "⚙️ Configuration / conditions"
+      label: "⚙️ Relevant configuration / conditions"
       description: |
-        Optional. Describe relevant application settings, Android settings,
-        permissions, build configuration, network conditions, integrations,
-        files, or other environmental conditions.
+        Optional. Describe only the settings or environmental conditions
+        that may affect the question.
+
+        Relevant examples include permissions, storage, Android settings,
+        build variants, Gradle configuration, network state, integrations,
+        lifecycle conditions, accessibility settings, or form factors.
       placeholder: |
         Examples:
-        - Application settings
-        - Android system settings
-        - Permissions granted or denied
+        - Permission granted or denied
+        - Storage configuration
+        - Relevant application setting
+        - Background execution state
+        - Notification configuration
         - Build variant
-        - Gradle configuration
-        - Network state
-        - External service or integration
-    validations:
-      required: false
+        - Network conditions
+        - External integration
+        - TalkBack enabled
+        - Tablet or foldable device
 
   # ===========================================================================
-  # 6️⃣ OBSERVED BEHAVIOR
+  # 4️⃣ OBSERVED BEHAVIOR & EVIDENCE
   # ===========================================================================
 
   - type: markdown
@@ -341,81 +278,71 @@ body:
       value: |
         ---
 
-        ## 6. 🔍 Observed behavior
+        ## 4️⃣ 🔍 Observed behavior & evidence
 
-        If your question involves an error, warning, or unexpected behavior,
-        describe **exactly what you observed**.
+        **What happened, and what evidence helps explain it?**
+
+        If the question involves an error, warning, unexpected result, or
+        troubleshooting scenario, provide the smallest useful evidence.
+
+        | Evidence | Useful for |
+        |:---:|---|
+        | ⚠️ **Exact error** | Identifying the immediate failure |
+        | 📋 **Focused logs** | Runtime and diagnostic context |
+        | 🖼️ **Screenshot** | Visual or configuration problems |
+        | 🎥 **Recording** | Interaction and timing problems |
+        | 📎 **Supporting file** | Additional focused diagnostic context |
+
+        > [!CAUTION]
+        > Sanitize all diagnostics and uploads first. Remove credentials,
+        > account details, identifiers, private paths, personal information,
+        > and anything else that should not be public.
 
   - type: textarea
-    id: error-observed
+    id: observed-behavior
     attributes:
       label: "🔍 Error / observed behavior"
       description: |
-        Optional. Include relevant error messages, warnings, unexpected
-        results, or other observations.
+        Optional. Describe the exact error, warning, unexpected result,
+        or behavior you observed.
 
-        Include exact error text when practical, but remove sensitive
-        information before submitting.
+        Include exact error text when useful, after removing sensitive data.
       placeholder: |
         Example:
-        The application displays:
+        When I select the location, the application reports:
 
         Permission denied
 
-        when attempting to access the selected location.
-    validations:
-      required: false
-
-  # ===========================================================================
-  # 7️⃣ EVIDENCE & ATTACHMENTS
-  # ===========================================================================
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 7. 📎 Evidence & attachments
-
-        Provide **focused supporting material** when it helps explain
-        the question or observed behavior.
-
-        > [!CAUTION]
-        > Review all logs, screenshots, recordings, configuration files,
-        > command output, and other attachments before submitting.
-        >
-        > Remove credentials, identifiers, personal information, and other
-        > sensitive data.
+        and the location remains unavailable.
 
   - type: textarea
     id: diagnostic-output
     attributes:
       label: "📋 Logs / command output"
       description: |
-        Optional. Paste short, relevant logs, error output, or command
-        output here.
+        Optional. Paste only the diagnostic or command output relevant to
+        the question.
 
-        Remove unrelated output and sanitize sensitive information first.
+        Remove unrelated output and sensitive information first.
       placeholder: |
-        Paste focused diagnostic or command output here.
-    validations:
-      required: false
+        Paste the smallest relevant diagnostic excerpt here.
+      render: text
 
   - type: upload
     id: supporting-files
     attributes:
       label: "📎 Supporting files"
       description: |
-        Optional. Attach screenshots, screen recordings, logs, configuration
-        files, documents, or other material that directly helps explain
-        the question.
+        Optional. Upload focused screenshots, recordings, logs, documents,
+        or archives that directly help explain the question.
 
-        GitHub will apply its supported file-type and size restrictions.
+        Review every uploaded file for sensitive or identifying information.
     validations:
       required: false
+      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.mp4,.mov,.webm,.log,.txt,.json,.csv,.pdf,.zip,.gz,.tar.gz"
 
   # ===========================================================================
-  # 8️⃣ REFERENCES
+  # 5️⃣ REFERENCES
   # ===========================================================================
 
   - type: markdown
@@ -423,31 +350,31 @@ body:
       value: |
         ---
 
-        ## 8. 🔗 References
+        ## 5️⃣ 🔗 References
 
-        Add documentation or other references that may help explain
-        **what you have already researched or which behavior you expect**.
+        **What have you already researched?**
+
+        Relevant documentation or prior discussions can help others understand
+        your assumptions and avoid repeating information you have already found.
 
   - type: textarea
     id: references
     attributes:
-      label: "🔗 References"
+      label: "🔗 Relevant references"
       description: |
-        Optional. Include relevant project documentation, official Android
-        documentation, related Discussions or Issues, specifications,
-        examples, or other useful sources.
+        Optional. Include project documentation, official Android references,
+        related Discussions or Issues, specifications, or other useful sources.
 
-        Use descriptive link text where possible.
+        Prefer descriptive link text where practical.
       placeholder: |
         Examples:
         - Relevant project documentation: ...
         - Official Android documentation: ...
         - Related discussion: ...
-    validations:
-      required: false
+        - Related issue: ...
 
   # ===========================================================================
-  # 9️⃣ PRIVACY & SECURITY
+  # 6️⃣ PRIVACY & SECURITY
   # ===========================================================================
 
   - type: markdown
@@ -455,41 +382,38 @@ body:
       value: |
         ---
 
-        ## 9. 🔐 Privacy & security
+        ## 6️⃣ 🔐 Privacy & security
 
-        ### 🌐 Remember: this Discussion is public
+        ### 🌐 Assume everything submitted here is public
 
-        Discussions and their attachments are normally visible to anyone
-        who can access the repository.
+        Before posting, review **every part of the discussion**:
 
-        Before submitting, review:
-
-        - 📝 Discussion text
+        - 📝 Question and context
         - ⚙️ Configuration details
-        - 💻 Logs and command output
+        - 📋 Logs and command output
         - 🔗 Links and references
         - 🖼️ Screenshots
         - 🎥 Screen recordings
         - 📎 Uploaded files
 
+        Remove anything that should not be publicly disclosed.
+
         > [!IMPORTANT]
         > If your question reveals or depends on a **security vulnerability**,
-        > do not submit it publicly. Follow the private reporting process
+        > do not post it publicly. Follow the private reporting process
         > described in `SECURITY.md`.
 
   - type: checkboxes
     id: privacy
     attributes:
       label: "🛡️ Public discussion confirmation"
-      description: "Confirm that this question is appropriate for public disclosure."
+      description: "Confirm that this question is safe and appropriate for public discussion."
       options:
         - label: "I reviewed this discussion and its attachments and removed passwords, authentication tokens, API keys, private keys, personal information, and other sensitive data."
           required: true
 
-        - label: "I am not publicly disclosing a security vulnerability."
+        - label: "This discussion does not publicly disclose a security vulnerability."
           required: true
-    validations:
-      required: true
 
   # ===========================================================================
   # 🏁 FINAL GUIDANCE
@@ -500,23 +424,31 @@ body:
       value: |
         ---
 
-        ## 🏁 Ready to ask?
+        # 🏁 Ready to ask?
 
-        ### 💡 A useful Q&A discussion answers these questions
+        A useful Q&A discussion gives the community a clear path toward
+        understanding and answering the question:
 
-        | | Question | Why it matters |
+        | | Question | What it establishes |
         |:---:|---|---|
-        | ❓ | **What are you asking?** | Defines the question |
-        | 🧩 | **What is the context?** | Explains the situation |
-        | 🎯 | **What are you trying to achieve?** | Clarifies the real goal |
-        | 🧪 | **What have you tried?** | Avoids repeated suggestions |
-        | 📦 | **Which app environment is involved?** | Identifies version-specific behavior |
-        | 🤖 | **Which Android environment is involved?** | Identifies platform-specific behavior |
-        | 🔍 | **What happened?** | Captures errors or unexpected results |
-        | 📎 | **What evidence is available?** | Helps others diagnose the situation |
-        | 🔗 | **What references are relevant?** | Shows existing research |
-        | 🔐 | **Can it be discussed safely?** | Protects you and the project |
+        | ❓ | **What are you asking?** | The primary question |
+        | 🎯 | **What are you trying to achieve?** | The real objective |
+        | 🧩 | **What is the context?** | The relevant situation |
+        | 🧪 | **What have you tried?** | Existing investigation |
+        | 📱 | **What environment matters?** | Version and platform context |
+        | 🔍 | **What happened?** | Observed behavior |
+        | 📎 | **What evidence exists?** | Diagnostic context |
+        | 🔗 | **What have you researched?** | Existing references |
+        | 🔐 | **Is it safe to discuss publicly?** | Community protection |
 
-        > **Clear question → relevant context → useful evidence → better answer.** 🚀
+        ### 💬 Answer journey
 
-        Thank you for providing clear, focused, and relevant information. 💙
+        **Clear question** → **Real goal** → **Relevant context** →
+        **Focused evidence** → **Better answer** 🚀
+
+        ---
+
+        ### 💙 Thank you
+
+        Thank you for asking a clear, focused question and giving the community
+        the context it needs to help effectively.
