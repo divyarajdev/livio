@@ -25,8 +25,8 @@ body:
 
         - 🔎 Search existing Issues and Discussions for related reports.
         - 📚 Check the current documentation before submitting.
-        - 🎯 Identify the exact documentation location.
-        - 🧪 Explain how the documentation problem can be verified.
+        - 🎯 Identify the relevant documentation location or topic.
+        - 🧪 Explain how the documentation problem can be verified when relevant.
         - 🔗 Provide authoritative sources for factual or technical corrections.
         - 📱 Include Android-specific details when they affect the documentation.
         - 📎 Attach relevant screenshots or other evidence when useful.
@@ -45,13 +45,7 @@ body:
       options:
         - label: I searched existing Issues and Discussions and did not find a duplicate.
           required: true
-        - label: I checked the current documentation and confirmed that it needs improvement.
-          required: true
-        - label: I identified the relevant documentation location.
-          required: true
-        - label: I explained how the documentation problem can be verified.
-          required: true
-        - label: This is a documentation issue, not an application bug, feature request, or Q&A question.
+        - label: I checked the current documentation before submitting.
           required: true
         - label: This report does not publicly disclose a security vulnerability.
           required: true
@@ -69,21 +63,25 @@ body:
 
         ## 1. 🔍 Documentation location
 
-        Identify exactly where the documentation problem exists.
+        Identify where the documentation problem exists, or the topic
+        where documentation is missing or needs improvement.
 
   - type: input
     id: documentation-location
     attributes:
-      label: Documentation location
+      label: Documentation location / topic
       description: |
         Provide the URL, repository file path, section, heading,
-        page, or other precise location.
+        page, topic, affected feature, or other relevant location.
+
+        If the documentation is completely missing, identify the
+        topic or feature that should be documented.
       placeholder: |
         Example:
         docs/setup.md — "Installation" section
 
         Or:
-        https://example.com/docs/setup
+        Backup encryption documentation
     validations:
       required: true
 
@@ -142,7 +140,8 @@ body:
     attributes:
       label: Current content
       description: |
-        Quote or summarize the relevant documentation.
+        Optional. Quote or summarize the relevant documentation when
+        existing content is available.
 
         Keep quotations reasonably short and do not include
         passwords, tokens, private keys, personal information,
@@ -153,7 +152,7 @@ body:
         but does not mention the permission required for the
         documented storage workflow.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # VERIFICATION
@@ -166,7 +165,7 @@ body:
 
         ## 3. 🧪 Verification
 
-        Provide enough evidence for the maintainer to verify
+        Provide evidence when it helps the maintainer verify
         the documentation problem.
 
   - type: textarea
@@ -174,7 +173,7 @@ body:
     attributes:
       label: Verification / evidence
       description: |
-        Explain how the documentation problem can be verified.
+        Optional. Explain how the documentation problem can be verified.
 
         Include observed behavior, reproducible checks, screenshots,
         command output, official platform information, or other
@@ -187,14 +186,14 @@ body:
         - The referenced page no longer exists.
         - The screenshot no longer matches the current UI.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: affected-context
     attributes:
       label: Affected context
       description: |
-        Identify the application version, documentation version,
+        Optional. Identify the application version, documentation version,
         platform version, workflow, or conditions in which the
         documentation problem applies.
       placeholder: |
@@ -205,7 +204,7 @@ body:
         - New installation workflow
         - Documentation introduced in a specific release
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # EXPECTED DOCUMENTATION
@@ -240,7 +239,7 @@ body:
     attributes:
       label: Acceptance criteria
       description: |
-        Define observable conditions that should be true when
+        Optional. Define observable conditions that should be true when
         the documentation change is considered complete.
 
         Keep each criterion clear, specific, and verifiable.
@@ -253,7 +252,7 @@ body:
         - The documented steps can be followed successfully.
         - Examples match the current application behavior.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: suggested-wording
