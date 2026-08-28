@@ -6,7 +6,7 @@ labels:
 
 body:
   # ===========================================================================
-  # 🐛 INTRODUCTION
+  # 🐛 WELCOME
   # ===========================================================================
 
   - type: markdown
@@ -14,57 +14,57 @@ body:
       value: |
         # 🐛 Bug Report
 
-        Thanks for helping improve the project! 💙
+        Thanks for helping make the project better! 💙
 
         Use this form to report a **reproducible problem with the application**.
-        Clear reproduction steps, environment details, and focused diagnostics
-        help us investigate issues faster and more accurately.
+        The more focused and complete the report is, the easier it is to
+        reproduce, diagnose, and fix.
 
-        ### 🧭 Before you report
+        **🔎 Search → 🔁 Reproduce → 📱 Describe → 🧪 Diagnose → 🛡️ Sanitize → 🚀 Submit**
+
+        ---
+
+        ### 🧭 Before you begin
 
         Please make sure that you:
 
-        - 🔎 **Search existing Issues** to avoid creating a duplicate.
-        - 🆕 **Check the latest supported version** when reasonably possible.
-        - 🧩 **Report one problem per issue** so each bug can be tracked independently.
-        - 🧪 **Include the reproduction information** currently available to you.
-        - 💡 Use the **Feature Request** form for new functionality or improvements.
-        - 💬 Use **Q&A** for questions, guidance, or general troubleshooting.
-        - 📚 Use the **Documentation Report** for incorrect, unclear, missing, or outdated documentation.
+        - 🔎 **Search existing issues** for the same problem.
+        - 🆕 **Test the latest supported version** when reasonably possible.
+        - 🎯 **Report one distinct problem per issue.**
+        - 🔁 **Provide the reproduction information** currently available to you.
+        - 💡 Use **Feature Request** for proposed functionality or improvements.
+        - 💬 Use **Q&A / Discussions** for questions, guidance, or general troubleshooting.
+        - 📚 Use **Documentation Report** for incorrect, unclear, missing, or outdated documentation.
 
         > [!WARNING]
-        > ### 🔐 Security vulnerabilities
-        >
-        > **Do not disclose security vulnerabilities in a public issue.**
-        > Follow the private disclosure process described in `SECURITY.md`.
+        > **Do not publicly disclose security vulnerabilities or sensitive information.**
+        > If the problem may be security-sensitive, follow the private disclosure
+        > process in `SECURITY.md`. Remove passwords, tokens, API keys, personal
+        > information, and other secrets from everything you submit.
 
-        > [!IMPORTANT]
-        > ### 🛡️ Protect sensitive information
-        >
-        > Issues and attachments are normally **publicly visible**.
-        > Before submitting, remove passwords, authentication tokens, API keys,
-        > private keys, personal information, account details, and any other
-        > sensitive or identifying data.
+  # ===========================================================================
+  # ✅ PRE-FLIGHT
+  # ===========================================================================
 
   - type: checkboxes
     id: preflight
     attributes:
-      label: "✅ Pre-submission checks"
+      label: "✅ Pre-submission checklist"
       description: "Confirm that this report is ready for investigation."
       options:
-        - label: "I searched existing Issues and did not find a duplicate."
+        - label: "I searched existing issues and did not find a duplicate."
           required: true
 
-        - label: "I am reporting a bug, not a feature request, documentation issue, or support question."
+        - label: "I am reporting a bug rather than a feature request, documentation issue, or support question."
           required: true
 
         - label: "I checked the latest supported version when reasonably possible."
           required: true
 
-        - label: "I included all reproduction information currently available to me."
+        - label: "I included the reproduction information currently available to me."
           required: true
 
-        - label: "This issue focuses on one distinct problem."
+        - label: "This report focuses on one distinct problem."
           required: true
 
   # ===========================================================================
@@ -76,21 +76,23 @@ body:
       value: |
         ---
 
-        ## 1. 🔍 Problem
+        ## 1️⃣ 🔍 Problem
 
-        Tell us **what went wrong** and provide the smallest reliable
-        reproduction sequence you currently know.
+        **What went wrong?**
+
+        Start with the smallest, clearest description of the failure and the
+        shortest reliable path that makes it happen.
 
         > [!TIP]
-        > A minimal reproduction is usually more useful than a long description.
-        > Include only the steps necessary to make the problem appear.
+        > A small, repeatable reproduction is usually more valuable than a long
+        > narrative. Include only the steps needed to expose the problem.
 
   - type: textarea
     id: description
     attributes:
-      label: "📝 Description"
+      label: "📝 Problem description"
       description: |
-        Clearly describe the problem and what you were doing when it occurred.
+        Clearly explain the problem and what you were doing when it occurred.
       placeholder: |
         Example:
         The application crashes when opening Settings after restoring
@@ -105,8 +107,8 @@ body:
       description: |
         Provide the smallest reliable sequence that reproduces the problem.
 
-        If you cannot currently reproduce it, describe what happened when
-        the problem occurred.
+        If the problem cannot currently be reproduced, describe the sequence
+        that occurred when you encountered it.
       placeholder: |
         Example:
         1. Open the application.
@@ -114,7 +116,7 @@ body:
         3. Select Backup & Restore.
         4. Restore an existing backup.
         5. Return to Settings.
-        6. Observe the problem.
+        6. Observe the crash.
     validations:
       required: true
 
@@ -126,7 +128,7 @@ body:
         Describe what you expected the application to do.
       placeholder: |
         Example:
-        The Settings screen should open normally.
+        The Settings screen should open normally after the restore completes.
     validations:
       required: true
 
@@ -137,7 +139,7 @@ body:
       description: |
         Describe what happened instead.
 
-        Include visible error messages when they are relevant.
+        Include visible error messages when relevant.
       placeholder: |
         Example:
         The application closes immediately and returns to the launcher.
@@ -148,13 +150,13 @@ body:
     id: reproducibility
     attributes:
       label: "🎯 Reproducibility"
-      description: "How consistently can you reproduce the problem?"
+      description: "How consistently does the problem occur?"
       options:
-        - "Every time"
-        - "Most of the time"
-        - "Occasionally"
-        - "Happened once"
-        - "No longer reproducible"
+        - "🔴 Every time"
+        - "🟠 Most of the time"
+        - "🟡 Occasionally"
+        - "⚪ Happened once"
+        - "🔵 No longer reproducible"
     validations:
       required: true
 
@@ -167,20 +169,20 @@ body:
       value: |
         ---
 
-        ## 2. 📱 Environment
+        ## 2️⃣ 📱 Environment
 
-        Tell us **where the problem occurs**.
+        **Where does the problem happen?**
 
-        Exact application and Android environment details can help distinguish
-        an application bug from device-, ROM-, version-, or distribution-specific
-        behavior.
+        Exact application and Android environment information helps distinguish
+        application defects from device-, ROM-, OS-, build-, or
+        distribution-specific behavior.
 
   - type: input
     id: app-version
     attributes:
       label: "📦 App version"
       description: |
-        Provide the exact application version affected, including the build
+        Provide the exact affected application version, including the build
         number when available.
       placeholder: "Example: 1.4.2 (142)"
     validations:
@@ -191,22 +193,22 @@ body:
     attributes:
       label: "🔨 Build / commit"
       description: |
-        For development, nightly, or local builds, provide the commit SHA,
-        branch, tag, or another useful build identifier.
-      placeholder: "Example: 8f3c21a / main"
+        For development, nightly, preview, or local builds, provide the commit
+        SHA, branch, tag, or another useful build identifier.
+      placeholder: "Example: 8f3c21a / main / v1.4.2"
 
   - type: dropdown
     id: installation-source
     attributes:
       label: "📥 Installation source"
-      description: "Where was the affected application build installed from?"
+      description: "Where was the affected build obtained?"
       options:
-        - "Google Play"
-        - "F-Droid"
-        - "GitHub Releases"
-        - "Local build"
-        - "Other"
-        - "Unknown"
+        - "🛍️ Google Play"
+        - "🤖 F-Droid"
+        - "🐙 GitHub Releases"
+        - "🛠️ Local build"
+        - "📦 Other source"
+        - "❓ Unknown"
     validations:
       required: true
 
@@ -237,8 +239,8 @@ body:
     attributes:
       label: "🧩 ROM / manufacturer software"
       description: |
-        Provide the ROM, firmware, skin, or manufacturer software version
-        when it may be relevant.
+        Provide the ROM, firmware, manufacturer skin, or system software
+        version when relevant.
       placeholder: "Example: One UI 8 / GrapheneOS / LineageOS"
 
   # ===========================================================================
@@ -250,12 +252,12 @@ body:
       value: |
         ---
 
-        ## 3. 🔄 Regression
+        ## 3️⃣ 🔄 Regression
 
-        Did this behavior work correctly before?
+        **Did this work correctly before?**
 
-        Regression information can significantly narrow the range of changes
-        that need to be investigated.
+        Knowing the last working version can dramatically reduce the number of
+        changes that need investigation.
 
   - type: dropdown
     id: regression
@@ -265,9 +267,9 @@ body:
         Indicate whether the affected behavior worked correctly in an earlier
         application version.
       options:
-        - "Unknown"
-        - "No — it has never worked correctly"
-        - "Yes — it worked previously"
+        - "❓ Unknown"
+        - "🆕 No — it has never worked correctly"
+        - "✅ Yes — it worked previously"
     validations:
       required: true
 
@@ -289,33 +291,39 @@ body:
       value: |
         ---
 
-        ## 4. 🧪 Diagnostics
+        ## 4️⃣ 🧪 Diagnostics
 
-        Relevant diagnostics can dramatically reduce investigation time.
+        **Help us see what the application saw.**
 
-        Include only information related to this issue whenever possible.
+        Focused diagnostics can substantially reduce investigation time.
+
+        Useful evidence may include:
+
+        | Evidence | Useful for |
+        |:---:|---|
+        | 📋 **Logcat / logs** | Runtime failures and warnings |
+        | 💥 **Stack traces** | Exception and crash locations |
+        | 🖼️ **Screenshots** | Visual or layout defects |
+        | 🎥 **Recordings** | Timing and interaction problems |
+        | 📎 **Diagnostic files** | Structured debugging information |
 
         > [!CAUTION]
-        > ### 🧹 Sanitize diagnostics before submitting
-        >
-        > Review **every log, stack trace, screenshot, recording, and uploaded
-        > file** before submitting it.
-        >
-        > Never include passwords, authentication tokens, API keys, private keys,
-        > personal information, account details, or other sensitive data.
+        > **Sanitize every diagnostic before uploading it.**
+        > Review logs, screenshots, recordings, stack traces, and files for
+        > passwords, tokens, API keys, account data, personal information,
+        > identifiers, private paths, and other sensitive content.
 
   - type: textarea
     id: logs
     attributes:
       label: "📋 Logs / stack trace"
       description: |
-        Include relevant Logcat output, crash information, exception messages,
-        or stack traces.
+        Include only the Logcat output, crash information, exception messages,
+        or stack trace relevant to this problem.
 
-        Remove unrelated output and review everything for sensitive information
-        before submitting.
+        Remove unrelated output and sensitive information before submitting.
       placeholder: |
-        Paste only the relevant diagnostic output here.
+        Paste the smallest relevant diagnostic excerpt here.
       render: text
 
   - type: upload
@@ -323,10 +331,10 @@ body:
     attributes:
       label: "🖼️ Screenshots / screen recording"
       description: |
-        Attach screenshots or a screen recording when visual evidence helps
-        demonstrate the problem.
+        Upload screenshots or a short screen recording when visual evidence
+        helps demonstrate the problem.
 
-        Review every file for sensitive or identifying information before upload.
+        Review every file for sensitive or identifying information first.
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm"
@@ -336,13 +344,13 @@ body:
     attributes:
       label: "📎 Additional diagnostic files"
       description: |
-        Optionally attach sanitized logs, structured diagnostic data, or an
-        archive containing information relevant to this bug.
+        Optionally upload sanitized logs, structured diagnostic data, or an
+        archive containing information directly relevant to this bug.
 
-        Do not upload full device dumps or unrelated files.
+        Avoid full device dumps and unrelated files.
     validations:
       required: false
-      accept: ".log,.txt,.json,.csv,.zip,.gz"
+      accept: ".log,.txt,.json,.csv,.zip,.gz,.tar.gz"
 
   - type: textarea
     id: workaround
@@ -364,23 +372,26 @@ body:
       value: |
         ---
 
-        ## 5. 📝 Additional context
+        ## 5️⃣ 🧠 Additional context
 
-        Add anything that may help **explain, reproduce, or narrow down**
-        the problem.
+        **What else could help narrow this down?**
+
+        Include context only when it contributes to reproducing, explaining,
+        or isolating the problem.
 
   - type: textarea
     id: additional-context
     attributes:
       label: "💬 Additional context"
       description: |
-        Include relevant configuration, recent changes, related Issues,
-        unusual circumstances, or other information useful to investigation.
+        Include relevant configuration, recent changes, related issues,
+        unusual circumstances, or other investigation context.
       placeholder: |
         Examples:
-        - The problem started after updating the application.
-        - The problem occurs only when a specific setting is enabled.
-        - A related issue or pull request may provide additional context.
+        - The issue started immediately after updating the application.
+        - It occurs only when a particular setting is enabled.
+        - It occurs only on one device or ROM.
+        - A related issue or pull request may provide useful context.
 
   # ===========================================================================
   # 6️⃣ PRIVACY & SECURITY
@@ -391,14 +402,11 @@ body:
       value: |
         ---
 
-        ## 6. 🔐 Privacy & security
+        ## 6️⃣ 🔐 Privacy & security
 
-        ### 🌐 Remember: this report is public
+        ### 🌐 Assume everything submitted here is public
 
-        This issue and its attachments will normally be visible to anyone
-        who can access the repository.
-
-        Before submitting, review:
+        Before submitting, review **every part of the report**:
 
         - 📝 Issue text
         - 📋 Logs and stack traces
@@ -407,26 +415,28 @@ body:
         - 📎 Uploaded files
         - 🔗 Linked resources
 
+        Remove anything that should not be publicly disclosed.
+
         > [!IMPORTANT]
-        > If you discover that the problem may represent a **security
-        > vulnerability**, stop here and follow the private reporting process
-        > described in `SECURITY.md`.
+        > If this problem may represent a **security vulnerability**, do not
+        > continue with a public bug report. Follow the private reporting
+        > process described in `SECURITY.md`.
 
   - type: checkboxes
     id: privacy
     attributes:
-      label: "🛡️ Public issue confirmation"
+      label: "🛡️ Public disclosure confirmation"
       description: |
         Confirm that this report is safe and appropriate for public disclosure.
       options:
-        - label: "I reviewed this report and its attachments and removed passwords, authentication tokens, API keys, private keys, personal information, and other sensitive data."
+        - label: "I reviewed the report and all attachments and removed passwords, authentication tokens, API keys, private keys, personal information, and other sensitive data."
           required: true
 
         - label: "This report does not describe a security vulnerability that requires private disclosure."
           required: true
 
   # ===========================================================================
-  # 🏁 FINAL GUIDANCE
+  # 🏁 FINAL CHECK
   # ===========================================================================
 
   - type: markdown
@@ -434,20 +444,27 @@ body:
       value: |
         ---
 
-        ## 🏁 Ready to submit?
+        # 🏁 Ready to submit?
 
-        ### 💡 A high-quality bug report answers six questions
+        A useful bug report gives maintainers a clear investigation path:
 
-        | | Question | What it tells us |
+        | | Question | Why it matters |
         |:---:|---|---|
-        | 🔍 | **What happened?** | The problem being investigated |
-        | 🔁 | **How can it be reproduced?** | The shortest path to trigger it |
-        | ✅ | **What should happen?** | The intended behavior |
-        | ❌ | **What actually happens?** | The observed failure |
-        | 📱 | **Where does it happen?** | The affected environment |
-        | 🔐 | **Can it be investigated safely?** | Whether diagnostics are safe to share |
+        | 🔍 | **What happened?** | Defines the problem |
+        | 🔁 | **How do we reproduce it?** | Creates a reliable test case |
+        | ✅ | **What should happen?** | Defines intended behavior |
+        | ❌ | **What happens instead?** | Identifies the failure |
+        | 📱 | **Where does it happen?** | Defines the affected environment |
+        | 🧪 | **What evidence exists?** | Accelerates diagnosis |
+        | 🔐 | **Is it safe to share?** | Protects users and contributors |
 
-        > **Clear report → reliable reproduction → faster diagnosis → better fix.** 🚀
+        ### ✨ Investigation flow
 
-        Thank you for taking the time to provide a thoughtful,
-        actionable bug report. 💙
+        **Clear report** → **Reliable reproduction** → **Focused diagnosis** → **Verified fix** 🚀
+
+        ---
+
+        ### 💙 Thank you
+
+        Thank you for taking the time to submit a thoughtful and actionable
+        report. High-quality reports make the project better for everyone.
