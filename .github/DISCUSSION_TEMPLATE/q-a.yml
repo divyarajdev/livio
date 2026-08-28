@@ -22,7 +22,7 @@ body:
         ### Before you submit
 
         - 🔎 Search existing Discussions for related questions.
-        - 📚 Check the available documentation before asking.
+        - 📚 Check the available documentation before submitting.
         - 🎯 Clearly describe what you are trying to accomplish.
         - 🧪 Explain what you have already tried and what happened.
         - 🤖 Provide Android-specific details when they affect the question.
@@ -33,6 +33,8 @@ body:
         - 🛡️ Do not publicly disclose security vulnerabilities.
         - 🐛 Use the Bug Report for confirmed reproducible application defects.
         - ✨ Use the Feature Request for new functionality or improvements.
+        - 📚 Use the Documentation report for missing, incorrect, unclear,
+          or outdated documentation.
 
   - type: checkboxes
     id: preflight
@@ -42,7 +44,7 @@ body:
       options:
         - label: I searched existing Discussions and did not find a sufficient answer.
           required: true
-        - label: I checked the available documentation before asking.
+        - label: I checked the available documentation before submitting.
           required: true
         - label: I clearly described my question, context, and goal.
           required: true
