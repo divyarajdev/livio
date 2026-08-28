@@ -350,7 +350,7 @@ body:
         Avoid full device dumps and unrelated files.
     validations:
       required: false
-      accept: ".log,.txt,.json,.csv,.zip,.gz,.tar.gz"
+      accept: ".log,.txt,.json,.csv,.zip,.gz"
 
   - type: textarea
     id: workaround
