@@ -1,0 +1,316 @@
+name: 📚 Documentation
+description: Report missing, incorrect, unclear, or outdated documentation.
+title: "[Docs]: "
+labels:
+  - documentation
+
+body:
+  # ---------------------------------------------------------------------------
+  # BEFORE YOU SUBMIT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Documentation
+
+        Thanks for helping improve the project's documentation.
+
+        Clear and accurate documentation helps users understand,
+        configure, use, troubleshoot, and contribute to the project.
+
+        ### Before you submit
+
+        - 🔎 Search existing issues and discussions for related reports.
+        - 📖 Check the current documentation before reporting a problem.
+        - 🔗 Include the relevant documentation page or file when possible.
+        - 🔐 Remove passwords, tokens, private keys, and personal information.
+        - 🛡️ Do not report security vulnerabilities here.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-submission checks
+      description: Please confirm all items before submitting.
+      options:
+        - label: I searched existing issues and discussions and did not find a duplicate.
+          required: true
+        - label: I checked the current documentation and confirmed that it needs improvement.
+          required: true
+        - label: I am reporting a documentation issue, not a bug, feature request, or support question.
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # DOCUMENTATION PROBLEM
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 1. 🔍 Documentation problem
+
+        Describe what is missing, incorrect, unclear, outdated,
+        or difficult to understand.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: |
+        What is wrong or missing in the documentation?
+        Explain what makes the information difficult to use or understand.
+      placeholder: |
+        Example:
+        The setup documentation does not explain how to configure
+        the application for a fresh Android installation.
+    validations:
+      required: true
+
+  - type: input
+    id: documentation-location
+    attributes:
+      label: Documentation location
+      description: |
+        Provide the URL, file path, section, or other location of
+        the documentation that needs attention.
+      placeholder: |
+        Example:
+        docs/setup.md — "Installation" section
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Documentation issue type
+      description: What kind of documentation problem is this?
+      options:
+        - Missing information
+        - Incorrect information
+        - Outdated information
+        - Unclear or confusing information
+        - Broken link or reference
+        - Typographical or grammatical error
+        - Incomplete example
+        - Poor organization or discoverability
+        - Other
+    validations:
+      required: true
+
+  # ---------------------------------------------------------------------------
+  # EXPECTED DOCUMENTATION
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 2. ✏️ Expected documentation
+
+        Explain what the documentation should communicate
+        or how it could be improved.
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current content
+      description: |
+        Optional. Quote or summarize the relevant documentation.
+        Do not include sensitive information.
+      placeholder: |
+        Summarize the current documentation or quote the relevant
+        short section here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-content
+    attributes:
+      label: Expected content
+      description: |
+        Describe the information, correction, clarification,
+        or guidance that should be provided.
+      placeholder: |
+        Explain what users should be told instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-wording
+    attributes:
+      label: Suggested wording
+      description: |
+        Optional. If you have a proposed explanation or replacement
+        text, provide it here.
+      placeholder: |
+        Provide suggested documentation text if you have one.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 3. 🎯 Context
+
+        Provide any additional context that helps maintainers
+        understand or verify the documentation issue.
+
+  # ---------------------------------------------------------------------------
+  # REFERENCES & EXAMPLES
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 4. 🔗 References & examples
+
+        Provide relevant material that can help verify or improve
+        the documentation.
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Optional. Include related issues, discussions, official
+        documentation, specifications, or other useful references.
+      placeholder: |
+        Add relevant links or references here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples / screenshots
+      description: |
+        Optional. Attach screenshots, diagrams, examples, or other
+        visual material when they help explain the documentation issue.
+      placeholder: |
+        Drag and drop screenshots, diagrams, or other files here.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # TECHNICAL CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 5. 🔧 Technical context
+
+        Add technical information only when it is relevant
+        to the documentation.
+
+  - type: textarea
+    id: technical-context
+    attributes:
+      label: Technical considerations
+      description: |
+        Optional. Include relevant versions, platforms, configuration,
+        compatibility requirements, commands, APIs, or other technical
+        details needed to document the subject accurately.
+      placeholder: |
+        Examples:
+        - Android/API requirements
+        - Application version
+        - Build configuration
+        - Platform limitations
+        - Required commands or configuration
+        - External specifications or APIs
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Optional. Include anything else that may help maintainers
+        understand, verify, or improve the documentation.
+      placeholder: |
+        Add any additional information that may be relevant.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # CONTRIBUTION
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 6. 🤝 Contribution
+
+        Documentation improvements are welcome when they follow
+        the project's documentation standards.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Optional.
+      options:
+        - label: I am willing to submit a documentation change if this issue is accepted.
+          required: false
+
+  # ---------------------------------------------------------------------------
+  # PRIVACY & SECURITY
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 7. 🔐 Privacy & security
+
+        This issue will normally be public.
+
+        Review all text, links, screenshots, examples, and attachments
+        before submitting.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue confirmation
+      description: Confirm that this report is safe to disclose publicly.
+      options:
+        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
+          required: true
+        - label: This report does not contain a security vulnerability that should be privately disclosed.
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # FINAL GUIDANCE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### 💡 What makes a useful documentation report?
+
+        **Where is the problem? → What is wrong or missing? → What should the**
+        **documentation explain? → What references or examples can help? →**
+        **Can it be improved clearly and accurately?**
+
+        Thank you for helping keep the project's documentation
+        accurate, understandable, and useful.
