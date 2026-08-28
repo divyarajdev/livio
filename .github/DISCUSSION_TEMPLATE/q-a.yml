@@ -12,8 +12,8 @@ body:
       value: |
         ## 💬 Q&A
 
-        Use this form when you need help understanding, using, configuring,
-        building, or troubleshooting the application.
+        Use this form when you need help understanding, using,
+        configuring, building, or troubleshooting the application.
 
         Please provide enough information to understand your question,
         reproduce relevant conditions when necessary, and provide
@@ -22,7 +22,7 @@ body:
         ### Before you submit
 
         - 🔎 Search existing Discussions for related questions.
-        - 📚 Check the available documentation before submitting.
+        - 📚 Check the current documentation before submitting.
         - 🎯 Clearly describe what you are trying to accomplish.
         - 🧪 Explain what you have already tried and what happened.
         - 🤖 Provide Android-specific details when they affect the question.
@@ -44,7 +44,7 @@ body:
       options:
         - label: I searched existing Discussions and did not find a sufficient answer.
           required: true
-        - label: I checked the available documentation before submitting.
+        - label: I checked the current documentation before submitting.
           required: true
         - label: I clearly described my question, context, and goal.
           required: true
@@ -79,6 +79,7 @@ body:
       label: Question
       description: |
         State your question clearly and specifically.
+
         If there are multiple questions, explain how they are related.
       placeholder: |
         Example:
@@ -93,6 +94,7 @@ body:
       label: Context
       description: |
         Describe the situation or background that led to the question.
+
         Include only information relevant to understanding the situation.
       placeholder: |
         Example:
@@ -127,6 +129,7 @@ body:
         ## 2. 🧪 What you tried
 
         Explain what you have already attempted.
+
         This helps avoid repeating approaches that did not work.
 
   - type: textarea
