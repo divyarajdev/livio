@@ -16,13 +16,13 @@ body:
 
         Thanks for helping improve the project.
 
-        Please provide enough information for a maintainer to understand
-        the problem, evaluate the need, and determine the best approach.
+        Please provide enough information for maintainers to understand
+        the problem, evaluate the need, and determine an appropriate solution.
 
         ### Before you submit
 
         - 🔎 Search existing issues and discussions for related requests.
-        - 💡 Keep the request focused on the problem and desired outcome.
+        - 💡 Focus on the problem and desired outcome.
         - 🔐 Remove passwords, tokens, private keys, and personal information.
         - 🛡️ Do not report security vulnerabilities here.
 
@@ -30,7 +30,7 @@ body:
     id: preflight
     attributes:
       label: Pre-submission checks
-      description: Please confirm all items before submitting.
+      description: Please confirm these items before submitting.
       options:
         - label: I searched existing issues and discussions and did not find a duplicate.
           required: true
@@ -56,12 +56,11 @@ body:
     attributes:
       label: Problem
       description: |
-        What is difficult, unavailable, inefficient, or limiting today?
-        Explain how it affects your workflow or experience.
+        What problem are you experiencing?
+        Explain what is difficult, unavailable, inefficient, or limiting today.
       placeholder: |
         What problem are you experiencing?
-        What is difficult, unavailable, or inefficient today?
-        How does it affect your workflow?
+        How does it affect your workflow or experience?
     validations:
       required: true
 
@@ -69,10 +68,29 @@ body:
     id: use-case
     attributes:
       label: Use case
-      description: Describe the workflow, scenario, or users affected.
+      description: |
+        Describe the workflow, scenario, or users affected.
       placeholder: |
         When does this problem occur?
         Who is affected?
+        What are they trying to accomplish?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / impact
+      description: |
+        Explain how you know this is a meaningful problem.
+        Include examples, frequency, affected workflows, or other
+        evidence when available.
+      placeholder: |
+        Examples:
+        - This happens every day when...
+        - Several users encounter...
+        - The current workflow requires...
+        - This becomes difficult when...
     validations:
       required: true
 
@@ -99,7 +117,7 @@ body:
       description: |
         Describe the desired capability or behavior from the user's
         perspective. Focus on the outcome rather than implementation
-        details. Maintainers will determine the most appropriate approach.
+        details.
       placeholder: |
         What should the application be able to do?
         What outcome would solve the problem?
@@ -110,9 +128,12 @@ body:
     id: alternatives
     attributes:
       label: Alternatives considered
-      description: Describe existing features, workarounds, or alternative approaches.
+      description: |
+        Describe existing features, workarounds, or alternative approaches.
+        Explain why they do not fully solve the problem.
       placeholder: |
         What do you currently use instead?
+        What have you tried?
         Why does it not fully solve the problem?
     validations:
       required: false
@@ -139,6 +160,24 @@ body:
         Describe how the feature should work from the user's perspective.
     validations:
       required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: |
+        Describe the observable conditions that would indicate the
+        feature successfully solves the problem.
+      placeholder: |
+        A successful implementation should:
+
+        - ...
+        - ...
+        - ...
+
+        Users should be able to...
+    validations:
+      required: true
 
   - type: textarea
     id: references
@@ -175,7 +214,7 @@ body:
       description: Identify the users or workflows that would benefit.
       placeholder: |
         Example:
-        Users managing large collections.
+        Users who frequently manage large collections.
     validations:
       required: false
 
@@ -209,7 +248,7 @@ body:
       required: false
 
   # ---------------------------------------------------------------------------
-  # TECHNICAL CONTEXT
+  # ANDROID CONTEXT
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -217,25 +256,44 @@ body:
       value: |
         ---
 
-        ## 5. 🔧 Technical context
+        ## 5. 🤖 Android context
 
-        Add technical information only when relevant.
+        Provide Android-specific information when it affects the
+        proposed feature, compatibility, behavior, or implementation.
+
+  - type: textarea
+    id: android-context
+    attributes:
+      label: Android considerations
+      description: |
+        Describe relevant Android versions, APIs, permissions, system
+        restrictions, device differences, or compatibility requirements.
+      placeholder: |
+        Examples:
+        - Android/API requirements
+        - Required permissions
+        - Background execution restrictions
+        - Device/manufacturer differences
+        - Battery or performance considerations
+        - Backward compatibility
+    validations:
+      required: false
 
   - type: textarea
     id: technical-context
     attributes:
       label: Technical considerations
       description: |
-        Describe known compatibility requirements, constraints,
-        dependencies, permissions, or performance considerations.
+        Describe known technical constraints, dependencies, or
+        implementation considerations when relevant.
       placeholder: |
         Examples:
-        - Android/API requirements
-        - Required permissions
-        - Backward compatibility
         - External dependencies
+        - API limitations
+        - Data/storage requirements
         - Performance considerations
-        - Device/platform limitations
+        - Security considerations
+        - Compatibility constraints
     validations:
       required: false
 
@@ -244,9 +302,8 @@ body:
     attributes:
       label: Additional context
       description: |
-        Optional. Include relevant configuration, related issues,
-        discussions, design notes, or anything else that may help
-        with evaluation.
+        Optional. Include related issues, discussions, design notes,
+        configuration, or anything else that may help with evaluation.
       placeholder: |
         Add any additional information that may be relevant.
     validations:
@@ -285,7 +342,7 @@ body:
 
         This issue will normally be public.
 
-        Review all text, logs, screenshots, recordings, and attachments
+        Review all text, links, screenshots, recordings, and attachments
         before submitting.
 
   - type: checkboxes
@@ -295,6 +352,8 @@ body:
       description: Confirm that this request is safe to disclose publicly.
       options:
         - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
+          required: true
+        - label: This report does not contain a security vulnerability that should be privately disclosed.
           required: true
 
   # ---------------------------------------------------------------------------
@@ -308,8 +367,8 @@ body:
 
         ### 💡 What makes a useful feature request?
 
-        **What is the problem? → Who is affected? → What outcome is wanted →**
-        **Why is it useful? → What constraints matter? → Can we evaluate it**
-        **clearly?**
+        **What is the problem? → Who is affected? → What evidence supports it? →**
+        **What outcome is wanted? → How will success be measured? → What**
+        **constraints matter?**
 
         Thank you for clearly explaining the problem, need, and desired outcome.
