@@ -3,7 +3,7 @@ blank_issues_enabled: false
 contact_links:
   - name: 🔐 Security Vulnerability
     url: https://github.com/divyarajdev/livio/security/advisories/new
-    about: Privately report security vulnerabilities through GitHub Security Advisories. Do not disclose security vulnerabilities in public issues.
+    about: Privately report security vulnerabilities through GitHub's private vulnerability reporting. Do not disclose security vulnerabilities in public Issues or Discussions.
 
   - name: 💬 Support & Questions
     url: https://github.com/divyarajdev/livio/discussions/categories/q-a
