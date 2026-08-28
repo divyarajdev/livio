@@ -1,0 +1,441 @@
+name: 💬 Question
+description: Ask for help, clarification, or guidance about the Android application.
+title: "[Question]: "
+labels:
+  - question
+
+body:
+  # ---------------------------------------------------------------------------
+  # BEFORE YOU POST
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 💬 Question
+
+        Thanks for taking the time to ask a question.
+
+        Please provide enough context for the maintainer to understand
+        your situation and provide a useful answer.
+
+        ### Before you post
+
+        - 🔎 Search existing discussions and documentation first.
+        - 📚 Check the relevant documentation when possible.
+        - 🧩 Explain what you are trying to accomplish.
+        - 📝 Include relevant errors or observed behavior when applicable.
+        - 🤖 Include Android details when they may affect the answer.
+        - 🔐 Remove passwords, tokens, private keys, and personal information.
+        - 🛡️ Do not publicly disclose security vulnerabilities.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-submission checks
+      description: Please confirm these items before posting.
+      options:
+        - label: I searched existing discussions and documentation and did not find an answer.
+          required: true
+        - label: This is a question or support request, not a bug report or feature request.
+          required: true
+        - label: I have removed passwords, tokens, private keys, and other sensitive information.
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # QUESTION
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 1. ❓ Question
+
+        Clearly describe what you need help with.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: What is your question?
+      description: |
+        Clearly describe what you want to know, understand, configure,
+        or accomplish.
+      placeholder: |
+        Example:
+        How can I allow the application to access files stored
+        in a specific directory?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: |
+        Explain the situation or workflow that led to your question.
+      placeholder: |
+        What are you trying to do?
+
+        When does the question arise?
+
+        What have you observed?
+    validations:
+      required: true
+
+  # ---------------------------------------------------------------------------
+  # GOAL
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 2. 🎯 Goal
+
+        Explain the result you are trying to achieve.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Desired outcome
+      description: |
+        Describe what you would like to accomplish.
+      placeholder: |
+        Example:
+        I want the application to access files from a directory
+        selected by the user.
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted-solution
+    attributes:
+      label: What have you tried?
+      description: |
+        Optional. Describe the settings, steps, documentation,
+        commands, or approaches you have already tried.
+      placeholder: |
+        Example:
+        I checked the application permissions and Android settings,
+        but I could not find an option that allows this.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ANDROID ENVIRONMENT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 3. 🤖 Android environment
+
+        Android behavior can vary between Android versions,
+        device manufacturers, ROMs, and installation sources.
+
+        Provide the details that are relevant to your question.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      description: Optional. Provide the application version when relevant.
+      placeholder: "Example: 1.4.2 (142)"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: installation-source
+    attributes:
+      label: Installation source
+      description: Optional. Where was the application installed from?
+      options:
+        - Google Play
+        - F-Droid
+        - GitHub Releases
+        - Other official distribution
+        - Local build
+        - Other
+        - Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: |
+        Optional. Provide the manufacturer and model when
+        device-specific behavior may be relevant.
+      placeholder: "Example: Google Pixel 9"
+    validations:
+      required: false
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version / API level
+      description: |
+        Optional. Provide the Android version and API level if known.
+      placeholder: "Example: Android 16 (API 36)"
+    validations:
+      required: false
+
+  - type: input
+    id: manufacturer-rom
+    attributes:
+      label: ROM / manufacturer software
+      description: |
+        Optional. Provide the ROM, firmware, or manufacturer software
+        when relevant.
+      placeholder: "Example: One UI 8 / GrapheneOS / LineageOS"
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ANDROID-SPECIFIC CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 4. 📱 Android-specific context
+
+        Select the Android areas that are relevant to your question.
+
+  - type: checkboxes
+    id: android-area
+    attributes:
+      label: Relevant Android area
+      description: |
+        Optional. Select all areas that apply.
+      options:
+        - label: App permissions
+          required: false
+        - label: Notifications
+          required: false
+        - label: Storage / files / scoped storage
+          required: false
+        - label: Media / audio / video
+          required: false
+        - label: Camera
+          required: false
+        - label: Location
+          required: false
+        - label: Bluetooth / nearby devices
+          required: false
+        - label: Network / connectivity
+          required: false
+        - label: Background execution
+          required: false
+        - label: Battery optimization
+          required: false
+        - label: Foreground services
+          required: false
+        - label: WorkManager / scheduled work
+          required: false
+        - label: Accessibility
+          required: false
+        - label: Intents / sharing / deep links
+          required: false
+        - label: Default applications
+          required: false
+        - label: Android system settings
+          required: false
+        - label: Backup / restore / migration
+          required: false
+        - label: App installation / updates
+          required: false
+        - label: Device or manufacturer-specific behavior
+          required: false
+        - label: Android version compatibility
+          required: false
+        - label: Other Android behavior
+          required: false
+
+  - type: textarea
+    id: android-context
+    attributes:
+      label: Android-specific details
+      description: |
+        Optional. Describe any Android behavior, platform restriction,
+        system setting, permission, or device-specific condition
+        that may be relevant.
+      placeholder: |
+        Examples:
+
+        - The behavior differs between Android versions.
+        - Android shows a permission prompt.
+        - The application behaves differently after battery optimization.
+        - A file is accessible on one Android version but not another.
+        - The behavior differs between manufacturers.
+        - Android opens a different application for an intent.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # CONFIGURATION & CONDITIONS
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 5. ⚙️ Configuration & conditions
+
+        Provide relevant configuration only when it may affect
+        the answer.
+
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Relevant configuration
+      description: |
+        Optional. Include application settings, Android settings,
+        permissions, connectivity, storage configuration, or other
+        conditions that may be relevant.
+      placeholder: |
+        Examples:
+
+        - Relevant application setting
+        - Permission state
+        - Wi-Fi / mobile data
+        - Storage location
+        - Battery optimization state
+        - Default application
+        - Accessibility setting
+        - VPN / Private DNS
+        - Developer options
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ERROR & EVIDENCE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 6. 🧪 Error & evidence
+
+        Include evidence when it helps explain the question.
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message / observed behavior
+      description: |
+        Optional. Include the exact error message or describe
+        the behavior you observe.
+      placeholder: |
+        Paste the exact error message or describe what you observe.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / diagnostic information
+      description: |
+        Optional. Include relevant diagnostic information when
+        it may help answer the question.
+
+        Remove sensitive information before posting.
+      placeholder: |
+        Paste relevant diagnostic output here.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / screen recordings
+      description: |
+        Optional. Attach screenshots or recordings when they
+        help explain the question.
+      placeholder: |
+        Drag and drop screenshots or a screen recording here.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # REFERENCES
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 7. 🔗 References
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Relevant links
+      description: |
+        Optional. Include documentation, existing issues,
+        discussions, Android documentation, or other references.
+      placeholder: |
+        Add relevant links here.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # PRIVACY & SECURITY
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 8. 🔐 Privacy & security
+
+        Discussions are normally public.
+
+        Review your question, logs, screenshots, recordings,
+        and attachments before posting.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public discussion confirmation
+      description: Confirm that this question is safe to discuss publicly.
+      options:
+        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this discussion and its attachments.
+          required: true
+        - label: This discussion does not contain a security vulnerability that should be privately disclosed.
+          required: true
+
+  # ---------------------------------------------------------------------------
+  # FINAL GUIDANCE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### 💡 What makes a useful Android question?
+
+        **What are you trying to do? → What have you tried? → What happened? →**
+        **Which Android environment matters? → Which Android behavior or**
+        **constraint is relevant? → What information can help answer the question?**
+
+        You do not need to provide every Android detail.
+        Include only the information relevant to your question.
+
+        Thank you for providing enough context for the maintainer to help.
