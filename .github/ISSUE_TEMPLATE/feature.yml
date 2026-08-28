@@ -3,11 +3,10 @@ description: Propose a new feature or improvement.
 title: "[Feature]: "
 labels:
   - enhancement
-assignees: []
 
 body:
   # ---------------------------------------------------------------------------
-  # BEFORE YOU REPORT
+  # BEFORE YOU SUBMIT
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -17,16 +16,15 @@ body:
 
         Thanks for helping improve the project.
 
-        Please provide enough information for a maintainer to understand,
-        evaluate, and prioritize the proposed feature or improvement.
+        Please provide enough information for a maintainer to understand
+        the problem, evaluate the need, and determine the best approach.
 
-        ### Before you report
+        ### Before you submit
 
         - 🔎 Search existing issues and discussions for related requests.
         - 💡 Keep the request focused on the problem and desired outcome.
         - 🔐 Remove passwords, tokens, private keys, and personal information.
-        - 🛡️ Do not report security vulnerabilities here. Follow the project's
-          security policy for private security reports.
+        - 🛡️ Do not report security vulnerabilities here.
 
   - type: checkboxes
     id: preflight
@@ -36,7 +34,7 @@ body:
       options:
         - label: I searched existing issues and discussions and did not find a duplicate.
           required: true
-        - label: I am proposing a feature or improvement, not reporting a bug or asking a support question.
+        - label: I am proposing a feature or improvement, not a bug report or support question.
           required: true
 
   # ---------------------------------------------------------------------------
@@ -50,19 +48,20 @@ body:
 
         ## 1. 🎯 Problem
 
-        Describe what is missing, difficult, inefficient, or limiting today.
+        Describe what is missing, difficult, inefficient, or limiting today,
+        and explain its impact.
 
   - type: textarea
     id: problem
     attributes:
       label: Problem
       description: |
-        What is difficult, unavailable, or inefficient today?
-        Describe the impact on your workflow or experience.
+        What is difficult, unavailable, inefficient, or limiting today?
+        Explain how it affects your workflow or experience.
       placeholder: |
-        Example:
-        There is currently no way to export selected items without
-        exporting the entire collection.
+        What problem are you experiencing?
+        What is difficult, unavailable, or inefficient today?
+        How does it affect your workflow?
     validations:
       required: true
 
@@ -70,12 +69,10 @@ body:
     id: use-case
     attributes:
       label: Use case
-      description: |
-        Describe the workflow, scenario, or users affected.
+      description: Describe the workflow, scenario, or users affected.
       placeholder: |
-        Example:
-        Users who manage large collections may need to export
-        only a specific group of items.
+        When does this problem occur?
+        Who is affected?
     validations:
       required: true
 
@@ -92,17 +89,20 @@ body:
 
         Describe the capability or outcome you would like to see.
 
+        Focus on the user's need rather than prescribing a specific
+        implementation.
+
   - type: textarea
     id: proposal
     attributes:
       label: Proposed solution
       description: |
         Describe the desired capability or behavior from the user's
-        perspective. Focus on the outcome rather than implementation details.
+        perspective. Focus on the outcome rather than implementation
+        details. Maintainers will determine the most appropriate approach.
       placeholder: |
-        Example:
-        Add an option that allows users to select specific items
-        and export only the selected items.
+        What should the application be able to do?
+        What outcome would solve the problem?
     validations:
       required: true
 
@@ -110,12 +110,10 @@ body:
     id: alternatives
     attributes:
       label: Alternatives considered
-      description: |
-        Describe existing features, workarounds, or alternative approaches.
+      description: Describe existing features, workarounds, or alternative approaches.
       placeholder: |
-        Example:
-        I currently export the entire collection and remove
-        unwanted items manually.
+        What do you currently use instead?
+        Why does it not fully solve the problem?
     validations:
       required: false
 
@@ -130,14 +128,13 @@ body:
 
         ## 3. 🎨 User experience
 
-        Add UI or interaction details when relevant.
+        Describe the desired user flow or interaction when relevant.
 
   - type: textarea
-    id: expected-experience
+    id: expected-behavior
     attributes:
-      label: Expected user experience
-      description: |
-        Describe the expected user flow or interaction.
+      label: Expected behavior
+      description: Describe the expected user flow or interaction.
       placeholder: |
         Describe how the feature should work from the user's perspective.
     validations:
@@ -147,8 +144,7 @@ body:
     id: examples
     attributes:
       label: Examples / references
-      description: |
-        Add relevant links, screenshots, mockups, or examples.
+      description: Add relevant links, screenshots, mockups, or examples.
       placeholder: |
         Add references or visual examples here.
     validations:
@@ -165,15 +161,14 @@ body:
 
         ## 4. 📊 Value & scope
 
-        Provide information that may help maintainers evaluate
-        and prioritize the proposed change.
+        Provide information that may help maintainers evaluate the
+        usefulness, impact, and scope of the proposed change.
 
   - type: textarea
     id: beneficiaries
     attributes:
       label: Who benefits?
-      description: |
-        Identify the users or workflows that would benefit.
+      description: Identify the users or workflows that would benefit.
       placeholder: |
         Example:
         Users managing large collections.
@@ -227,7 +222,7 @@ body:
     attributes:
       label: Technical considerations
       description: |
-        Optional. Include compatibility requirements, constraints,
+        Describe known compatibility requirements, constraints,
         dependencies, permissions, or performance considerations.
       placeholder: |
         Examples:
@@ -239,17 +234,6 @@ body:
         - Device/platform limitations
     validations:
       required: false
-
-  # ---------------------------------------------------------------------------
-  # ADDITIONAL CONTEXT
-  # ---------------------------------------------------------------------------
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-
-        ## 6. 📝 Additional context
 
   - type: textarea
     id: additional-context
@@ -265,12 +249,10 @@ body:
       required: false
 
   - type: textarea
-    id: screenshots
+    id: attachments
     attributes:
       label: Screenshots / mockups
-      description: |
-        Optional. Attach visual references when they help explain
-        the proposed feature.
+      description: Attach visual references when useful.
       placeholder: |
         Drag and drop screenshots, mockups, diagrams, or other files here.
     validations:
@@ -285,10 +267,7 @@ body:
       value: |
         ---
 
-        ## 7. 🤝 Contribution
-
-        Let maintainers know if you are interested in helping
-        implement the proposed change.
+        ## 6. 🤝 Contribution
 
   - type: checkboxes
     id: contribution
@@ -308,18 +287,18 @@ body:
       value: |
         ---
 
-        ## 8. 🔐 Privacy & security
+        ## 7. 🔐 Privacy & security
 
         This issue will normally be public.
 
-        Review all text, screenshots, recordings, and attachments
+        Review all text, logs, screenshots, recordings, and attachments
         before submitting.
 
   - type: checkboxes
     id: privacy
     attributes:
       label: Public issue confirmation
-      description: Confirm that this report is safe to disclose publicly.
+      description: Confirm that this request is safe to disclose publicly.
       options:
         - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
           required: true
@@ -335,7 +314,8 @@ body:
 
         ### 💡 What makes a useful feature request?
 
-        **What is the problem? → Who is affected? → What outcome is wanted? →  
-        Why is it useful? → What constraints or considerations matter?**
+        **What is the problem? → Who is affected? → What outcome is wanted →**
+        **Why is it useful? → What constraints matter? → Can we evaluate it**
+        **clearly?**
 
-        Thank you for providing a clear and focused proposal.
+        Thank you for clearly explaining the problem, need, and desired outcome.
