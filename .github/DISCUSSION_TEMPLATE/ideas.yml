@@ -15,25 +15,25 @@ body:
         Use this form to discuss an early idea, concept, or potential
         improvement before it becomes a formal feature request.
 
-        Ideas are intended for exploration and discussion. They may be
-        incomplete, experimental, or open to alternative approaches.
-
-        Please provide enough information to understand the idea,
-        the problem or opportunity behind it, the expected value,
-        and the questions that should be discussed.
+        Ideas may still be incomplete or open to alternative approaches,
+        but they should provide enough information for the project to
+        understand the problem, evaluate the potential value, and discuss
+        the direction responsibly.
 
         ### Before you submit
 
         - 🔎 Search existing Issues and Discussions for related ideas.
         - 📚 Check the current documentation and existing features first.
-        - 🎯 Clearly describe the problem, opportunity, or need behind the idea.
-        - 💡 Describe the idea and intended outcome without requiring a specific implementation.
-        - 📊 Explain the expected value, impact, or affected users when possible.
+        - 🎯 Clearly describe the problem, opportunity, or unmet need.
+        - 💡 Describe the idea and intended outcome.
+        - 📊 Explain who benefits and why the idea may be valuable.
+        - 🔄 Describe alternatives, existing workarounds, or limitations.
         - 🎨 Describe the expected user experience when relevant.
-        - 🤖 Include Android-specific details when they affect the idea.
-        - 🔧 Include technical considerations only when relevant.
-        - 📎 Attach screenshots, mockups, diagrams, examples, or other evidence when useful.
-        - 🔐 Remove passwords, tokens, private keys, personal information,
+        - ❓ Identify important questions, uncertainties, or trade-offs.
+        - 📱 Include Android-specific details when they affect the idea.
+        - 🔧 Include relevant technical constraints when they affect feasibility.
+        - 📎 Attach screenshots, mockups, diagrams, examples, or evidence when useful.
+        - 🔐 Remove passwords, authentication tokens, private keys, personal information,
           and other sensitive data.
         - 🛡️ Do not publicly disclose security vulnerabilities.
         - ✨ Use the Feature Request when the proposal is sufficiently defined
@@ -47,15 +47,19 @@ body:
     id: preflight
     attributes:
       label: Pre-submission checks
-      description: Please confirm these items before submitting.
+      description: Please confirm all items before submitting.
       options:
         - label: I searched existing Issues and Discussions and did not find a duplicate.
           required: true
         - label: I checked the current documentation and existing features before submitting.
           required: true
-        - label: I clearly described the problem, opportunity, or need behind this idea.
+        - label: I clearly described the problem, opportunity, or unmet need behind this idea.
           required: true
-        - label: I described the idea and intended outcome clearly enough for discussion.
+        - label: I clearly described the idea and intended outcome.
+          required: true
+        - label: I explained who may benefit and why the idea may be valuable.
+          required: true
+        - label: I considered relevant alternatives, limitations, or existing workarounds.
           required: true
         - label: This is an early-stage idea or concept, not a confirmed bug, documentation issue, Q&A question, or formal feature request.
           required: true
@@ -75,18 +79,18 @@ body:
 
         ## 1. 🎯 Problem / opportunity
 
-        Describe the problem, unmet need, limitation, or opportunity
-        that led to the idea.
+        Explain the underlying problem, unmet need, limitation,
+        or opportunity that led to the idea.
 
   - type: textarea
     id: problem
     attributes:
       label: Problem / opportunity
       description: |
-        Explain what is currently difficult, missing, inefficient,
-        limiting, or potentially worth improving.
+        Describe what is currently difficult, missing, inefficient,
+        limiting, or worth improving.
 
-        Focus on the underlying need rather than the proposed solution.
+        Focus on the underlying need rather than the implementation.
       placeholder: |
         Example:
         Users who frequently manage large collections may need
@@ -102,7 +106,8 @@ body:
         Describe the workflow, scenario, or situation in which
         the problem or opportunity occurs.
 
-        Explain who is affected and when the need arises.
+        Explain who is affected, when the need arises,
+        and what they are trying to accomplish.
       placeholder: |
         Example:
         A user managing a large collection may need to organize
@@ -121,9 +126,8 @@ body:
 
         ## 2. 💡 Idea
 
-        Describe the concept you would like the project to explore.
-
-        The idea does not need to define the final implementation.
+        Describe the concept or direction you would like
+        the project to explore.
 
   - type: textarea
     id: idea
@@ -133,9 +137,8 @@ body:
         Describe the proposed concept, capability, workflow,
         or direction.
 
-        Explain what you imagine the application could do
-        without requiring maintainers to implement it exactly
-        as described.
+        The idea does not need to define the final implementation,
+        but it should be specific enough to discuss meaningfully.
       placeholder: |
         Example:
         Explore a way for users to group related items and
@@ -177,7 +180,7 @@ body:
     attributes:
       label: Beneficiaries
       description: |
-        Identify the users, workflows, or use cases that could
+        Identify the users, workflows, or use cases that would
         benefit from the idea.
       placeholder: |
         Example:
@@ -190,19 +193,22 @@ body:
     attributes:
       label: Evidence / impact
       description: |
-        Optional but strongly recommended.
+        Provide evidence supporting the idea where possible.
 
         Include user feedback, frequency, measurable impact,
         related requests, examples, existing limitations,
-        or other evidence supporting the idea.
+        or other relevant evidence.
+
+        If no evidence is currently available, explain why.
       placeholder: |
         Examples:
         - This affects a frequent workflow.
         - The current process requires many repetitive steps.
         - Similar requests have appeared in Discussions.
         - Users have reported difficulty with the current workflow.
+        - No direct evidence is currently available because this is an early concept.
     validations:
-      required: false
+      required: true
 
   - type: dropdown
     id: usage-frequency
@@ -230,19 +236,17 @@ body:
 
         ## 4. 🎨 Expected user experience
 
-        Describe the experience you imagine from the user's perspective
-        when relevant.
+        Describe how the idea could work from the user's perspective.
 
   - type: textarea
     id: expected-ux
     attributes:
       label: Expected UX
       description: |
-        Optional. Describe the possible user flow, interaction,
-        feedback, or behavior.
+        Describe the expected user flow, interaction, feedback,
+        states, or observable behavior.
 
-        Keep the description open to alternative designs where
-        the final UX has not yet been determined.
+        The final design may change during discussion.
       placeholder: |
         Example:
         1. Select multiple related items.
@@ -251,10 +255,10 @@ body:
         4. Confirm the action when necessary.
         5. The application clearly communicates the result.
     validations:
-      required: false
+      required: true
 
   # ---------------------------------------------------------------------------
-  # ALTERNATIVES & CONSIDERATIONS
+  # ALTERNATIVES
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -272,8 +276,8 @@ body:
     attributes:
       label: Alternatives considered
       description: |
-        Optional. Describe existing features, workarounds,
-        alternative ideas, or approaches you considered.
+        Describe existing features, workarounds, alternative ideas,
+        or approaches you considered.
 
         Explain their advantages, limitations, or unresolved problems.
       placeholder: |
@@ -282,23 +286,26 @@ body:
         but does not scale efficiently when many items need
         the same action.
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: open-questions
     attributes:
       label: Open questions
       description: |
-        Optional. List questions, uncertainties, trade-offs,
-        or design decisions that should be discussed.
+        Identify important questions, uncertainties, trade-offs,
+        risks, or design decisions that should be discussed.
+
+        If there are no known open questions, state that explicitly.
       placeholder: |
         Examples:
         - Should this apply to all item types?
         - Should the action require confirmation?
         - Are there Android platform restrictions to consider?
         - What should happen when some selected items cannot be processed?
+        - No significant open questions are currently known.
     validations:
-      required: false
+      required: true
 
   # ---------------------------------------------------------------------------
   # ANDROID CONTEXT
@@ -311,21 +318,24 @@ body:
 
         ## 6. 🤖 Android context
 
-        Provide Android-specific information only when it affects
-        the idea.
+        Provide Android-specific information when it affects
+        the idea or its feasibility.
 
   - type: textarea
     id: android-context
     attributes:
       label: Android-specific context
       description: |
-        Optional. Include relevant Android API levels, permissions,
-        storage behavior, lifecycle behavior, background execution,
-        notifications, accessibility, device behavior, or platform
-        restrictions.
+        Required only when Android-specific behavior affects the idea.
+
+        If no Android-specific considerations are known, state that explicitly.
+
+        Include relevant API levels, permissions, storage behavior,
+        lifecycle behavior, background execution, notifications,
+        accessibility, device behavior, or platform restrictions.
       placeholder: |
         Examples:
-        - Android/API level
+        - Android/API level requirements
         - Runtime permissions
         - Scoped storage
         - Background execution restrictions
@@ -333,8 +343,9 @@ body:
         - Android lifecycle behavior
         - Accessibility requirements
         - Device/manufacturer-specific behavior
+        - No known Android-specific considerations.
     validations:
-      required: false
+      required: true
 
   # ---------------------------------------------------------------------------
   # TECHNICAL CONTEXT
@@ -347,20 +358,22 @@ body:
 
         ## 7. 🔧 Technical context
 
-        Add technical information only when it is relevant
-        to evaluating or discussing the idea.
+        Add technical information when it affects feasibility,
+        compatibility, performance, security, or project scope.
 
   - type: textarea
     id: technical-context
     attributes:
       label: Technical considerations
       description: |
-        Optional. Include known APIs, dependencies, compatibility
-        requirements, performance considerations, architecture,
-        storage, network, integrations, or other constraints.
+        Describe relevant APIs, dependencies, compatibility requirements,
+        performance considerations, architecture, storage, network,
+        integrations, or other constraints.
 
         Do not prescribe an implementation unless the technical
         detail is necessary for discussion.
+
+        If no technical considerations are known, state that explicitly.
       placeholder: |
         Examples:
         - Required Android APIs
@@ -369,8 +382,9 @@ body:
         - Performance considerations
         - Network or storage requirements
         - Integration requirements
+        - No known technical considerations.
     validations:
-      required: false
+      required: true
 
   # ---------------------------------------------------------------------------
   # REFERENCES & ADDITIONAL CONTEXT
@@ -383,8 +397,8 @@ body:
 
         ## 8. 🔗 References & additional context
 
-        Provide supporting material that helps others understand
-        and evaluate the idea.
+        Provide supporting material that helps others understand,
+        evaluate, or discuss the idea.
 
   - type: textarea
     id: references
@@ -475,10 +489,10 @@ body:
         ### 💡 What makes a useful idea?
 
         **What is the problem or opportunity? → Who is affected? → What is**
-        **the idea? → What outcome could it provide? → What alternatives**
-        **exist? → What questions or trade-offs should be discussed? → What**
-        **Android or technical constraints matter?**
+        **the idea? → What outcome could it provide? → What evidence supports**
+        **the need? → What alternatives exist? → What questions or trade-offs**
+        **matter? → What Android or technical constraints should be considered?**
 
         Thank you for providing clear, relevant, and constructive information
-        that helps the project explore ideas before deciding whether they
-        should become formal feature requests.
+        that helps the project evaluate early ideas before deciding whether
+        they should become formal feature requests.
