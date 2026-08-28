@@ -26,10 +26,10 @@ body:
         - 📚 Check the current documentation and existing features first.
         - 🎯 Clearly describe the problem, opportunity, or unmet need.
         - 💡 Describe the idea and intended outcome.
-        - 📊 Explain who benefits and why the idea may be valuable.
-        - 🔄 Describe alternatives, existing workarounds, or limitations.
+        - 📊 Explain who benefits and why the idea may be valuable when known.
+        - 🔄 Describe alternatives, existing workarounds, or limitations when relevant.
         - 🎨 Describe the expected user experience when relevant.
-        - ❓ Identify important questions, uncertainties, or trade-offs.
+        - ❓ Identify important questions, uncertainties, or trade-offs when known.
         - 📱 Include Android-specific details when they affect the idea.
         - 🔧 Include relevant technical constraints when they affect feasibility.
         - 📎 Attach screenshots, mockups, diagrams, examples, or evidence when useful.
@@ -52,16 +52,6 @@ body:
         - label: I searched existing Issues and Discussions and did not find a duplicate.
           required: true
         - label: I checked the current documentation and existing features before submitting.
-          required: true
-        - label: I clearly described the problem, opportunity, or unmet need behind this idea.
-          required: true
-        - label: I clearly described the idea and intended outcome.
-          required: true
-        - label: I explained who may benefit and why the idea may be valuable.
-          required: true
-        - label: I considered relevant alternatives, limitations, or existing workarounds.
-          required: true
-        - label: This is an early-stage idea or concept, not a confirmed bug, documentation issue, Q&A question, or formal feature request.
           required: true
         - label: This discussion does not publicly disclose a security vulnerability.
           required: true
@@ -103,7 +93,7 @@ body:
     attributes:
       label: Use case
       description: |
-        Describe the workflow, scenario, or situation in which
+        Optional. Describe the workflow, scenario, or situation in which
         the problem or opportunity occurs.
 
         Explain who is affected, when the need arises,
@@ -113,7 +103,7 @@ body:
         A user managing a large collection may need to organize
         many related items during routine maintenance.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # IDEA
@@ -180,50 +170,32 @@ body:
     attributes:
       label: Beneficiaries
       description: |
-        Identify the users, workflows, or use cases that would
+        Optional. Identify the users, workflows, or use cases that would
         benefit from the idea.
       placeholder: |
         Example:
         Users who frequently manage large collections.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: evidence-impact
     attributes:
       label: Evidence / impact
       description: |
-        Provide evidence supporting the idea where possible.
+        Optional. Provide evidence supporting the idea where possible.
 
         Include user feedback, frequency, measurable impact,
         related requests, examples, existing limitations,
         or other relevant evidence.
-
-        If no evidence is currently available, explain why.
       placeholder: |
         Examples:
         - This affects a frequent workflow.
         - The current process requires many repetitive steps.
         - Similar requests have appeared in Discussions.
         - Users have reported difficulty with the current workflow.
-        - No direct evidence is currently available because this is an early concept.
     validations:
-      required: true
-
-  - type: dropdown
-    id: usage-frequency
-    attributes:
-      label: Expected usage frequency
-      description: How frequently might this idea be useful?
-      options:
-        - Several times a day
-        - Daily
-        - Weekly
-        - Occasionally
-        - Rarely
-        - Unsure
-    validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # EXPECTED USER EXPERIENCE
@@ -236,14 +208,15 @@ body:
 
         ## 4. 🎨 Expected user experience
 
-        Describe how the idea could work from the user's perspective.
+        Describe how the idea could work from the user's perspective
+        when you already have a possible interaction in mind.
 
   - type: textarea
     id: expected-ux
     attributes:
       label: Expected UX
       description: |
-        Describe the expected user flow, interaction, feedback,
+        Optional. Describe the expected user flow, interaction, feedback,
         states, or observable behavior.
 
         The final design may change during discussion.
@@ -255,7 +228,7 @@ body:
         4. Confirm the action when necessary.
         5. The application clearly communicates the result.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # ALTERNATIVES
@@ -269,14 +242,14 @@ body:
         ## 5. 🔄 Alternatives & considerations
 
         Explain existing approaches and other directions
-        that could be considered.
+        that could be considered when relevant.
 
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives considered
       description: |
-        Describe existing features, workarounds, alternative ideas,
+        Optional. Describe existing features, workarounds, alternative ideas,
         or approaches you considered.
 
         Explain their advantages, limitations, or unresolved problems.
@@ -286,26 +259,23 @@ body:
         but does not scale efficiently when many items need
         the same action.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: open-questions
     attributes:
       label: Open questions
       description: |
-        Identify important questions, uncertainties, trade-offs,
+        Optional. Identify important questions, uncertainties, trade-offs,
         risks, or design decisions that should be discussed.
-
-        If there are no known open questions, state that explicitly.
       placeholder: |
         Examples:
         - Should this apply to all item types?
         - Should the action require confirmation?
         - Are there Android platform restrictions to consider?
         - What should happen when some selected items cannot be processed?
-        - No significant open questions are currently known.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # ANDROID CONTEXT
@@ -326,9 +296,8 @@ body:
     attributes:
       label: Android-specific context
       description: |
-        Required only when Android-specific behavior affects the idea.
-
-        If no Android-specific considerations are known, state that explicitly.
+        Optional. Include Android-specific information when platform
+        behavior affects the idea.
 
         Include relevant API levels, permissions, storage behavior,
         lifecycle behavior, background execution, notifications,
@@ -343,9 +312,8 @@ body:
         - Android lifecycle behavior
         - Accessibility requirements
         - Device/manufacturer-specific behavior
-        - No known Android-specific considerations.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # TECHNICAL CONTEXT
@@ -366,14 +334,12 @@ body:
     attributes:
       label: Technical considerations
       description: |
-        Describe relevant APIs, dependencies, compatibility requirements,
+        Optional. Describe relevant APIs, dependencies, compatibility requirements,
         performance considerations, architecture, storage, network,
         integrations, or other constraints.
 
         Do not prescribe an implementation unless the technical
         detail is necessary for discussion.
-
-        If no technical considerations are known, state that explicitly.
       placeholder: |
         Examples:
         - Required Android APIs
@@ -382,9 +348,8 @@ body:
         - Performance considerations
         - Network or storage requirements
         - Integration requirements
-        - No known technical considerations.
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------------------------
   # REFERENCES & ADDITIONAL CONTEXT
