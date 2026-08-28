@@ -1,0 +1,368 @@
+name: 💬 Question
+description: Ask a clear question about using, configuring, building, or understanding the Android application.
+title: "[Question]: "
+labels:
+  - question
+
+body:
+  # ---------------------------------------------------------------------------
+  # BEFORE YOU SUBMIT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 💬 Question
+
+        Use this form when you need help understanding, using, configuring,
+        building, or troubleshooting the application.
+
+        Please provide enough context for the maintainer to understand
+        your goal and give an accurate answer without requiring
+        unnecessary information.
+
+        ### Before you submit
+
+        - 🔎 Search existing issues and discussions for related questions.
+        - 📚 Check the available documentation before asking.
+        - 🎯 Clearly describe what you are trying to accomplish.
+        - 🧪 Include what you have already tried when relevant.
+        - 🤖 Provide Android-specific details when they affect the question.
+        - 🔐 Remove passwords, tokens, private keys, and personal information.
+        - 🛡️ Do not publicly disclose security vulnerabilities.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-submission checks
+      description: Please confirm these items before submitting.
+      options:
+        - label: I searched existing issues and discussions and did not find a duplicate.
+          required: true
+        - label: I checked the available documentation and could not find a sufficient answer.
+          required: true
+        - label: This is a question or request for guidance, not a bug report or feature request.
+          required: true
+    validations:
+      required: true
+
+  # ---------------------------------------------------------------------------
+  # QUESTION
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 1. ❓ Question
+
+        Clearly describe what you want to understand, accomplish,
+        or determine.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: |
+        State your question clearly and specifically.
+        If there are multiple questions, explain how they are related.
+      placeholder: |
+        Example:
+        How can I configure the application to use a different
+        storage location on Android?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: |
+        Provide the background needed to understand why you are asking
+        the question and what you are working with.
+      placeholder: |
+        Example:
+        I am configuring the application on a new Android device
+        and want to keep application data on a user-selected location.
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: |
+        Describe what you are trying to accomplish or what successful
+        outcome would look like.
+      placeholder: |
+        Example:
+        I want the application to access the selected location
+        reliably without requiring unnecessary permissions.
+    validations:
+      required: true
+
+  # ---------------------------------------------------------------------------
+  # WHAT WAS TRIED
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 2. 🧪 What you have tried
+
+        Explain what you have already attempted when applicable.
+        This helps avoid repeating approaches that did not work.
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What was tried
+      description: |
+        Optional. Describe the steps, settings, commands, documentation,
+        approaches, or solutions you have already tried and their results.
+      placeholder: |
+        Examples:
+        - Followed the setup documentation.
+        - Changed a specific application setting.
+        - Tried a particular Android system setting.
+        - Ran a specific Gradle command.
+        - Tested a different configuration.
+        
+        Result:
+        Explain what happened.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ANDROID ENVIRONMENT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 3. 📱 Android environment
+
+        Provide environment information when it affects the question.
+        Do not include unrelated device information.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      description: |
+        Optional. Provide the application version when the answer
+        may depend on the version.
+      placeholder: "Example: 1.4.2 (142)"
+    validations:
+      required: false
+
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: |
+        Optional. Provide the manufacturer and model when device-specific
+        behavior may be relevant.
+      placeholder: "Example: Google Pixel 9"
+    validations:
+      required: false
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      description: |
+        Optional. Provide the Android version and API level when known.
+      placeholder: "Example: Android 16 (API 36)"
+    validations:
+      required: false
+
+  - type: input
+    id: manufacturer-rom
+    attributes:
+      label: ROM / manufacturer software
+      description: |
+        Optional. Provide the ROM, firmware, or manufacturer software
+        when it may affect the behavior.
+      placeholder: "Example: One UI / GrapheneOS / LineageOS"
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ANDROID-SPECIFIC CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: textarea
+    id: android-context
+    attributes:
+      label: Android-specific context
+      description: |
+        Optional. Include relevant Android platform details such as
+        API-level behavior, permissions, storage, lifecycle, background
+        execution, notifications, accessibility, intents, services,
+        or manufacturer-specific restrictions.
+      placeholder: |
+        Examples:
+        - Runtime permission state
+        - Scoped storage behavior
+        - Background execution restrictions
+        - Notification settings
+        - Activity/service lifecycle
+        - Intent or URI behavior
+        - Accessibility behavior
+        - Device or manufacturer restrictions
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # CONFIGURATION & CONDITIONS
+  # ---------------------------------------------------------------------------
+
+  - type: textarea
+    id: configuration-conditions
+    attributes:
+      label: Configuration / conditions
+      description: |
+        Optional. Describe relevant application settings, Android settings,
+        build configuration, permissions, network conditions, files,
+        integrations, or other conditions required to understand the question.
+      placeholder: |
+        Examples:
+        - Application settings
+        - Android system settings
+        - Permissions granted or denied
+        - Build variant
+        - Gradle configuration
+        - Network state
+        - External service or integration
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # ERROR / OBSERVED BEHAVIOR
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 4. 🔍 Observed behavior
+
+        If your question involves something not working as expected,
+        describe exactly what you observed.
+
+  - type: textarea
+    id: error-observed
+    attributes:
+      label: Error / observed behavior
+      description: |
+        Optional. Include error messages, warnings, unexpected behavior,
+        or other observations relevant to the question.
+      placeholder: |
+        Example:
+        The application shows "Permission denied" when attempting
+        to access the selected location.
+        
+        If there is an error message, include the exact text when possible.
+      render: text
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # EVIDENCE
+  # ---------------------------------------------------------------------------
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: |
+        Optional. Attach relevant screenshots, logs, recordings,
+        command output, code snippets, or other evidence that helps
+        explain the question.
+        
+        Remove sensitive information before submitting.
+      placeholder: |
+        Add relevant screenshots, logs, command output, or other evidence here.
+      render: text
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # REFERENCES
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 5. 🔗 References
+
+        Include relevant documentation or other material when useful.
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Optional. Include relevant documentation, official Android
+        references, related issues, discussions, examples, or other
+        sources that may help answer the question.
+      placeholder: |
+        Add relevant references here.
+    validations:
+      required: false
+
+  # ---------------------------------------------------------------------------
+  # PRIVACY & SECURITY
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 6. 🔐 Privacy & security
+
+        Discussions are normally public.
+
+        Review your question, configuration details, logs, screenshots,
+        recordings, and attachments before submitting.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue confirmation
+      description: Confirm that this question is safe to disclose publicly.
+      options:
+        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this question and its attachments.
+          required: true
+        - label: I am not publicly disclosing a security vulnerability.
+          required: true
+    validations:
+      required: true
+
+  # ---------------------------------------------------------------------------
+  # FINAL GUIDANCE
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### 💡 What makes a useful question?
+
+        **What are you trying to do? → What is your goal? → What have you**
+        **already tried? → Which Android context matters? → What happened?**
+        **→ What evidence or references can help provide an accurate answer?**
+
+        Thank you for providing clear context that helps the maintainer
+        understand the question and provide useful guidance.
