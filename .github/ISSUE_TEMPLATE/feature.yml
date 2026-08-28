@@ -140,13 +140,17 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: examples
+    - type: textarea
+    id: references
     attributes:
       label: Examples / references
-      description: Add relevant links, screenshots, mockups, or examples.
+      description: |
+        Optional. Include relevant links, screenshots, mockups,
+        diagrams, examples, or other material that helps explain
+        the proposed feature.
       placeholder: |
-        Add references or visual examples here.
+        Add relevant links or attach screenshots, mockups,
+        diagrams, or other examples here.
     validations:
       required: false
 
@@ -245,16 +249,6 @@ body:
         with evaluation.
       placeholder: |
         Add any additional information that may be relevant.
-    validations:
-      required: false
-
-  - type: textarea
-    id: attachments
-    attributes:
-      label: Screenshots / mockups
-      description: Attach visual references when useful.
-      placeholder: |
-        Drag and drop screenshots, mockups, diagrams, or other files here.
     validations:
       required: false
 
