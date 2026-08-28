@@ -33,7 +33,7 @@ body:
         - 🔐 Remove passwords, tokens, private keys, personal information,
           and other sensitive data.
         - 🛡️ Do not publicly disclose security vulnerabilities.
-        - 🐛 Use the Bug Report for application defects.
+        - 🐛 Use the Bug Report for confirmed reproducible application defects.
         - ✨ Use the Feature Request for new functionality or improvements.
         - 💬 Use Q&A for questions, guidance, or troubleshooting.
 
@@ -322,7 +322,7 @@ body:
 
         ## 6. 🤖 Android context
 
-        Provide Android information only when it affects
+        Provide Android-specific information only when it affects
         the documentation problem.
 
   - type: textarea
@@ -385,6 +385,16 @@ body:
   # ADDITIONAL CONTEXT
   # ---------------------------------------------------------------------------
 
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 8. 📝 Additional context
+
+        Provide any additional information that may help verify
+        or improve the documentation.
+
   - type: textarea
     id: additional-context
     attributes:
@@ -407,7 +417,7 @@ body:
       value: |
         ---
 
-        ## 8. 🤝 Contribution
+        ## 9. 🤝 Contribution
 
         Documentation improvements are welcome when they follow
         the project's documentation standards.
@@ -430,7 +440,7 @@ body:
       value: |
         ---
 
-        ## 9. 🔐 Privacy & security
+        ## 10. 🔐 Privacy & security
 
         Issues are normally public.
 
