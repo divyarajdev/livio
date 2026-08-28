@@ -1,5 +1,5 @@
 name: ✨ Feature Request
-description: Propose a new feature or improvement with enough context to evaluate its value, scope, and expected behavior.
+description: Propose a new feature or improvement with enough context to evaluate its value, scope, behavior, and feasibility.
 title: "[Feature]: "
 labels:
   - enhancement
@@ -14,19 +14,29 @@ body:
       value: |
         ## ✨ Feature Request
 
-        Thanks for helping improve the project.
+        Use this form to propose a new feature, capability, or improvement.
 
-        Please provide enough information for the maintainer to understand
-        the problem, evaluate its impact, define the desired outcome, and
-        determine how the change could be validated.
+        Please provide enough information to understand the problem,
+        evaluate the value and scope of the request, define the desired
+        outcome, and determine how the change can be validated.
 
         ### Before you submit
 
-        - 🔎 Search existing issues and discussions for related requests.
-        - 🎯 Focus on the problem and desired outcome rather than implementation.
-        - 📊 Provide evidence or explain the expected impact when possible.
-        - 🔐 Remove passwords, tokens, private keys, and personal information.
-        - 🛡️ Do not report security vulnerabilities here.
+        - 🔎 Search existing Issues and Discussions for related requests.
+        - 📚 Check the current documentation and existing features first.
+        - 🎯 Describe the problem or need rather than prescribing an implementation.
+        - 📊 Explain the expected value, impact, or frequency when possible.
+        - 🎨 Describe the expected user experience and observable behavior.
+        - 📱 Include Android-specific details when they affect the request.
+        - 🔧 Include technical constraints only when relevant.
+        - 📎 Attach screenshots, mockups, examples, or other evidence when useful.
+        - 🔐 Remove passwords, tokens, private keys, personal information,
+          and other sensitive data.
+        - 🛡️ Do not publicly disclose security vulnerabilities.
+        - 🐛 Use the Bug Report for confirmed reproducible application defects.
+        - 💬 Use Q&A for questions, guidance, or troubleshooting.
+        - 📚 Use the Documentation report for missing, incorrect, unclear,
+          or outdated documentation.
 
   - type: checkboxes
     id: preflight
@@ -34,12 +44,20 @@ body:
       label: Pre-submission checks
       description: Please confirm these items before submitting.
       options:
-        - label: I searched existing issues and discussions and did not find a duplicate.
+        - label: I searched existing Issues and Discussions and did not find a duplicate.
           required: true
-        - label: I am proposing a feature or improvement, not a bug report or support question.
+        - label: I checked the current documentation and existing features before submitting.
           required: true
-        - label: I have described the problem or need that this request is intended to address.
+        - label: I clearly described the problem or need this request is intended to address.
           required: true
+        - label: I described the desired outcome rather than requiring a specific implementation.
+          required: true
+        - label: This is a feature request or improvement, not a confirmed bug, documentation issue, or Q&A question.
+          required: true
+        - label: This request does not publicly disclose a security vulnerability.
+          required: true
+    validations:
+      required: true
 
   # ---------------------------------------------------------------------------
   # PROBLEM
@@ -59,9 +77,10 @@ body:
     attributes:
       label: Problem
       description: |
-        What problem are you experiencing?
-        What is difficult, unavailable, inefficient, or limiting today?
-        Explain why the current behavior or workflow is insufficient.
+        Explain the problem clearly.
+
+        Describe what is currently difficult, unavailable, inefficient,
+        or limiting and why the existing behavior or workflow is insufficient.
       placeholder: |
         Example:
         Managing a large number of saved items requires opening each item
@@ -74,8 +93,11 @@ body:
     attributes:
       label: Use case
       description: |
-        Describe the workflow, scenario, or situation in which this problem
-        occurs. Explain who is affected and when the need arises.
+        Describe the workflow, scenario, or situation in which the
+        problem occurs.
+
+        Explain who is affected, when the need arises, and what
+        the user is trying to accomplish.
       placeholder: |
         Example:
         Users managing large collections may need to perform the same
@@ -88,9 +110,10 @@ body:
     attributes:
       label: Evidence / impact
       description: |
-        Explain how significant the problem is. Include examples,
-        frequency, measurable impact, user feedback, related issues,
-        or other evidence when available.
+        Explain how significant the problem is.
+
+        Include examples, frequency, measurable impact, user feedback,
+        related requests, existing limitations, or other evidence when available.
       placeholder: |
         Examples:
         - This affects a frequent workflow.
@@ -113,20 +136,21 @@ body:
 
         Describe the capability or outcome you would like to see.
 
-        Focus on the user's need rather than prescribing a specific
-        implementation.
+        Focus on the user need and desired result rather than
+        prescribing a specific implementation.
 
   - type: textarea
     id: proposal
     attributes:
       label: Proposed solution
       description: |
-        Describe what the application should be able to do and what outcome
-        would solve the identified problem.
+        Describe what the application should be able to do,
+        what the user should be able to accomplish, and how
+        the proposed change would address the identified problem.
       placeholder: |
         Example:
-        Allow users to select multiple items and perform the same action
-        on all selected items.
+        Allow users to select multiple items and perform the same
+        action on all selected items.
     validations:
       required: true
 
@@ -135,18 +159,20 @@ body:
     attributes:
       label: Alternatives considered
       description: |
-        Describe existing features, workarounds, or alternative approaches
-        you considered. Explain why they do not fully solve the problem.
+        Describe existing features, workarounds, or alternative
+        approaches you considered.
+
+        Explain why they do not fully solve the identified problem.
       placeholder: |
         Example:
         The current workaround is to process each item individually,
         which is practical for a small number of items but inefficient
         for larger collections.
     validations:
-      required: false
+      required: true
 
   # ---------------------------------------------------------------------------
-  # USER EXPERIENCE
+  # EXPECTED USER EXPERIENCE
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -156,37 +182,44 @@ body:
 
         ## 3. 🎨 Expected user experience
 
-        Describe the desired behavior or interaction from the user's
-        perspective when relevant.
+        Describe the desired behavior or interaction from the
+        user's perspective.
 
   - type: textarea
     id: expected-ux
     attributes:
       label: Expected UX
       description: |
-        Describe the expected user flow, interaction, feedback, or behavior.
-        UI mockups, screenshots, or examples may be attached when useful.
+        Describe the expected user flow, interaction, feedback,
+        states, or behavior when the feature is used.
+
+        Include UI mockups, screenshots, diagrams, or examples
+        when they help communicate the intended experience.
       placeholder: |
         Example:
         1. Select one or more items.
         2. Choose the desired action.
         3. Confirm the action when necessary.
-        4. The selected items are updated and the result is clearly shown.
+        4. The selected items are updated.
+        5. The result is clearly communicated to the user.
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: acceptance-criteria
     attributes:
       label: Acceptance criteria
       description: |
-        Define observable conditions that should be true when the feature
-        is considered complete. Keep the criteria user-focused and testable.
+        Define observable conditions that should be true when
+        the feature is considered complete.
+
+        Keep each criterion clear, specific, user-focused, and testable.
       placeholder: |
         Example:
         - Users can select multiple items.
         - The selected action applies to all selected items.
         - The existing single-item workflow continues to work.
+        - Invalid or unsupported selections are handled clearly.
         - The result is clearly communicated to the user.
         - The feature does not expose private or sensitive data.
     validations:
@@ -203,21 +236,21 @@ body:
 
         ## 4. 📊 Value & scope
 
-        Provide information that helps evaluate usefulness, priority,
-        and potential scope.
+        Provide information that helps evaluate usefulness,
+        priority, impact, and potential scope.
 
   - type: textarea
     id: beneficiaries
     attributes:
       label: Beneficiaries
       description: |
-        Identify the users, workflows, or use cases that would benefit
-        from this change.
+        Identify the users, workflows, or use cases that would
+        benefit from this change.
       placeholder: |
         Example:
         Users who frequently manage large collections.
     validations:
-      required: false
+      required: true
 
   - type: dropdown
     id: usage-frequency
@@ -232,7 +265,7 @@ body:
         - Rarely
         - Unsure
     validations:
-      required: false
+      required: true
 
   - type: dropdown
     id: scope
@@ -246,7 +279,7 @@ body:
         - New integration
         - Unsure
     validations:
-      required: false
+      required: true
 
   # ---------------------------------------------------------------------------
   # ANDROID CONTEXT
@@ -259,26 +292,27 @@ body:
 
         ## 5. 🤖 Android context
 
-        Provide Android-specific information when it affects the
-        requested feature. Do not provide unrelated device details.
+        Provide Android-specific information only when it affects
+        the requested feature.
 
   - type: textarea
     id: android-constraints
     attributes:
       label: Android constraints
       description: |
-        Optional. Describe Android-specific requirements, platform
-        behavior, API-level considerations, permissions, lifecycle
-        behavior, storage restrictions, background execution limits,
-        compatibility requirements, or device-specific limitations.
+        Optional. Describe Android-specific requirements or constraints,
+        including API-level behavior, permissions, lifecycle behavior,
+        storage restrictions, background execution limits, notifications,
+        accessibility requirements, compatibility requirements, or
+        device/manufacturer-specific limitations.
       placeholder: |
         Examples:
         - Minimum or target Android API level
         - Runtime permissions
         - Scoped storage
         - Background execution restrictions
-        - Android lifecycle behavior
         - Notification behavior
+        - Android lifecycle behavior
         - Accessibility requirements
         - Device or manufacturer-specific limitations
     validations:
@@ -295,8 +329,8 @@ body:
 
         ## 6. 🔧 Technical context
 
-        Add technical information only when it is relevant to evaluating
-        the request.
+        Add technical information only when it is relevant
+        to evaluating the request.
 
   - type: textarea
     id: technical-context
@@ -305,8 +339,8 @@ body:
       description: |
         Optional. Include known dependencies, compatibility requirements,
         performance considerations, architectural constraints, APIs,
-        integrations, or other technical information that may affect
-        implementation.
+        integrations, storage, network requirements, or other technical
+        information that may affect feasibility.
       placeholder: |
         Examples:
         - Required Android APIs
@@ -319,15 +353,42 @@ body:
     validations:
       required: false
 
+  # ---------------------------------------------------------------------------
+  # REFERENCES & ADDITIONAL CONTEXT
+  # ---------------------------------------------------------------------------
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 7. 🔗 References & additional context
+
+        Provide supporting material that helps evaluate the request.
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Optional. Include related Issues, Discussions, documentation,
+        examples, specifications, external references, or other
+        relevant material.
+      placeholder: |
+        Add relevant references here.
+    validations:
+      required: false
+
   - type: textarea
     id: additional-context
     attributes:
       label: Additional context
       description: |
-        Optional. Include related issues, discussions, examples,
-        screenshots, mockups, design notes, or other relevant information.
+        Optional. Include screenshots, mockups, diagrams, examples,
+        design notes, research, or other information that may help
+        evaluate the request.
       placeholder: |
-        Add any additional information that may help evaluate the request.
+        Add any additional relevant information here.
     validations:
       required: false
 
@@ -340,7 +401,7 @@ body:
       value: |
         ---
 
-        ## 7. 🤝 Contribution
+        ## 8. 🤝 Contribution
 
         Contributions are welcome when the proposed change is accepted
         and follows the project's development standards.
@@ -363,12 +424,12 @@ body:
       value: |
         ---
 
-        ## 8. 🔐 Privacy & security
+        ## 9. 🔐 Privacy & security
 
-        This issue will normally be public.
+        Issues are normally public.
 
-        Review all text, screenshots, mockups, links, examples, and
-        attachments before submitting.
+        Review all text, links, screenshots, mockups, examples,
+        and attachments before submitting.
 
   - type: checkboxes
     id: privacy
@@ -376,8 +437,12 @@ body:
       label: Public issue confirmation
       description: Confirm that this request is safe to disclose publicly.
       options:
-        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
+        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this request and its attachments.
           required: true
+        - label: I am not publicly disclosing a security vulnerability.
+          required: true
+    validations:
+      required: true
 
   # ---------------------------------------------------------------------------
   # FINAL GUIDANCE
@@ -391,10 +456,10 @@ body:
         ### 💡 What makes a useful feature request?
 
         **What is the problem? → Who and what is affected? → What evidence**
-        **supports the need? → What outcome is wanted? → How should it work?**
-        **→ How can success be verified? → What Android or technical constraints**
-        **matter?**
+        **supports the need? → What outcome is wanted? → How should it**
+        **work for the user? → How can success be verified? → What Android**
+        **or technical constraints matter?**
 
-        Thank you for clearly explaining the problem, value, desired outcome,
-        and conditions that will help determine whether the feature is useful
-        and achievable.
+        Thank you for providing clear, relevant, and verifiable information
+        that helps evaluate the usefulness, scope, feasibility, and expected
+        behavior of the proposed change.
