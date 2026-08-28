@@ -31,7 +31,7 @@ body:
     id: preflight
     attributes:
       label: Pre-submission checks
-      description: Please confirm all items before submitting.
+      description: Please confirm these items before submitting.
       options:
         - label: I searched existing issues and discussions and did not find a duplicate.
           required: true
@@ -99,6 +99,22 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification / evidence
+      description: |
+        Explain how you determined that the documentation is incorrect,
+        incomplete, outdated, or unclear.
+      placeholder: |
+        Examples:
+        - Following the documented steps produces...
+        - The documentation says X, but the application currently does Y.
+        - The referenced API has changed since this documentation was written.
+        - A required step or configuration is missing.
+    validations:
+      required: true
+
   # ---------------------------------------------------------------------------
   # EXPECTED DOCUMENTATION
   # ---------------------------------------------------------------------------
@@ -139,11 +155,27 @@ body:
       required: true
 
   - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Documentation acceptance criteria
+      description: |
+        Describe what the updated documentation should make clear
+        or allow a reader to accomplish.
+      placeholder: |
+        After the documentation is updated, a reader should be able to:
+
+        - ...
+        - ...
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
     id: suggested-wording
     attributes:
       label: Suggested wording
       description: |
-        Optional. If you have a proposed explanation or replacement
+        Optional. If you have proposed replacement or explanatory
         text, provide it here.
       placeholder: |
         Provide suggested documentation text if you have one.
@@ -177,6 +209,19 @@ body:
       required: false
 
   - type: textarea
+    id: authoritative-reference
+    attributes:
+      label: Authoritative reference
+      description: |
+        Optional. Link to official Android documentation, API references,
+        specifications, release notes, or other authoritative sources
+        supporting the correction.
+      placeholder: |
+        Add an official or authoritative reference here.
+    validations:
+      required: false
+
+  - type: textarea
     id: examples
     attributes:
       label: Examples / screenshots
@@ -189,7 +234,7 @@ body:
       required: false
 
   # ---------------------------------------------------------------------------
-  # TECHNICAL CONTEXT
+  # ANDROID CONTEXT
   # ---------------------------------------------------------------------------
 
   - type: markdown
@@ -197,27 +242,59 @@ body:
       value: |
         ---
 
-        ## 4. 🔧 Technical context
+        ## 4. 🤖 Android context
 
-        Add technical information only when it is relevant
-        to the documentation.
+        Provide Android-specific information when it is relevant
+        to understanding or verifying the documentation issue.
+
+  - type: input
+    id: affected-version
+    attributes:
+      label: Affected version / context
+      description: |
+        Optional. Provide the application, Android, API, or documentation
+        version relevant to the issue.
+      placeholder: |
+        Example:
+        App 1.4.2 / Android 16 / API 36
+    validations:
+      required: false
+
+  - type: textarea
+    id: android-context
+    attributes:
+      label: Android considerations
+      description: |
+        Include relevant Android versions, API levels, device behavior,
+        platform changes, permissions, system restrictions, or
+        compatibility requirements.
+      placeholder: |
+        Examples:
+        - Android/API version affected
+        - Platform behavior or restriction
+        - Required permission
+        - Device/manufacturer difference
+        - Deprecated Android API
+        - Current Android/Jetpack behavior
+        - Compatibility requirement
+    validations:
+      required: false
 
   - type: textarea
     id: technical-context
     attributes:
       label: Technical considerations
       description: |
-        Optional. Include relevant versions, platforms, configuration,
-        compatibility requirements, commands, APIs, or other technical
-        details needed to document the subject accurately.
+        Optional. Include commands, APIs, configuration, compatibility
+        requirements, build details, or other technical information
+        needed to document the subject accurately.
       placeholder: |
         Examples:
-        - Android/API requirements
-        - Application version
         - Build configuration
+        - Required commands
+        - API behavior
         - Platform limitations
-        - Required commands or configuration
-        - External specifications or APIs
+        - External specifications
     validations:
       required: false
 
@@ -294,9 +371,9 @@ body:
 
         ### 💡 What makes a useful documentation report?
 
-        **Where is the problem? → What is wrong or missing? → What should the**
-        **documentation explain? → What references or examples can help? →**
-        **Can it be improved clearly and accurately?**
+        **Where is the problem? → What is wrong or missing? → How can it be**
+        **verified? → What should the documentation explain? → What evidence**
+        **supports the correction? → Can the updated documentation be verified?**
 
         Thank you for helping keep the project's documentation
         accurate, understandable, and useful.
