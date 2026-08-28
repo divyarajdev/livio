@@ -1,0 +1,297 @@
+name: ✨ Feature Request
+description: Propose a new feature or improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+
+body:
+  # ===========================================================================
+  # INTRO
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+
+        Use this form to propose a new feature or improve existing functionality.
+
+        > **Tip:** Keep the request focused. Include the problem, use case,
+        > and expected outcome. Technical details are optional.
+
+        ### Before submitting
+
+        - 🔎 Search existing issues and discussions for related requests.
+        - 🐛 Use the bug report form for bugs.
+        - 🔐 Do not include passwords, tokens, private keys, or sensitive information.
+        - 🛡️ Report security vulnerabilities privately using the project's security policy.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before submitting
+      description: Confirm the following before creating the issue.
+      options:
+        - label: I searched existing issues and discussions for a duplicate.
+          required: true
+        - label: This is a feature request or improvement, not a bug report.
+          required: true
+
+  # ===========================================================================
+  # 01 — PROBLEM
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 01 · 🎯 Problem
+
+        Explain what is missing, difficult, or inefficient today.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the limitation, missing capability, and its impact.
+      placeholder: |
+        What is difficult, unavailable, or inefficient today?
+        How does it affect your workflow?
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Describe the workflow, scenario, or users affected.
+      placeholder: |
+        When does this problem occur?
+        Who is affected?
+    validations:
+      required: true
+
+  # ===========================================================================
+  # 02 — PROPOSED SOLUTION
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 02 · 💡 Proposed solution
+
+        Describe the capability or behavior you want.
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the expected capability or behavior.
+      placeholder: |
+        What should the application do?
+        Focus on the desired result rather than implementation details.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe existing features, workarounds, or alternative approaches.
+      placeholder: |
+        What do you currently use instead?
+        Why does it not fully solve the problem?
+    validations:
+      required: false
+
+  # ===========================================================================
+  # 03 — USER EXPERIENCE
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 03 · 🎨 User experience
+
+        Add UI or interaction details when relevant.
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Describe the expected user flow or interaction.
+      placeholder: |
+        Describe how the feature should work from the user's perspective.
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples / references
+      description: Add relevant links, screenshots, mockups, or examples.
+      placeholder: |
+        Add references or visual examples here.
+    validations:
+      required: false
+
+  # ===========================================================================
+  # 04 — VALUE & SCOPE
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 04 · 📊 Value & scope
+
+        Provide additional information that helps with prioritization and triage.
+
+  - type: textarea
+    id: beneficiaries
+    attributes:
+      label: Who benefits?
+      description: Identify the users or workflows that would benefit.
+      placeholder: |
+        Example:
+        Users managing large collections.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: usage-frequency
+    attributes:
+      label: Usage frequency
+      description: How frequently would this feature be used?
+      options:
+        - Several times a day
+        - Daily
+        - Weekly
+        - Occasionally
+        - Rarely
+        - Unsure
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Change scope
+      description: Select the closest description of the requested change.
+      options:
+        - Small improvement
+        - New functionality
+        - Major UX or workflow change
+        - New integration
+        - Unsure
+    validations:
+      required: false
+
+  # ===========================================================================
+  # 05 — TECHNICAL CONTEXT
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 05 · 🔧 Technical context
+
+        Add technical information only when relevant.
+
+  - type: textarea
+    id: technical-context
+    attributes:
+      label: Technical considerations
+      description: Describe compatibility requirements, constraints, dependencies, permissions, or performance considerations.
+      placeholder: |
+        Examples:
+        - Android/API requirements
+        - Required permissions
+        - Backward compatibility
+        - External dependencies
+        - Performance considerations
+        - Device/platform limitations
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add related issues, discussions, design notes, or other relevant information.
+      placeholder: |
+        Add any additional context here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Screenshots / mockups
+      description: Attach visual references when useful.
+      placeholder: |
+        Drag and drop screenshots, mockups, diagrams, or other files here.
+    validations:
+      required: false
+
+  # ===========================================================================
+  # 06 — CONTRIBUTION
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 06 · 🤝 Contribution
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Optional.
+      options:
+        - label: I am willing to work on this feature if it is accepted.
+          required: false
+
+  # ===========================================================================
+  # 07 — PRIVACY
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## 07 · 🔐 Privacy
+
+        Issues are public. Review all content and attachments before submitting.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue confirmation
+      options:
+        - label: I have removed passwords, authentication tokens, private keys, personal information, and other sensitive data from this report and its attachments.
+          required: true
+
+  # ===========================================================================
+  # FINAL
+  # ===========================================================================
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### ✅ Ready to submit
+
+        Please review the information above and submit the feature request.
