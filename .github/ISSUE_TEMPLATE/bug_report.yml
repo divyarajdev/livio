@@ -1,54 +1,48 @@
-name: 🐛 Bug Report
+name: "🐛 Bug Report"
 description: Report a reproducible problem or unexpected behavior
 title: "[Bug]: "
 labels:
   - bug
   - needs-triage
-type: bug
+type: bug  
 
 body:
-  # ─────────────────────────────────────────────
   # Introduction
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to report a bug.
 
-        Provide enough information to reproduce and investigate the issue.
+        Provide enough information for the problem to be reproduced and investigated.
 
-        > 🔒 **Privacy:** Do not include passwords, authentication tokens, email addresses, or other sensitive information in logs, screenshots, or attachments.
+        > **Security:** Do not report security vulnerabilities in a public issue. Follow the private reporting instructions in the repository's security policy.
 
-  # ─────────────────────────────────────────────
+        > **Privacy:** Remove passwords, authentication tokens, email addresses, personal data, and other sensitive information from logs, screenshots, recordings, and attachments.
+
   # Pre-submission
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### ✅ Pre-submission
-        ---
+        ## ✅ Pre-submission
 
   - type: checkboxes
     id: prechecks
     attributes:
       label: Before submitting
+      description: Confirm each item before opening the report.
       options:
-        - label: I searched both open and closed issues and could not find an existing report for this bug.
+        - label: I searched open and closed issues and could not find an existing report for this bug.
           required: true
-        - label: This issue reports one bug only.
+        - label: This report covers one bug only.
+          required: true
+        - label: I removed private, personal, and security-sensitive information from the report and its attachments.
           required: true
 
-  # ─────────────────────────────────────────────
   # Issue details
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 🐛 Issue details
-        ---
+        ## 🐛 Issue details
 
   - type: textarea
     id: description
@@ -62,21 +56,17 @@ body:
   - type: input
     id: component
     attributes:
-      label: Affected component / feature
+      label: Affected component or feature
       description: Enter the screen, feature, module, or component where the issue occurs.
       placeholder: "Settings / Backup / Authentication"
     validations:
       required: true
 
-  # ─────────────────────────────────────────────
   # Reproduction
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 🔁 Reproduction
-        ---
+        ## 🔁 Reproduction
 
   - type: textarea
     id: reproduce
@@ -127,31 +117,27 @@ body:
     id: regression-last-good
     attributes:
       label: Last known working version
-      description: Optional. The most recent app version where this worked correctly.
+      description: Optional. Enter the most recent app version in which this worked correctly.
       placeholder: "2.3.0"
 
   - type: input
     id: regression-first-bad
     attributes:
       label: First known affected version
-      description: Optional. The earliest app version where you noticed the problem.
+      description: Optional. Enter the earliest app version in which you noticed the problem.
       placeholder: "2.4.0"
 
-  # ─────────────────────────────────────────────
   # Environment
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 📱 Environment
-        ---
+        ## 📱 Environment
 
   - type: input
     id: app-version
     attributes:
       label: App version
-      description: Enter the exact affected app version. Do not use "latest" or "current".
+      description: Enter the exact affected app version. Do not enter "latest" or "current."
       placeholder: "2.4.1"
     validations:
       required: true
@@ -159,14 +145,14 @@ body:
   - type: dropdown
     id: build-channel
     attributes:
-      label: Installation source / build channel
-      description: How did you install the app? This helps rule out packaging or build-specific bugs.
+      label: Installation source or build channel
+      description: Select how you installed the app. This helps identify packaging and build-specific problems.
       options:
-        - Play Store
+        - Google Play
         - F-Droid
         - GitHub Releases
         - Debug build
-        - Self-built (from source)
+        - Self-built from source
         - Other
     validations:
       required: true
@@ -174,8 +160,8 @@ body:
   - type: input
     id: build-number
     attributes:
-      label: Build number / commit SHA
-      description: Optional. Only needed for nightly, CI, beta, or source builds. Leave blank for normal Play Store or F-Droid releases — App version above already covers those.
+      label: Build number or commit SHA
+      description: Optional. Provide this for nightly, CI, beta, debug, or source builds.
       placeholder: "a1b2c3d or nightly-2026.08.29"
 
   - type: input
@@ -199,59 +185,48 @@ body:
   - type: input
     id: rom
     attributes:
-      label: Android distribution / ROM
+      label: Android distribution or ROM
       description: Optional. Enter the Android distribution or custom ROM, if applicable.
       placeholder: "Stock Android / One UI / LineageOS"
 
-  # ─────────────────────────────────────────────
   # Diagnostics
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 🧪 Diagnostics
-        ---
+        ## 🧪 Diagnostics
 
   - type: textarea
     id: logs
     attributes:
-      label: Logs / diagnostic information
+      label: Logs or diagnostic information
       description: |
         Paste relevant logcat output, stack traces, or diagnostic logs.
 
-        Remove passwords, authentication tokens, email addresses, and other sensitive information before submitting.
+        **Before submitting:** Remove passwords, authentication tokens, email addresses, personal data, and other sensitive information. The submitted content will be formatted automatically as a code block.
       render: shell
 
   - type: upload
     id: media
     attributes:
-      label: Screenshots / screen recordings
-      description: |
-        Optional. Upload screenshots or screen recordings that demonstrate the issue.
-
-        Make sure they do not contain private or sensitive information.
+      label: Screenshots or screen recordings
+      description: Optional. Upload screenshots or recordings that demonstrate the issue. Verify that the files do not reveal private or sensitive information.
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm"
 
-  # ─────────────────────────────────────────────
   # Additional context
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 📎 Anything else
-        ---
+        ## 📎 Additional context
 
   - type: textarea
     id: additional-context
     attributes:
-      label: Additional context
+      label: Anything else?
       description: Add any other technical information that may help reproduce or investigate the issue.
       placeholder: |
         For example:
-        - The issue started after an app or system update
-        - The issue occurs only under specific conditions
-        - You found a temporary workaround
+        - The issue started after an app or system update.
+        - The issue occurs only under specific conditions.
+        - You found a temporary workaround.
