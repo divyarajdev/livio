@@ -3,6 +3,8 @@ description: Report a reproducible problem or unexpected behavior
 title: "[Bug]: "
 labels:
   - bug
+  - needs-triage
+type: bug
 
 body:
   # ─────────────────────────────────────────────
@@ -153,6 +155,28 @@ body:
       placeholder: "2.4.1"
     validations:
       required: true
+
+  - type: dropdown
+    id: build-channel
+    attributes:
+      label: Installation source / build channel
+      description: How did you install the app? This helps rule out packaging or build-specific bugs.
+      options:
+        - Play Store
+        - F-Droid
+        - GitHub Releases
+        - Debug build
+        - Self-built (from source)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: build-number
+    attributes:
+      label: Build number / commit SHA
+      description: Optional. Only needed for nightly, CI, beta, or source builds. Leave blank for normal Play Store or F-Droid releases — App version above already covers those.
+      placeholder: "a1b2c3d or nightly-2026.08.29"
 
   - type: input
     id: android-version
