@@ -1,0 +1,233 @@
+name: 🐛 Bug Report
+description: Report a reproducible problem or unexpected behavior
+title: "[Bug]: "
+labels:
+  - bug
+
+body:
+  # ─────────────────────────────────────────────
+  # Introduction
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+
+        Provide enough information to reproduce and investigate the issue.
+
+        > 🔒 **Privacy:** Do not include passwords, authentication tokens, email addresses, or other sensitive information in logs, screenshots, or attachments.
+
+  # ─────────────────────────────────────────────
+  # Pre-submission
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### ✅ Pre-submission
+        ---
+
+  - type: checkboxes
+    id: prechecks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched both open and closed issues and could not find an existing report for this bug.
+          required: true
+        - label: This issue reports one bug only.
+          required: true
+
+  # ─────────────────────────────────────────────
+  # Issue details
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🐛 Issue details
+        ---
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: Describe the problem clearly, including what you were doing when it happened.
+      placeholder: Describe what is not working as expected.
+    validations:
+      required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Affected component / feature
+      description: Enter the screen, feature, module, or component where the issue occurs.
+      placeholder: "Settings / Backup / Authentication"
+    validations:
+      required: true
+
+  # ─────────────────────────────────────────────
+  # Reproduction
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🔁 Reproduction
+        ---
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the exact steps required to reproduce the issue.
+      placeholder: |
+        1. Open ...
+        2. Tap ...
+        3. Select ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      description: Select how consistently the issue can be reproduced.
+      options:
+        - Always
+        - Often
+        - Sometimes
+        - Rarely
+        - Unable to reproduce consistently
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe the result you expected.
+      placeholder: Describe what should happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Describe the result that actually occurs.
+      placeholder: Describe what happens instead.
+    validations:
+      required: true
+
+  - type: input
+    id: regression-last-good
+    attributes:
+      label: Last known working version
+      description: Optional. The most recent app version where this worked correctly.
+      placeholder: "2.3.0"
+
+  - type: input
+    id: regression-first-bad
+    attributes:
+      label: First known affected version
+      description: Optional. The earliest app version where you noticed the problem.
+      placeholder: "2.4.0"
+
+  # ─────────────────────────────────────────────
+  # Environment
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📱 Environment
+        ---
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      description: Enter the exact affected app version. Do not use "latest" or "current".
+      placeholder: "2.4.1"
+    validations:
+      required: true
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      description: Enter the Android version running on the affected device.
+      placeholder: "Android 16"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Enter the device manufacturer and model.
+      placeholder: "Google Pixel 9 Pro"
+    validations:
+      required: true
+
+  - type: input
+    id: rom
+    attributes:
+      label: Android distribution / ROM
+      description: Optional. Enter the Android distribution or custom ROM, if applicable.
+      placeholder: "Stock Android / One UI / LineageOS"
+
+  # ─────────────────────────────────────────────
+  # Diagnostics
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🧪 Diagnostics
+        ---
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / diagnostic information
+      description: |
+        Paste relevant logcat output, stack traces, or diagnostic logs.
+
+        Remove passwords, authentication tokens, email addresses, and other sensitive information before submitting.
+      render: shell
+
+  - type: upload
+    id: media
+    attributes:
+      label: Screenshots / screen recordings
+      description: |
+        Optional. Upload screenshots or screen recordings that demonstrate the issue.
+
+        Make sure they do not contain private or sensitive information.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm"
+
+  # ─────────────────────────────────────────────
+  # Additional context
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📎 Additional context
+        ---
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other technical information that may help reproduce or investigate the issue.
+      placeholder: |
+        For example:
+        - The issue started after an app or system update
+        - The issue occurs only under specific conditions
+        - You found a temporary workaround
