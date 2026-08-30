@@ -1,6 +1,6 @@
 name: "💡 Feature Request"
 description: "Propose a scoped capability or behavior change"
-title: "[Feature] "
+title: "[Feature]: "
 labels:
   - enhancement
   - needs-triage
