@@ -13,8 +13,10 @@ body:
       value: |
         Use this form for a reproducible defect in the app or project.
 
-        Use the Q&A category for usage, configuration, or troubleshooting questions.
-        Use the Feature Request form for proposed behavior changes.
+        Use the Feature Request form for scoped capability or behavior changes that are ready for project triage.
+        Use the Documentation Request form for documentation corrections or additions.
+        Use the Q&A category for questions about usage, configuration, integration, builds, or troubleshooting.
+        Use the Ideas category to explore early-stage proposals.
 
   # Pre-submission checks
   - type: checkboxes
@@ -22,14 +24,14 @@ body:
     attributes:
       label: Pre-submission checks
       options:
-        - label: I searched existing open and closed issues for this defect.
+        - label: I searched existing Issues for this defect.
           required: true
-        - label: This report covers one defect.
+        - label: This submission covers one defect.
           required: true
         - label: >-
             I am not publicly disclosing a security vulnerability, and I removed
             credentials, authentication tokens, private endpoints, personal data,
-            and other sensitive data from this report and its attachments.
+            and other sensitive data from this submission and its attachments.
           required: true
 
   # Defect scope
@@ -203,4 +205,4 @@ body:
         Triggering conditions:
         Recent app or system changes:
         Temporary workaround:
-        Related issue:
+        Related Issue:
