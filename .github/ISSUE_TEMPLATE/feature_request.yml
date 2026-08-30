@@ -1,10 +1,10 @@
 name: "💡 Feature Request"
-description: Suggest a new feature or improvement
+description: "Suggest a new feature or improvement"
 title: "[Feature]: "
 labels:
   - enhancement
   - needs-triage
-type: feature  
+type: feature
 
 body:
   # Introduction
@@ -13,15 +13,7 @@ body:
       value: |
         Thanks for taking the time to suggest an improvement.
 
-        Before submitting:
-
-        - Search existing open and closed issues to avoid duplicates.
-        - Use the bug report template for defects or unexpected behavior.
-        - Use the project's support or discussion channel for questions, if available.
-
-        > **Security:** Do not disclose security vulnerabilities here. Follow the repository's security policy instead.
-
-        > **Privacy:** Do not include passwords, authentication tokens, private data, or other sensitive information.
+        Use this form to describe a new feature or an improvement to existing functionality.
 
   # Pre-submission
   - type: markdown
@@ -32,16 +24,27 @@ body:
   - type: checkboxes
     id: preflight
     attributes:
-      label: Before you submit
-      description: Confirm each item before submitting your request.
+      label: Before submitting
+      description: Confirm each item before submitting.
       options:
-        - label: I searched open and closed issues and did not find an existing request for the same feature.
+        # Common checks
+        - label: I searched open and closed issues and did not find an existing report or request covering this submission.
           required: true
+        - label: This submission does not disclose a security vulnerability; I will follow the repository's security policy to report vulnerabilities privately.
+          required: true
+        - label: I removed passwords, authentication tokens, personal data, and other sensitive information from this submission and its attachments.
+          required: true
+        - label: I agree to follow the project's Code of Conduct and contribution guidelines.
+          required: true
+
+        # Feature-specific checks
         - label: I checked the README, documentation, and FAQ, if available, for an existing solution.
           required: true
         - label: This is a feature request or improvement, not a bug report or support question.
           required: true
-        - label: This request is relevant to this project and its scope.
+        - label: This request is relevant to the project and its scope.
+          required: true
+        - label: I understand that submitting a feature request does not guarantee that it will be implemented.
           required: true
 
   # Scope
@@ -188,7 +191,7 @@ body:
     id: supporting-files
     attributes:
       label: Mockups or supporting files
-      description: Upload screenshots, mockups, diagrams, or other files that help explain the request. Do not upload confidential or sensitive information.
+      description: Upload screenshots, mockups, diagrams, or other files that help explain the request.
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.zip"
@@ -226,21 +229,3 @@ body:
       label: Additional context
       description: Add anything else that would help maintainers understand or evaluate this request.
       placeholder: Add any remaining context here.
-
-  # Final acknowledgements
-  - type: markdown
-    attributes:
-      value: |
-        ## 🔏 Final acknowledgements
-
-  - type: checkboxes
-    id: acknowledgements
-    attributes:
-      label: Acknowledgements
-      options:
-        - label: I agree to follow this project's Code of Conduct and contribution guidelines, where applicable.
-          required: true
-        - label: I have not included passwords, authentication tokens, private data, or other sensitive information.
-          required: true
-        - label: I understand that submitting a feature request does not guarantee that it will be implemented.
-          required: true
