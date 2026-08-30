@@ -1,17 +1,17 @@
-title: "[Q&A] "
+title: "[Q&A]: "
 
 body:
   # Purpose and routing
   - type: markdown
     attributes:
       value: |
-        Use this category for technical questions about project usage, configuration, integration, source builds, or architecture.
+        Use this category for technical questions about using, configuring, integrating, building, or understanding the Android project.
 
-        Limit each discussion to one technical question.
+        Limit each Discussion to one technical question.
         Use the Bug Report form for reproducible defects.
-        Use the Feature Request form for scoped capability or behavior changes.
+        Use the Feature Request form for scoped capability or behavior changes that are ready for project triage.
         Use the Documentation Request form for documentation corrections or additions.
-        Use the Ideas category for early-stage proposals.
+        Use the Ideas category to explore early-stage proposals.
 
         > **Public content:** Do not disclose security vulnerabilities. Remove credentials,
         > authentication tokens, private endpoints, personal data, and other sensitive data
@@ -23,7 +23,7 @@ body:
     attributes:
       label: Search prerequisite
       options:
-        - label: I searched existing discussions, issues, and project documentation for this question or an existing solution.
+        - label: I searched existing Discussions, Issues, and project documentation for this question or an existing solution.
           required: true
 
   # Question classification
@@ -163,10 +163,10 @@ body:
     id: references
     attributes:
       label: References
-      description: Link documentation, discussions, issues, specifications, or reproductions relevant to the question.
+      description: Link documentation, Discussions, Issues, specifications, or reproductions relevant to the question.
       placeholder: |
         Documentation:
-        Related discussion or issue:
+        Related Discussion or Issue:
         Specification:
         Reproduction:
 
