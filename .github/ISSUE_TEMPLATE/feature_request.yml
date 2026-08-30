@@ -1,77 +1,59 @@
 name: "💡 Feature Request"
-description: "Suggest a new feature or improvement"
+description: "Propose a scoped feature or behavior change"
 title: "[Feature]: "
 labels:
   - enhancement
   - needs-triage
-type: feature
+type: feature  
 
 body:
-  # Introduction
+  # Purpose and routing
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to suggest an improvement.
+        Use this form for a scoped new capability or change to existing behavior.
 
-        Use this form to describe a new feature or an improvement to existing functionality.
+        Use the Bug Report form for reproducible defects.
+        Use the Q&A category for usage, configuration, or implementation questions.
+        Use the Documentation Request form for documentation changes.
+        Use the Ideas category for proposals that still require problem or scope exploration.
 
-  # Pre-submission
-  - type: markdown
-    attributes:
-      value: |
-        ## ✅ Pre-submission
-
+  # Pre-submission checks
   - type: checkboxes
     id: preflight
     attributes:
-      label: Before submitting
-      description: Confirm each item before submitting.
+      label: Pre-submission checks
       options:
-        # Common checks
-        - label: I searched open and closed issues and did not find an existing report or request covering this submission.
+        - label: I searched existing open and closed issues, discussions, and project documentation for this request or an existing solution.
           required: true
-        - label: This submission does not disclose a security vulnerability; I will follow the repository's security policy to report vulnerabilities privately.
+        - label: This request covers one scoped capability or behavior change.
           required: true
-        - label: I removed passwords, authentication tokens, personal data, and other sensitive information from this submission and its attachments.
-          required: true
-        - label: I agree to follow the project's Code of Conduct and contribution guidelines.
-          required: true
-
-        # Feature-specific checks
-        - label: I checked the README, documentation, and FAQ, if available, for an existing solution.
-          required: true
-        - label: This is a feature request or improvement, not a bug report or support question.
-          required: true
-        - label: This request is relevant to the project and its scope.
-          required: true
-        - label: I understand that submitting a feature request does not guarantee that it will be implemented.
+        - label: >-
+            I am not publicly disclosing a security vulnerability, and I removed
+            credentials, authentication tokens, private endpoints, personal data,
+            and other sensitive data from this request and its attachments.
           required: true
 
-  # Scope
-  - type: markdown
-    attributes:
-      value: |
-        ## 🧭 Scope
-
+  # Request scope
   - type: dropdown
     id: area
     attributes:
-      label: Area or component
-      description: Which area is most closely related to this request?
+      label: Area
+      description: Select the technical area most directly affected by the request.
       options:
         - Core functionality
-        - UI and UX
+        - UI or UX
         - Accessibility
-        - Settings and configuration
+        - Settings or configuration
         - Notifications
-        - Data and storage
-        - Networking and sync
-        - Privacy and security
-        - Performance and battery
+        - Data or storage
+        - Networking or synchronization
+        - Privacy or security
+        - Performance or battery
         - Integrations
         - Developer API or SDK
         - Build, tooling, or developer experience
-        - Documentation
+        - Localization
         - Other
     validations:
       required: true
@@ -80,152 +62,107 @@ body:
     id: component
     attributes:
       label: Specific component or module
-      description: If applicable, identify the screen, package, module, API, feature, or component involved.
-      placeholder: "Example: Settings > Appearance, sync module, or Gradle module path such as :feature:home"
+      description: Identify the affected screen, feature, API, package, service, or Gradle module.
+      placeholder: "Example: Settings > Appearance, sync API, or :feature:home"
 
-  # The idea
-  - type: markdown
-    attributes:
-      value: |
-        ## 💡 The idea
-
+  # Problem definition
   - type: textarea
     id: problem
     attributes:
-      label: Problem or motivation
-      description: What problem, limitation, or user need would this feature address?
+      label: Problem and affected workflow
+      description: Describe the current limitation, who or what it affects, when it occurs, and the resulting user or developer impact. Do not prescribe the implementation here.
       placeholder: |
-        Describe the problem clearly.
-        Explain what is difficult or currently not possible rather than describing only the desired implementation.
+        Current limitation:
+        Affected users or workflow:
+        Conditions:
+        Impact:
     validations:
       required: true
 
-  - type: textarea
-    id: use-case
-    attributes:
-      label: Use case
-      description: Describe a real-world scenario in which this feature would be useful and who would benefit from it.
-      placeholder: |
-        Example:
-        As a ...
-        I want to ...
-        So that ...
-    validations:
-      required: true
-
+  # Requested behavior
   - type: textarea
     id: proposed-solution
     attributes:
-      label: Proposed solution
-      description: What would you like the project to do? Describe the expected behavior or user experience.
-      placeholder: Describe your preferred solution as clearly as possible.
+      label: Requested outcome
+      description: Describe the observable behavior or capability required to resolve the problem. Define success without prescribing internal implementation unless an architectural constraint requires it.
+      placeholder: |
+        Required behavior:
+        Success conditions:
+        - ...
     validations:
       required: true
-
-  # Alternatives and impact
-  - type: markdown
-    attributes:
-      value: |
-        ## 🔀 Alternatives and impact
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives or workarounds considered
-      description: Have you tried or considered alternative solutions or existing workarounds?
-      placeholder: Describe alternatives, workarounds, or why existing options are insufficient.
+      label: Alternatives and workarounds
+      description: List existing capabilities, workarounds, or approaches evaluated and explain why they are insufficient.
+      placeholder: |
+        Existing capability or workaround:
+        Limitation:
+        Alternative approach considered:
 
-  - type: textarea
-    id: impact
-    attributes:
-      label: Expected benefit or impact
-      description: How would this feature improve the project or help its users?
-      placeholder: Describe the expected value, affected users, or workflows that would improve.
-
-  # Platform and technical details
-  - type: markdown
-    attributes:
-      value: |
-        ## 📱 Platform and technical details
-
+  # Android scope
   - type: dropdown
     id: android-target
     attributes:
-      label: Android targets
-      description: Select any Android targets or form factors relevant to this request.
+      label: Affected Android targets
+      description: Select every runtime or form factor affected by the request.
       multiple: true
       options:
         - All targets or platform-independent
         - Android phones
         - Tablets
         - Foldables
-        - ChromeOS and desktop windowing
         - Wear OS
         - Android TV or Google TV
-        - Android Auto
-        - Android Automotive OS
-        - Android XR
+        - Android Automotive OS or Android Auto
         - Other
 
-  - type: textarea
-    id: platform-considerations
-    attributes:
-      label: Android or platform considerations
-      description: Mention any relevant Android version, API level, form-factor behavior, permission, or platform restriction.
-      placeholder: "Example: Android 13+ notification permission, large-screen layout, or background execution limits"
-
+  # Technical evaluation
   - type: textarea
     id: technical-considerations
     attributes:
-      label: Technical considerations
-      description: Note any relevant accessibility, privacy, security, performance, compatibility, public API or SDK changes, data migration, battery, network, storage, or localization considerations.
-      placeholder: Include only considerations you know are relevant; implementation details are not required.
+      label: Technical constraints
+      description: Identify known constraints that affect feasibility, compatibility, implementation, or acceptance.
+      placeholder: |
+        Android versions or API levels:
+        Permissions or platform restrictions:
+        Accessibility:
+        Privacy or security:
+        Performance, battery, network, or storage:
+        Data migration or backward compatibility:
+        Public API or SDK compatibility:
+        Localization:
 
-  # Supporting material
-  - type: markdown
-    attributes:
-      value: |
-        ## 📎 Supporting material
-
+  # Supporting evidence
   - type: upload
     id: supporting-files
     attributes:
-      label: Mockups or supporting files
-      description: Upload screenshots, mockups, diagrams, or other files that help explain the request.
+      label: Mockups, diagrams, or supporting files
+      description: Upload files required to clarify the requested behavior, interaction, or technical constraints.
     validations:
       required: false
-      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.zip"
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.mp4,.webm"
 
   - type: textarea
     id: references
     attributes:
-      label: Related issues or references
-      description: Add links or references to related issues, pull requests, discussions, documentation, specifications, or similar implementations.
+      label: Related work and references
+      description: Link related issues, discussions, pull requests, documentation, specifications, or comparable implementations.
       placeholder: |
-        - Related issue:
-        - Discussion:
-        - Documentation or specification:
-        - Other reference:
+        Related issue or discussion:
+        Documentation or specification:
+        Comparable implementation:
+        Other reference:
 
-  # Contribution and context
-  - type: markdown
-    attributes:
-      value: |
-        ## 🤝 Contribution and context
-
+  # Contribution
   - type: dropdown
     id: contribution
     attributes:
-      label: Would you like to help implement this feature?
-      description: This is optional and does not affect whether the request will be considered.
+      label: Implementation contribution
+      description: Select whether you can prepare an implementation after the scope is agreed.
       options:
-        - Yes, I would like to work on it
-        - Maybe, with guidance from maintainers
-        - No, not at this time
-
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional context
-      description: Add anything else that would help maintainers understand or evaluate this request.
-      placeholder: Add any remaining context here.
+        - I can prepare an implementation
+        - I may contribute with technical guidance
+        - I am not planning to implement it
