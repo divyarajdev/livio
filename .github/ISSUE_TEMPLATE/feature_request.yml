@@ -1,43 +1,39 @@
-name: 💡 Feature Request
+name: "💡 Feature Request"
 description: Suggest a new feature or improvement
 title: "[Feature]: "
 labels:
   - enhancement
   - needs-triage
-type: feature
+type: feature  
 
 body:
-  # ─────────────────────────────────────────────
   # Introduction
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to suggest an improvement.
 
         Before submitting:
+
         - Search existing open and closed issues to avoid duplicates.
         - Use the bug report template for defects or unexpected behavior.
         - Use the project's support or discussion channel for questions, if available.
-        - Do not disclose security vulnerabilities here; follow the repository's security policy instead.
-        - Do not include passwords, tokens, private data, or other sensitive information.
 
-  # ─────────────────────────────────────────────
+        > **Security:** Do not disclose security vulnerabilities here. Follow the repository's security policy instead.
+
+        > **Privacy:** Do not include passwords, authentication tokens, private data, or other sensitive information.
+
   # Pre-submission
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### ✅ Pre-submission
-        ---
+        ## ✅ Pre-submission
 
   - type: checkboxes
     id: preflight
     attributes:
       label: Before you submit
-      description: Please confirm each item before submitting your request.
+      description: Confirm each item before submitting your request.
       options:
         - label: I searched open and closed issues and did not find an existing request for the same feature.
           required: true
@@ -48,15 +44,11 @@ body:
         - label: This request is relevant to this project and its scope.
           required: true
 
-  # ─────────────────────────────────────────────
   # Scope
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 🧭 Scope
-        ---
+        ## 🧭 Scope
 
   - type: dropdown
     id: area
@@ -65,17 +57,17 @@ body:
       description: Which area is most closely related to this request?
       options:
         - Core functionality
-        - UI / UX
+        - UI and UX
         - Accessibility
-        - Settings / Configuration
+        - Settings and configuration
         - Notifications
-        - Data / Storage
-        - Networking / Sync
-        - Privacy / Security
-        - Performance / Battery
+        - Data and storage
+        - Networking and sync
+        - Privacy and security
+        - Performance and battery
         - Integrations
-        - Developer API / SDK
-        - Build / Tooling / Developer Experience
+        - Developer API or SDK
+        - Build, tooling, or developer experience
         - Documentation
         - Other
     validations:
@@ -86,17 +78,13 @@ body:
     attributes:
       label: Specific component or module
       description: If applicable, identify the screen, package, module, API, feature, or component involved.
-      placeholder: "Example: Settings > Appearance, sync module, or Gradle module path like :feature:home"
+      placeholder: "Example: Settings > Appearance, sync module, or Gradle module path such as :feature:home"
 
-  # ─────────────────────────────────────────────
   # The idea
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 💡 The idea
-        ---
+        ## 💡 The idea
 
   - type: textarea
     id: problem
@@ -105,7 +93,7 @@ body:
       description: What problem, limitation, or user need would this feature address?
       placeholder: |
         Describe the problem clearly.
-        Explain what is difficult or currently not possible, rather than only describing the desired implementation.
+        Explain what is difficult or currently not possible rather than describing only the desired implementation.
     validations:
       required: true
 
@@ -113,7 +101,7 @@ body:
     id: use-case
     attributes:
       label: Use case
-      description: Describe a real-world scenario where this feature would be useful and who would benefit from it.
+      description: Describe a real-world scenario in which this feature would be useful and who would benefit from it.
       placeholder: |
         Example:
         As a ...
@@ -131,21 +119,17 @@ body:
     validations:
       required: true
 
-  # ─────────────────────────────────────────────
-  # Alternatives & impact
-  # ─────────────────────────────────────────────
-
+  # Alternatives and impact
   - type: markdown
     attributes:
       value: |
-        ### 🔀 Alternatives & impact
-        ---
+        ## 🔀 Alternatives and impact
 
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives or workarounds considered
-      description: Have you tried or considered any alternative solutions or existing workarounds?
+      description: Have you tried or considered alternative solutions or existing workarounds?
       placeholder: Describe alternatives, workarounds, or why existing options are insufficient.
 
   - type: textarea
@@ -155,30 +139,29 @@ body:
       description: How would this feature improve the project or help its users?
       placeholder: Describe the expected value, affected users, or workflows that would improve.
 
-  # ─────────────────────────────────────────────
-  # Platform & technical details
-  # ─────────────────────────────────────────────
-
+  # Platform and technical details
   - type: markdown
     attributes:
       value: |
-        ### 📱 Platform & technical details
-        ---
+        ## 📱 Platform and technical details
 
   - type: dropdown
     id: android-target
     attributes:
       label: Android targets
-      description: Select any Android targets or form factors that are relevant to this request.
+      description: Select any Android targets or form factors relevant to this request.
       multiple: true
       options:
-        - All / platform-independent
+        - All targets or platform-independent
         - Android phones
         - Tablets
         - Foldables
+        - ChromeOS and desktop windowing
         - Wear OS
-        - Android TV / Google TV
-        - Android Automotive / Android Auto
+        - Android TV or Google TV
+        - Android Auto
+        - Android Automotive OS
+        - Android XR
         - Other
 
   - type: textarea
@@ -186,7 +169,7 @@ body:
     attributes:
       label: Android or platform considerations
       description: Mention any relevant Android version, API level, form-factor behavior, permission, or platform restriction.
-      placeholder: "Example: Android 13+ notification permission, large-screen layout, background execution limits"
+      placeholder: "Example: Android 13+ notification permission, large-screen layout, or background execution limits"
 
   - type: textarea
     id: technical-considerations
@@ -195,15 +178,11 @@ body:
       description: Note any relevant accessibility, privacy, security, performance, compatibility, public API or SDK changes, data migration, battery, network, storage, or localization considerations.
       placeholder: Include only considerations you know are relevant; implementation details are not required.
 
-  # ─────────────────────────────────────────────
   # Supporting material
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 📎 Supporting material
-        ---
+        ## 📎 Supporting material
 
   - type: upload
     id: supporting-files
@@ -222,18 +201,14 @@ body:
       placeholder: |
         - Related issue:
         - Discussion:
-        - Documentation/specification:
+        - Documentation or specification:
         - Other reference:
 
-  # ─────────────────────────────────────────────
-  # Contribution & context
-  # ─────────────────────────────────────────────
-
+  # Contribution and context
   - type: markdown
     attributes:
       value: |
-        ### 🤝 Contribution & context
-        ---
+        ## 🤝 Contribution and context
 
   - type: dropdown
     id: contribution
@@ -243,7 +218,7 @@ body:
       options:
         - Yes, I would like to work on it
         - Maybe, with guidance from maintainers
-        - No / not at this time
+        - No, not at this time
 
   - type: textarea
     id: additional-context
@@ -252,15 +227,11 @@ body:
       description: Add anything else that would help maintainers understand or evaluate this request.
       placeholder: Add any remaining context here.
 
-  # ─────────────────────────────────────────────
   # Final acknowledgements
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 🔏 Final acknowledgements
-        ---
+        ## 🔏 Final acknowledgements
 
   - type: checkboxes
     id: acknowledgements
@@ -269,7 +240,7 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct and contribution guidelines, where applicable.
           required: true
-        - label: I have not included passwords, tokens, private data, or other sensitive information.
+        - label: I have not included passwords, authentication tokens, private data, or other sensitive information.
           required: true
         - label: I understand that submitting a feature request does not guarantee that it will be implemented.
           required: true
