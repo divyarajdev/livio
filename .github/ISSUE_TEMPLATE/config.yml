@@ -1,24 +1,14 @@
-# Routes contributors to structured Issue Forms, private security reporting,
-# support discussions, or early idea discussions.
-#
-# Public blank issues are disabled to keep reports structured and actionable.
-# GitHub may still show a maintainer-only blank issue option to users with
-# sufficient repository permissions.
-
 blank_issues_enabled: false
 
 contact_links:
-  # Private security disclosure
   - name: "🔐 Report a Security Vulnerability"
     url: "https://github.com/divyarajdev/livio/security/advisories/new"
-    about: "Privately report a suspected security vulnerability. Do not disclose security-sensitive findings in public Issues or Discussions."
+    about: "Privately report a suspected security vulnerability instead of disclosing it in public Issues or Discussions."
 
-  # Questions and troubleshooting
-  - name: "💬 Ask a Question or Get Support"
+  - name: "💬 Ask a Question in Q&A"
     url: "https://github.com/divyarajdev/livio/discussions/categories/q-a"
-    about: "Ask usage questions, request guidance, and discuss troubleshooting with the community in Q&A."
+    about: "Ask technical questions about usage, configuration, integration, source builds, or troubleshooting."
 
-  # Early idea exploration
   - name: "💡 Discuss an Idea"
     url: "https://github.com/divyarajdev/livio/discussions/categories/ideas"
-    about: "Explore early ideas, possible approaches, and community feedback before opening a formal Feature Request."
+    about: "Explore an early-stage proposal before opening a scoped Feature Request."
