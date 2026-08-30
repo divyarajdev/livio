@@ -4,7 +4,7 @@ title: "[Docs]: "
 labels:
   - documentation
   - needs-triage
-type: docs
+ type: docs 
 
 body:
   # Purpose and routing
@@ -13,9 +13,10 @@ body:
       value: |
         Use this form for incorrect, outdated, missing, or unclear project documentation.
 
-        Use the Bug Report form for reproducible software defects.
-        Use the Q&A category when the documentation does not require correction.
-        Use the Feature Request form for product, API, or behavior changes.
+        Use the Bug Report form for reproducible defects.
+        Use the Feature Request form for scoped capability or behavior changes that are ready for project triage.
+        Use the Q&A category for questions about usage, configuration, integration, builds, or troubleshooting.
+        Use the Ideas category to explore early-stage proposals.
 
         For a small and unambiguous correction, a direct pull request is preferred.
 
@@ -25,14 +26,14 @@ body:
     attributes:
       label: Pre-submission checks
       options:
-        - label: I checked the current documentation and searched existing issues and discussions for this request.
+        - label: I checked the current documentation and searched existing Issues and Discussions for this request.
           required: true
-        - label: This request covers one scoped documentation problem or addition.
+        - label: This submission covers one scoped documentation problem or addition.
           required: true
         - label: >-
             I am not publicly disclosing a security vulnerability, and I removed
             credentials, authentication tokens, private endpoints, personal data,
-            and other sensitive data from this request and its attachments.
+            and other sensitive data from this submission and its attachments.
           required: true
 
   # Request classification
@@ -127,11 +128,11 @@ body:
     id: references
     attributes:
       label: Evidence and references
-      description: Link authoritative documentation, source code, APIs, specifications, related issues, or pull requests that support the requested correction.
+      description: Link authoritative documentation, source code, APIs, specifications, related Issues, or pull requests that support the requested correction.
       placeholder: |
         Source of truth:
         Related code or API:
-        Related issue or pull request:
+        Related Issue or pull request:
         Other reference:
 
   - type: upload
@@ -141,7 +142,7 @@ body:
       description: Upload files required to identify, demonstrate, or verify the documentation problem.
     validations:
       required: false
-      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.txt,.md"
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.txt"
 
   # Contribution
   - type: dropdown
