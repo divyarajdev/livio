@@ -1,0 +1,275 @@
+name: 💡 Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels:
+  - enhancement
+  - needs-triage
+type: feature
+
+body:
+  # ─────────────────────────────────────────────
+  # Introduction
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest an improvement.
+
+        Before submitting:
+        - Search existing open and closed issues to avoid duplicates.
+        - Use the bug report template for defects or unexpected behavior.
+        - Use the project's support or discussion channel for questions, if available.
+        - Do not disclose security vulnerabilities here; follow the repository's security policy instead.
+        - Do not include passwords, tokens, private data, or other sensitive information.
+
+  # ─────────────────────────────────────────────
+  # Pre-submission
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### ✅ Pre-submission
+        ---
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you submit
+      description: Please confirm each item before submitting your request.
+      options:
+        - label: I searched open and closed issues and did not find an existing request for the same feature.
+          required: true
+        - label: I checked the README, documentation, and FAQ, if available, for an existing solution.
+          required: true
+        - label: This is a feature request or improvement, not a bug report or support question.
+          required: true
+        - label: This request is relevant to this project and its scope.
+          required: true
+
+  # ─────────────────────────────────────────────
+  # Scope
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🧭 Scope
+        ---
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area or component
+      description: Which area is most closely related to this request?
+      options:
+        - Core functionality
+        - UI / UX
+        - Accessibility
+        - Settings / Configuration
+        - Notifications
+        - Data / Storage
+        - Networking / Sync
+        - Privacy / Security
+        - Performance / Battery
+        - Integrations
+        - Developer API / SDK
+        - Build / Tooling / Developer Experience
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Specific component or module
+      description: If applicable, identify the screen, package, module, API, feature, or component involved.
+      placeholder: "Example: Settings > Appearance, sync module, or Gradle module path like :feature:home"
+
+  # ─────────────────────────────────────────────
+  # The idea
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 💡 The idea
+        ---
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What problem, limitation, or user need would this feature address?
+      placeholder: |
+        Describe the problem clearly.
+        Explain what is difficult or currently not possible, rather than only describing the desired implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Describe a real-world scenario where this feature would be useful and who would benefit from it.
+      placeholder: |
+        Example:
+        As a ...
+        I want to ...
+        So that ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: What would you like the project to do? Describe the expected behavior or user experience.
+      placeholder: Describe your preferred solution as clearly as possible.
+    validations:
+      required: true
+
+  # ─────────────────────────────────────────────
+  # Alternatives & impact
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🔀 Alternatives & impact
+        ---
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds considered
+      description: Have you tried or considered any alternative solutions or existing workarounds?
+      placeholder: Describe alternatives, workarounds, or why existing options are insufficient.
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected benefit or impact
+      description: How would this feature improve the project or help its users?
+      placeholder: Describe the expected value, affected users, or workflows that would improve.
+
+  # ─────────────────────────────────────────────
+  # Platform & technical details
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📱 Platform & technical details
+        ---
+
+  - type: dropdown
+    id: android-target
+    attributes:
+      label: Android targets
+      description: Select any Android targets or form factors that are relevant to this request.
+      multiple: true
+      options:
+        - All / platform-independent
+        - Android phones
+        - Tablets
+        - Foldables
+        - Wear OS
+        - Android TV / Google TV
+        - Android Automotive / Android Auto
+        - Other
+
+  - type: textarea
+    id: platform-considerations
+    attributes:
+      label: Android or platform considerations
+      description: Mention any relevant Android version, API level, form-factor behavior, permission, or platform restriction.
+      placeholder: "Example: Android 13+ notification permission, large-screen layout, background execution limits"
+
+  - type: textarea
+    id: technical-considerations
+    attributes:
+      label: Technical considerations
+      description: Note any relevant accessibility, privacy, security, performance, compatibility, public API or SDK changes, data migration, battery, network, storage, or localization considerations.
+      placeholder: Include only considerations you know are relevant; implementation details are not required.
+
+  # ─────────────────────────────────────────────
+  # Supporting material
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📎 Supporting material
+        ---
+
+  - type: upload
+    id: supporting-files
+    attributes:
+      label: Mockups or supporting files
+      description: Upload screenshots, mockups, diagrams, or other files that help explain the request. Do not upload confidential or sensitive information.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.zip"
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Related issues or references
+      description: Add links or references to related issues, pull requests, discussions, documentation, specifications, or similar implementations.
+      placeholder: |
+        - Related issue:
+        - Discussion:
+        - Documentation/specification:
+        - Other reference:
+
+  # ─────────────────────────────────────────────
+  # Contribution & context
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🤝 Contribution & context
+        ---
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Would you like to help implement this feature?
+      description: This is optional and does not affect whether the request will be considered.
+      options:
+        - Yes, I would like to work on it
+        - Maybe, with guidance from maintainers
+        - No / not at this time
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add anything else that would help maintainers understand or evaluate this request.
+      placeholder: Add any remaining context here.
+
+  # ─────────────────────────────────────────────
+  # Final acknowledgements
+  # ─────────────────────────────────────────────
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🔏 Final acknowledgements
+        ---
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Final acknowledgements
+      options:
+        - label: I agree to follow this project's Code of Conduct and contribution guidelines, where applicable.
+          required: true
+        - label: I have not included passwords, tokens, private data, or other sensitive information.
+          required: true
+        - label: I understand that submitting a feature request does not guarantee that it will be implemented.
+          required: true
