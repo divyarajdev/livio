@@ -1,70 +1,55 @@
 name: "📚 Documentation Request"
-description: "Report missing, incorrect, outdated, unclear, or incomplete documentation, or request new documentation."
+description: "Report incorrect, outdated, missing, or unclear documentation"
 title: "[Docs]: "
 labels:
   - documentation
   - needs-triage
-type: docs  
+type: docs
 
 body:
-  # Introduction
+  # Purpose and routing
   - type: markdown
     attributes:
       value: |
-        Thank you for helping us improve the documentation.
+        Use this form for incorrect, outdated, missing, or unclear project documentation.
 
-        Use this form to report missing, incorrect, outdated, unclear, or incomplete documentation, or to request new documentation.
+        Use the Bug Report form for reproducible software defects.
+        Use the Q&A category when the documentation does not require correction.
+        Use the Feature Request form for product, API, or behavior changes.
 
-        For small documentation fixes such as typos, you may submit a pull request directly.
+        For a small and unambiguous correction, a direct pull request is preferred.
 
-  # Pre-submission
-  - type: markdown
-    attributes:
-      value: |
-        ## ✅ Pre-submission
-
+  # Pre-submission checks
   - type: checkboxes
     id: preflight
     attributes:
-      label: Before submitting
-      description: Confirm each item before submitting.
+      label: Pre-submission checks
       options:
-        # Common checks
-        - label: I searched open and closed issues and did not find an existing report or request covering this submission.
+        - label: I checked the current documentation and searched existing issues and discussions for this request.
           required: true
-        - label: This submission does not disclose a security vulnerability; I will follow the repository's security policy to report vulnerabilities privately.
+        - label: This request covers one scoped documentation problem or addition.
           required: true
-        - label: I removed passwords, authentication tokens, personal data, and other sensitive information from this submission and its attachments.
-          required: true
-        - label: I agree to follow the project's Code of Conduct and contribution guidelines.
-          required: true
-
-        # Documentation-specific checks
-        - label: I checked the latest available documentation.
-          required: true
-        - label: This submission concerns documentation, not a software bug or support question.
+        - label: >-
+            I am not publicly disclosing a security vulnerability, and I removed
+            credentials, authentication tokens, private endpoints, personal data,
+            and other sensitive data from this request and its attachments.
           required: true
 
-  # Scope
-  - type: markdown
-    attributes:
-      value: |
-        ## 🧭 Scope
-
+  # Request classification
   - type: dropdown
     id: request-type
     attributes:
-      label: Documentation request type
-      description: What kind of documentation change is needed?
+      label: Request type
+      description: Select the change that most directly describes the documentation problem.
       options:
         - Incorrect information
         - Outdated information
         - Missing information
-        - Unclear or confusing documentation
-        - Broken link
-        - Code or sample issue
-        - Typo or formatting issue
-        - New documentation request
+        - Unclear or ambiguous explanation
+        - Broken link or reference
+        - Incorrect code, command, or configuration example
+        - Typographical, grammar, or formatting error
+        - New documentation
         - Other
     validations:
       required: true
@@ -73,133 +58,98 @@ body:
     id: documentation-area
     attributes:
       label: Documentation area
-      description: Which documentation areas are affected? Select all that apply.
+      description: Select every repository documentation area affected by the request.
       multiple: true
       options:
-        - Getting started
-        - Installation and setup
-        - API reference
-        - Guides and tutorials
-        - Kotlin
-        - Java
-        - Jetpack Compose
-        - Views and XML
-        - Gradle and build configuration
-        - Samples and examples
-        - Migration guide
         - README
-        - Contributing documentation
+        - Setup
+        - Development workflow
+        - Architecture
+        - Testing
+        - Accessibility
+        - Privacy
+        - Security
+        - Performance
+        - Release process
+        - Translation or localization
+        - Troubleshooting
+        - Contributing
+        - Code or API documentation
+        - Samples or examples
         - Other
     validations:
       required: true
 
+  # Affected documentation
   - type: input
     id: affected-documentation
     attributes:
-      label: Affected documentation
-      description: 'Provide the URL, repository file path, or section name. For completely new documentation, enter "N/A".'
-      placeholder: "https://..., docs/guide.md, README section, or N/A"
+      label: Affected documentation location
+      description: Provide the exact URL, repository path, or section. For new documentation, provide the proposed location.
+      placeholder: "Example: docs/setup.md, README > Installation, or proposed docs/migration.md"
     validations:
       required: true
 
   - type: input
     id: affected-version
     attributes:
-      label: Affected version
-      description: If this request is version-specific, provide the affected app, library, SDK, API, or documentation version.
-      placeholder: "Example: app 2.4.0, Android API level 35, documentation commit abc1234, or N/A"
+      label: Affected version or revision
+      description: Provide the exact app, library, SDK, API, release, or commit revision when the problem is version-specific.
+      placeholder: "Example: 2.4.0, Android API 36, or commit abc1234"
 
-  # The request
-  - type: markdown
-    attributes:
-      value: |
-        ## 📖 The request
-
-  - type: textarea
-    id: current-content
-    attributes:
-      label: Current documentation
-      description: Describe the relevant current documentation, if any. You may quote a short relevant section.
-      placeholder: |
-        What does the documentation currently say or show?
-
-        Leave this empty if you are requesting completely new documentation.
-
+  # Documentation problem
   - type: textarea
     id: documentation-request
     attributes:
-      label: What needs to be changed?
-      description: Explain what is missing, incorrect, outdated, unclear, incomplete, or otherwise needs improvement.
+      label: Documentation problem
+      description: Identify the current text, example, or omission and explain why it is incorrect, outdated, missing, or unclear.
       placeholder: |
-        Describe the documentation problem or request clearly.
-
-        Include enough detail for maintainers to understand:
-
-        - What is wrong or missing
-        - Where the confusion occurs
-        - Why the documentation should be changed
+        Current content or omission:
+        Problem:
+        Effect on the reader:
     validations:
       required: true
 
+  # Required result
   - type: textarea
     id: desired-outcome
     attributes:
-      label: What should the documentation explain or show?
-      description: Describe what you expected to learn, understand, or accomplish from the documentation.
+      label: Required correction
+      description: State the accurate information, example, or explanation that the documentation must provide and what the reader should be able to do afterward.
       placeholder: |
-        Explain the desired outcome.
-
-        What should a reader understand or be able to do after the documentation is improved?
+        Required correction or information:
+        Expected reader outcome:
     validations:
       required: true
 
-  # Supporting material
-  - type: markdown
-    attributes:
-      value: |
-        ## 📎 Supporting material
-
+  # Supporting evidence
   - type: textarea
     id: references
     attributes:
-      label: Examples and references
-      description: Add any relevant code examples, documentation links, specifications, related issues, pull requests, or other references.
+      label: Evidence and references
+      description: Link authoritative documentation, source code, APIs, specifications, related issues, or pull requests that support the requested correction.
       placeholder: |
-        Examples:
-
-        - Related documentation
-        - Code or API example
-        - Related issue or pull request
-        - External specification or reference
+        Source of truth:
+        Related code or API:
+        Related issue or pull request:
+        Other reference:
 
   - type: upload
     id: attachments
     attributes:
       label: Screenshots or supporting files
-      description: If useful, upload screenshots or other files that help explain the documentation request.
+      description: Upload files required to identify, demonstrate, or verify the documentation problem.
     validations:
       required: false
-      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.zip"
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.txt,.md"
 
-  # Contribution and context
-  - type: markdown
-    attributes:
-      value: |
-        ## 🤝 Contribution and context
-
+  # Contribution
   - type: dropdown
     id: contribution
     attributes:
-      label: Would you like to contribute this documentation change?
-      description: This is optional and does not affect how your request is handled.
+      label: Documentation contribution
+      description: Select whether you can prepare the documentation change after the scope is agreed.
       options:
-        - Yes, I would like to work on it
-        - Maybe, with guidance from maintainers
-        - No, not at this time
-
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional context
-      description: Add anything else that may help maintainers understand or evaluate this documentation request.
-      placeholder: Any additional context, limitations, edge cases, or related information.
+        - I can prepare the documentation change
+        - I may contribute with technical guidance
+        - I am not planning to prepare the change
