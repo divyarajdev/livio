@@ -12,10 +12,10 @@ body:
         A complete technical solution is not required.
         Limit each Discussion to one idea.
 
-        Use the Q&A category for questions about existing behavior or configuration.
         Use the Bug Report form for reproducible defects.
-        Use the Feature Request form when a change is defined and ready for project triage.
-        Use the Documentation Request form for defined documentation corrections or additions.
+        Use the Feature Request form for scoped capability or behavior changes that are ready for project triage.
+        Use the Documentation Request form for documentation corrections or additions.
+        Use the Q&A category for questions about usage, configuration, integration, builds, or troubleshooting.
 
         > **Public content:** Do not disclose security vulnerabilities. Remove credentials,
         > authentication tokens, private endpoints, personal data, and other sensitive data
@@ -141,9 +141,3 @@ body:
         Comparable app or library:
         Mockup, screenshot, or recording:
         Example repository:
-
-  # Possible follow-up
-  - type: markdown
-    attributes:
-      value: |
-        If the Discussion produces a defined and actionable change, link it from the corresponding Feature Request.
