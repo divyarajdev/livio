@@ -1,53 +1,49 @@
-title: "[Q&A] "
+title: "[Q&A]: "
 
 body:
-  # Introduction
+  # Purpose and routing
   - type: markdown
     attributes:
       value: |
         ## Android Q&A
 
-        Use this Discussion category to ask questions about using, configuring,
-        integrating, building, or understanding this Android project.
+        Use this category for technical questions about project usage, configuration, integration, source builds, or architecture.
 
-        Please keep the Discussion focused on one main question and include
-        enough context to understand what you are trying to do.
+        - Limit each discussion to one question.
+        - Use the Bug Report form for reproducible defects.
+        - Use the Feature Request form for scoped change proposals.
+        - Use the Ideas category for early-stage proposals and exploration.
 
-        - Include Android or development details only when they are relevant.
-        - Use the bug-report process for confirmed reproducible bugs.
-        - Use the Feature Request form or Ideas category for suggestions and proposed behavior changes.
+        > **Public content:** Do not disclose security vulnerabilities. Remove credentials,
+        > API keys, authentication tokens, signing material, private endpoints, and personal
+        > data from all text and attachments.
 
-        > **Privacy and security:** Do not post passwords, API keys, access tokens,
-        > signing secrets, private URLs, personal information, or security vulnerabilities.
-
-  # Lightweight pre-posting check
+  # Search prerequisite
   - type: checkboxes
-    id: before-posting
+    id: prerequisite
     attributes:
-      label: Before posting
+      label: Prerequisite
       options:
-        - label: I searched existing Discussions and checked the available documentation before asking this question.
+        - label: I searched existing discussions, issues, and project documentation.
           required: true
 
-  # Question classification
+  # Classification
   - type: dropdown
     id: topic
     attributes:
-      label: What is your question about?
-      description: Choose the area that best matches your question.
+      label: Topic
+      description: Select the closest technical area.
       options:
-        - Getting started
-        - Using the app
-        - Configuration
+        - Getting started or app usage
+        - Project configuration
         - Android integration
         - SDK or library usage
         - Kotlin or Java
-        - Jetpack Compose or UI
-        - Activity, Fragment, or lifecycle
+        - UI or Jetpack Compose
+        - Lifecycle or state management
         - Navigation
-        - State management
         - Storage or database
-        - Networking or synchronization
+        - Networking or sync
         - Authentication or accounts
         - Permissions
         - Notifications
@@ -63,140 +59,123 @@ body:
     validations:
       required: true
 
-  # Core question
+  # Required question details
   - type: textarea
     id: question
     attributes:
-      label: What is your question?
-      description: Describe the help you need as clearly as possible.
+      label: Technical question
+      description: State the question and the specific result you need.
       placeholder: |
-        What are you trying to understand, configure, or accomplish?
+        What behavior, API, configuration, or implementation do you need help with?
     validations:
       required: true
 
   - type: textarea
-    id: context
+    id: technical-context
     attributes:
-      label: Context
-      description: Provide enough background to understand your question.
+      label: Technical context
+      description: Provide the architecture, constraints, current approach, and observed behavior relevant to the question.
       placeholder: |
-        Useful details may include:
-
-        - What you are trying to build or configure
-        - How you are using this project
-        - Relevant requirements or limitations
-        - Why you chose your current approach
+        Objective:
+        Current approach:
+        Constraints:
+        Observed behavior:
     validations:
       required: true
 
   - type: textarea
-    id: tried
+    id: investigation
     attributes:
-      label: What have you already tried?
-      description: Share what you have already checked, tested, or researched.
+      label: Investigation performed
+      description: List the documentation, tests, and approaches already evaluated.
       placeholder: |
-        For example:
+        Documentation:
+        Tests or experiments:
+        Results:
+        Remaining uncertainty:
 
-        - Documentation I checked:
-        - Approaches I tried:
-        - Related Discussions or Issues:
-        - What I am still unsure about:
-
-  # Project usage
+  # Project context
   - type: dropdown
-    id: usage
+    id: usage-mode
     attributes:
-      label: How are you using the project?
+      label: Usage mode
+      description: Select how the project is being used.
       options:
-        - Using the Android app
-        - Integrating the library or SDK
-        - Developing the project from source
-        - Building a custom version
-        - Using a sample or demo
-        - Maintaining a fork
-        - Evaluating or learning the project
+        - Android app user
+        - SDK or library consumer
+        - Source contributor
+        - Custom build
+        - Sample or demo
+        - Fork maintainer
+        - Evaluation or learning
         - Other
         - Not applicable
 
   - type: input
     id: version
     attributes:
-      label: Project, app, or library version
-      description: Provide the relevant version, release tag, or commit when applicable.
-      placeholder: "Example: 2.4.1, v3.0.0-beta2, or commit abc1234"
+      label: Version or revision
+      description: Provide the relevant app or library version, release tag, or commit SHA.
+      placeholder: "Example: 2.4.1, v3.0.0-beta2, or abc1234"
 
-  # Android and development context
+  # Runtime context
   - type: textarea
-    id: android-context
+    id: android-runtime
     attributes:
-      label: Android context
-      description: Add Android or device details only when they are relevant.
+      label: Android runtime
+      description: Complete this field for device- or OS-specific questions.
       placeholder: |
-        Android version or API level:
-        Device or emulator:
-        Manufacturer or model:
-        Relevant Android setting:
-        Relevant permission state:
+        Android/API level:
+        Device/emulator:
+        Manufacturer/model:
+        Permissions or settings:
 
+  # Build context
   - type: textarea
-    id: development-environment
+    id: build-environment
     attributes:
-      label: Development environment
-      description: For development, integration, or build questions, include only relevant versions.
+      label: Build environment
+      description: Complete this field for source, build, Compose, or dependency questions.
       placeholder: |
         Android Studio:
         Kotlin:
-        Java or JDK:
+        JDK:
         Gradle:
-        Android Gradle Plugin:
+        AGP:
         compileSdk:
         targetSdk:
         minSdk:
-        Jetpack Compose BOM:
+        Compose BOM:
         Relevant dependencies:
 
-  # Supporting information
+  # Technical evidence
   - type: textarea
-    id: code
+    id: technical-evidence
     attributes:
-      label: Relevant code, logs, or configuration
-      description: |
-        Share the smallest relevant example if it helps explain the question.
-
-        Use fenced code blocks with an appropriate language identifier.
+      label: Minimal code, logs, or configuration
+      description: Include only the excerpt required to reproduce or explain the question. Use fenced code blocks with the correct language identifier.
       placeholder: |
-        Add the smallest relevant Kotlin, Java, Gradle, Manifest, XML,
-        Compose, ProGuard/R8, log, or configuration excerpt.
+        Paste the minimal relevant code, log output, Gradle configuration,
+        manifest entry, XML, Compose code, or ProGuard/R8 rule.
 
   - type: textarea
     id: references
     attributes:
-      label: Related references
-      description: Add documentation, Discussions, Issues, examples, or other useful references.
+      label: References
+      description: Link relevant documentation, discussions, issues, or reproductions.
       placeholder: |
         Documentation:
-        Related Discussion:
-        Related Issue:
-        Example project:
-        Other reference:
+        Related discussion or issue:
+        Reproduction:
 
   - type: textarea
-    id: additional-context
+    id: additional-evidence
     attributes:
-      label: Anything else?
-      description: Add any other information that may help answer your question.
-      placeholder: |
-        Screenshots, constraints, observations, or any other useful context.
+      label: Additional evidence
+      description: Add constraints, screenshots, recordings, or observations not captured above.
 
-  # Closing
+  # Resolution
   - type: markdown
     attributes:
       value: |
-        Thanks for providing the relevant details.
-
-        I may ask for additional information if something important is missing.
-
-        If you find the solution yourself, add it to the Discussion so it is
-        available to future readers.
-
-        If a response resolves your question, please mark it as the answer.
+        If you resolve the question, post the solution and mark the resolving response as the answer.
