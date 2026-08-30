@@ -1,33 +1,32 @@
-title: "[Q&A]: "
+title: "[Q&A] "
 
 body:
   # Purpose and routing
   - type: markdown
     attributes:
       value: |
-        ## Android Q&A
-
         Use this category for technical questions about project usage, configuration, integration, source builds, or architecture.
 
-        - Limit each discussion to one question.
-        - Use the Bug Report form for reproducible defects.
-        - Use the Feature Request form for scoped change proposals.
-        - Use the Ideas category for early-stage proposals and exploration.
+        Limit each discussion to one technical question.
+        Use the Bug Report form for reproducible defects.
+        Use the Feature Request form for scoped capability or behavior changes.
+        Use the Documentation Request form for documentation corrections or additions.
+        Use the Ideas category for early-stage proposals.
 
         > **Public content:** Do not disclose security vulnerabilities. Remove credentials,
-        > API keys, authentication tokens, signing material, private endpoints, and personal
-        > data from all text and attachments.
+        > authentication tokens, private endpoints, personal data, and other sensitive data
+        > from all text and attachments.
 
   # Search prerequisite
   - type: checkboxes
-    id: prerequisite
+    id: before-posting
     attributes:
-      label: Prerequisite
+      label: Search prerequisite
       options:
-        - label: I searched existing discussions, issues, and project documentation.
+        - label: I searched existing discussions, issues, and project documentation for this question or an existing solution.
           required: true
 
-  # Classification
+  # Question classification
   - type: dropdown
     id: topic
     attributes:
@@ -43,7 +42,7 @@ body:
         - Lifecycle or state management
         - Navigation
         - Storage or database
-        - Networking or sync
+        - Networking or synchronization
         - Authentication or accounts
         - Permissions
         - Notifications
@@ -64,17 +63,17 @@ body:
     id: question
     attributes:
       label: Technical question
-      description: State the question and the specific result you need.
+      description: State one question and the specific result you need.
       placeholder: |
         What behavior, API, configuration, or implementation do you need help with?
     validations:
       required: true
 
   - type: textarea
-    id: technical-context
+    id: context
     attributes:
       label: Technical context
-      description: Provide the architecture, constraints, current approach, and observed behavior relevant to the question.
+      description: Provide the objective, current approach, constraints, and observed behavior relevant to the question.
       placeholder: |
         Objective:
         Current approach:
@@ -83,20 +82,21 @@ body:
     validations:
       required: true
 
+  # Investigation
   - type: textarea
-    id: investigation
+    id: tried
     attributes:
       label: Investigation performed
-      description: List the documentation, tests, and approaches already evaluated.
+      description: List the documentation, tests, and approaches already evaluated, including their results.
       placeholder: |
-        Documentation:
+        Documentation reviewed:
         Tests or experiments:
         Results:
         Remaining uncertainty:
 
   # Project context
   - type: dropdown
-    id: usage-mode
+    id: usage
     attributes:
       label: Usage mode
       description: Select how the project is being used.
@@ -115,64 +115,66 @@ body:
     id: version
     attributes:
       label: Version or revision
-      description: Provide the relevant app or library version, release tag, or commit SHA.
+      description: Provide the relevant app or library version, release tag, or commit SHA when applicable.
       placeholder: "Example: 2.4.1, v3.0.0-beta2, or abc1234"
 
   # Runtime context
   - type: textarea
-    id: android-runtime
+    id: android-context
     attributes:
       label: Android runtime
-      description: Complete this field for device- or OS-specific questions.
+      description: Complete this field for device-specific, operating-system-specific, or permission-related questions.
       placeholder: |
-        Android/API level:
-        Device/emulator:
-        Manufacturer/model:
-        Permissions or settings:
+        Android version or API level:
+        Device or emulator:
+        Manufacturer or model:
+        Android distribution or ROM:
+        Relevant permissions or settings:
 
   # Build context
   - type: textarea
-    id: build-environment
+    id: development-environment
     attributes:
       label: Build environment
-      description: Complete this field for source, build, Compose, or dependency questions.
+      description: Complete this field for source, build, dependency, SDK, or Jetpack Compose questions.
       placeholder: |
         Android Studio:
         Kotlin:
         JDK:
         Gradle:
-        AGP:
+        Android Gradle Plugin:
         compileSdk:
         targetSdk:
         minSdk:
-        Compose BOM:
+        Jetpack Compose BOM:
         Relevant dependencies:
 
   # Technical evidence
   - type: textarea
-    id: technical-evidence
+    id: code
     attributes:
       label: Minimal code, logs, or configuration
-      description: Include only the excerpt required to reproduce or explain the question. Use fenced code blocks with the correct language identifier.
+      description: Include only the excerpt required to explain the question. Use fenced code blocks with the appropriate language identifier.
       placeholder: |
-        Paste the minimal relevant code, log output, Gradle configuration,
-        manifest entry, XML, Compose code, or ProGuard/R8 rule.
+        Add the smallest relevant Kotlin, Java, Gradle, Manifest, XML,
+        Compose, ProGuard/R8, configuration, or log excerpt.
 
   - type: textarea
     id: references
     attributes:
       label: References
-      description: Link relevant documentation, discussions, issues, or reproductions.
+      description: Link documentation, discussions, issues, specifications, or reproductions relevant to the question.
       placeholder: |
         Documentation:
         Related discussion or issue:
+        Specification:
         Reproduction:
 
   - type: textarea
-    id: additional-evidence
+    id: additional-context
     attributes:
       label: Additional evidence
-      description: Add constraints, screenshots, recordings, or observations not captured above.
+      description: Attach screenshots or recordings, or add constraints and observations not represented above.
 
   # Resolution
   - type: markdown
