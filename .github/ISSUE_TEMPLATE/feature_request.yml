@@ -1,6 +1,6 @@
 name: "💡 Feature Request"
-description: "Propose a scoped feature or behavior change"
-title: "[Feature]: "
+description: "Propose a scoped capability or behavior change"
+title: "[Feature] "
 labels:
   - enhancement
   - needs-triage
@@ -11,12 +11,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this form for a scoped new capability or change to existing behavior.
+        Use this form for a scoped capability or behavior change that is ready for project triage.
 
         Use the Bug Report form for reproducible defects.
-        Use the Q&A category for usage, configuration, or implementation questions.
-        Use the Documentation Request form for documentation changes.
-        Use the Ideas category for proposals that still require problem or scope exploration.
+        Use the Documentation Request form for documentation corrections or additions.
+        Use the Q&A category for questions about usage, configuration, integration, builds, or troubleshooting.
+        Use the Ideas category to explore early-stage proposals.
 
   # Pre-submission checks
   - type: checkboxes
@@ -24,14 +24,14 @@ body:
     attributes:
       label: Pre-submission checks
       options:
-        - label: I searched existing open and closed issues, discussions, and project documentation for this request or an existing solution.
+        - label: I searched existing Issues, Discussions, and project documentation for this request or an existing solution.
           required: true
-        - label: This request covers one scoped capability or behavior change.
+        - label: This submission covers one scoped capability or behavior change.
           required: true
         - label: >-
             I am not publicly disclosing a security vulnerability, and I removed
             credentials, authentication tokens, private endpoints, personal data,
-            and other sensitive data from this request and its attachments.
+            and other sensitive data from this submission and its attachments.
           required: true
 
   # Request scope
@@ -149,9 +149,9 @@ body:
     id: references
     attributes:
       label: Related work and references
-      description: Link related issues, discussions, pull requests, documentation, specifications, or comparable implementations.
+      description: Link related Issues, Discussions, pull requests, documentation, specifications, or comparable implementations.
       placeholder: |
-        Related issue or discussion:
+        Related Issue or Discussion:
         Documentation or specification:
         Comparable implementation:
         Other reference:
