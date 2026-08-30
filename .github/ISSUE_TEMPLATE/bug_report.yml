@@ -1,85 +1,69 @@
 name: "🐛 Bug Report"
-description: "Report a reproducible problem or unexpected behavior"
+description: "Report a reproducible defect or unexpected behavior"
 title: "[Bug]: "
 labels:
   - bug
   - needs-triage
-type: bug  
+type: bug
 
 body:
-  # Introduction
+  # Purpose and routing
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug.
+        Use this form for a reproducible defect in the app or project.
 
-        Provide enough information for the problem to be reproduced and investigated.
+        Use the Q&A category for usage, configuration, or troubleshooting questions.
+        Use the Feature Request form for proposed behavior changes.
 
-  # Pre-submission
-  - type: markdown
-    attributes:
-      value: |
-        ## ✅ Pre-submission
-
+  # Pre-submission checks
   - type: checkboxes
-    id: preflight
+    id: prechecks
     attributes:
-      label: Before submitting
-      description: Confirm each item before submitting.
+      label: Pre-submission checks
       options:
-        # Common checks
-        - label: I searched open and closed issues and did not find an existing report or request covering this submission.
+        - label: I searched existing open and closed issues for this defect.
           required: true
-        - label: This submission does not disclose a security vulnerability; I will follow the repository's security policy to report vulnerabilities privately.
+        - label: This report covers one defect.
           required: true
-        - label: I removed passwords, authentication tokens, personal data, and other sensitive information from this submission and its attachments.
-          required: true
-        - label: I agree to follow the project's Code of Conduct and contribution guidelines.
-          required: true
-
-        # Bug-specific check
-        - label: This report describes one bug only.
+        - label: >-
+            I am not publicly disclosing a security vulnerability, and I removed
+            credentials, authentication tokens, private endpoints, personal data,
+            and other sensitive data from this report and its attachments.
           required: true
 
-  # Issue details
-  - type: markdown
-    attributes:
-      value: |
-        ## 🐛 Issue details
-
+  # Defect scope
   - type: textarea
     id: description
     attributes:
-      label: Bug description
-      description: Describe the problem clearly, including what you were doing when it happened.
-      placeholder: Describe what is not working as expected.
+      label: Defect summary
+      description: Describe the affected workflow, scope, and impact. Do not repeat the reproduction steps.
+      placeholder: |
+        Affected workflow:
+        Scope:
+        Impact:
     validations:
       required: true
 
   - type: input
     id: component
     attributes:
-      label: Affected component or feature
-      description: Enter the screen, feature, module, or component where the issue occurs.
-      placeholder: "Settings / Backup / Authentication"
+      label: Affected component or module
+      description: Identify the affected screen, feature, API, service, or Gradle module.
+      placeholder: "Example: Settings > Backup, authentication, or :core:network"
     validations:
       required: true
 
   # Reproduction
-  - type: markdown
-    attributes:
-      value: |
-        ## 🔁 Reproduction
-
   - type: textarea
     id: reproduce
     attributes:
-      label: Steps to reproduce
-      description: Provide the exact steps required to reproduce the issue.
+      label: Reproduction steps
+      description: List the smallest known sequence that causes the defect.
       placeholder: |
-        1. Open ...
-        2. Tap ...
-        3. Select ...
+        1. Start from ...
+        2. Open ...
+        3. Perform ...
         4. Observe ...
     validations:
       required: true
@@ -88,13 +72,13 @@ body:
     id: reproducibility
     attributes:
       label: Reproducibility
-      description: Select how consistently the issue can be reproduced.
+      description: Select how consistently the defect occurs when following the reproduction steps.
       options:
-        - Always
-        - Often
-        - Sometimes
-        - Rarely
-        - Unable to reproduce consistently
+        - Every attempt
+        - Most attempts
+        - Intermittently
+        - Observed once
+        - Unable to reproduce again
     validations:
       required: true
 
@@ -102,8 +86,8 @@ body:
     id: expected
     attributes:
       label: Expected behavior
-      description: Describe the result you expected.
-      placeholder: Describe what should happen.
+      description: State the result that should occur after completing the reproduction steps.
+      placeholder: "After completing the steps, the app should ..."
     validations:
       required: true
 
@@ -111,51 +95,49 @@ body:
     id: actual
     attributes:
       label: Actual behavior
-      description: Describe the result that actually occurs.
-      placeholder: Describe what happens instead.
+      description: State the observed result, including error messages, incorrect state, or missing behavior.
+      placeholder: "After completing the steps, the app instead ..."
     validations:
       required: true
 
+  # Regression range
   - type: input
     id: regression-last-good
     attributes:
-      label: Last known working version
-      description: Optional. Enter the most recent app version in which this worked correctly.
-      placeholder: "2.3.0"
+      label: Last known working version or revision
+      description: Provide the most recent app version, release tag, or commit SHA where the behavior worked correctly.
+      placeholder: "Example: 2.3.0 or abc1234"
 
   - type: input
     id: regression-first-bad
     attributes:
-      label: First known affected version
-      description: Optional. Enter the earliest app version in which you noticed the problem.
-      placeholder: "2.4.0"
+      label: First known affected version or revision
+      description: Provide the earliest app version, release tag, or commit SHA where the defect occurred.
+      placeholder: "Example: 2.4.0 or def5678"
 
-  # Environment
-  - type: markdown
-    attributes:
-      value: |
-        ## 📱 Environment
-
+  # App environment
   - type: input
     id: app-version
     attributes:
       label: App version
-      description: Enter the exact affected app version. Do not enter "latest" or "current."
-      placeholder: "2.4.1"
+      description: Provide the exact affected app version. Do not enter "latest" or "current".
+      placeholder: "Example: 2.4.1"
     validations:
       required: true
 
   - type: dropdown
     id: build-channel
     attributes:
-      label: Installation source or build channel
-      description: Select how you installed the app. This helps identify packaging and build-specific problems.
+      label: Installation or build source
+      description: Select how the affected build was obtained.
       options:
         - Google Play
         - F-Droid
         - GitHub Releases
-        - Debug build
-        - Self-built from source
+        - Beta or preview build
+        - Nightly or CI artifact
+        - Locally built from source
+        - Preinstalled or managed build
         - Other
     validations:
       required: true
@@ -163,25 +145,26 @@ body:
   - type: input
     id: build-number
     attributes:
-      label: Build number or commit SHA
-      description: Optional. Provide this for nightly, CI, beta, debug, or source builds.
-      placeholder: "a1b2c3d or nightly-2026.08.29"
+      label: Build identifier or commit SHA
+      description: Provide the versionCode, CI build identifier, release tag, or commit SHA when relevant.
+      placeholder: "Example: versionCode 20401, nightly-2026.08.29, or a1b2c3d"
 
+  # Android environment
   - type: input
     id: android-version
     attributes:
-      label: Android version
-      description: Enter the Android version running on the affected device.
-      placeholder: "Android 16"
+      label: Android version and API level
+      description: Provide the Android version. Include the API level when available.
+      placeholder: "Example: Android 16 / API 36"
     validations:
       required: true
 
   - type: input
     id: device
     attributes:
-      label: Device
-      description: Enter the device manufacturer and model.
-      placeholder: "Google Pixel 9 Pro"
+      label: Device manufacturer and model
+      description: Identify the physical device or emulator where the defect occurs.
+      placeholder: "Example: Google Pixel 9 Pro or Pixel 8 API 36 emulator"
     validations:
       required: true
 
@@ -189,44 +172,35 @@ body:
     id: rom
     attributes:
       label: Android distribution or ROM
-      description: Optional. Enter the Android distribution or custom ROM, if applicable.
-      placeholder: "Stock Android / One UI / LineageOS"
+      description: Provide the Android distribution, manufacturer skin, or custom ROM when relevant.
+      placeholder: "Example: Stock Android, One UI, GrapheneOS, or LineageOS"
 
-  # Diagnostics
-  - type: markdown
-    attributes:
-      value: |
-        ## 🧪 Diagnostics
-
+  # Diagnostic evidence
   - type: textarea
     id: logs
     attributes:
-      label: Logs or diagnostic information
-      description: Paste relevant logcat output, stack traces, or diagnostic logs. Submitted content will be formatted automatically as a code block.
-      render: shell
+      label: Logs or diagnostic output
+      description: Paste the smallest relevant Logcat excerpt, stack trace, Gradle failure, or diagnostic output that contains the failure.
+      placeholder: |
+        Paste the relevant diagnostic output here.
+      render: text
 
   - type: upload
     id: media
     attributes:
-      label: Screenshots or screen recordings
-      description: Optional. Upload screenshots or recordings that demonstrate the issue.
+      label: Screenshots, recordings, or diagnostic files
+      description: Upload only evidence that demonstrates or helps diagnose the defect.
     validations:
       required: false
-      accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm"
-
-  # Additional context
-  - type: markdown
-    attributes:
-      value: |
-        ## 📎 Additional context
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm,.log,.txt,.json"
 
   - type: textarea
     id: additional-context
     attributes:
-      label: Anything else?
-      description: Add any other technical information that may help reproduce or investigate the issue.
+      label: Additional diagnostic context
+      description: Record relevant conditions not captured above, such as update history, network state, background restrictions, account state, or a temporary workaround.
       placeholder: |
-        For example:
-        - The issue started after an app or system update.
-        - The issue occurs only under specific conditions.
-        - You found a temporary workaround.
+        Triggering conditions:
+        Recent app or system changes:
+        Temporary workaround:
+        Related issue:
