@@ -7,8 +7,8 @@ contact_links:
 
   - name: "💬 Ask a Question in Q&A"
     url: "https://github.com/divyarajdev/livio/discussions/categories/q-a"
-    about: "Ask technical questions about usage, configuration, integration, source builds, or troubleshooting."
+    about: "Ask questions about usage, configuration, integration, builds, or troubleshooting."
 
   - name: "💡 Discuss an Idea"
     url: "https://github.com/divyarajdev/livio/discussions/categories/ideas"
-    about: "Explore an early-stage proposal before opening a scoped Feature Request."
+    about: "Explore an early-stage proposal before project triage."
