@@ -1,5 +1,5 @@
 name: "🐛 Bug Report"
-description: Report a reproducible problem or unexpected behavior
+description: "Report a reproducible problem or unexpected behavior"
 title: "[Bug]: "
 labels:
   - bug
@@ -15,10 +15,6 @@ body:
 
         Provide enough information for the problem to be reproduced and investigated.
 
-        > **Security:** Do not report security vulnerabilities in a public issue. Follow the private reporting instructions in the repository's security policy.
-
-        > **Privacy:** Remove passwords, authentication tokens, email addresses, personal data, and other sensitive information from logs, screenshots, recordings, and attachments.
-
   # Pre-submission
   - type: markdown
     attributes:
@@ -26,16 +22,23 @@ body:
         ## ✅ Pre-submission
 
   - type: checkboxes
-    id: prechecks
+    id: preflight
     attributes:
       label: Before submitting
-      description: Confirm each item before opening the report.
+      description: Confirm each item before submitting.
       options:
-        - label: I searched open and closed issues and could not find an existing report for this bug.
+        # Common checks
+        - label: I searched open and closed issues and did not find an existing report or request covering this submission.
           required: true
-        - label: This report covers one bug only.
+        - label: This submission does not disclose a security vulnerability; I will follow the repository's security policy to report vulnerabilities privately.
           required: true
-        - label: I removed private, personal, and security-sensitive information from the report and its attachments.
+        - label: I removed passwords, authentication tokens, personal data, and other sensitive information from this submission and its attachments.
+          required: true
+        - label: I agree to follow the project's Code of Conduct and contribution guidelines.
+          required: true
+
+        # Bug-specific check
+        - label: This report describes one bug only.
           required: true
 
   # Issue details
@@ -199,17 +202,14 @@ body:
     id: logs
     attributes:
       label: Logs or diagnostic information
-      description: |
-        Paste relevant logcat output, stack traces, or diagnostic logs.
-
-        **Before submitting:** Remove passwords, authentication tokens, email addresses, personal data, and other sensitive information. The submitted content will be formatted automatically as a code block.
+      description: Paste relevant logcat output, stack traces, or diagnostic logs. Submitted content will be formatted automatically as a code block.
       render: shell
 
   - type: upload
     id: media
     attributes:
       label: Screenshots or screen recordings
-      description: Optional. Upload screenshots or recordings that demonstrate the issue. Verify that the files do not reveal private or sensitive information.
+      description: Optional. Upload screenshots or recordings that demonstrate the issue.
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm"
