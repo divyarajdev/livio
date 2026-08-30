@@ -15,13 +15,7 @@ body:
 
         Use this form to report missing, incorrect, outdated, unclear, or incomplete documentation, or to request new documentation.
 
-        Before submitting:
-
-        - For software bugs, use the bug report template instead.
-        - For security vulnerabilities, follow the repository's security reporting policy.
-        - For small documentation fixes such as typos, you may submit a pull request directly.
-
-        > **Privacy:** Do not include passwords, authentication tokens, private data, internal information, or other sensitive material in the request or its attachments.
+        For small documentation fixes such as typos, you may submit a pull request directly.
 
   # Pre-submission
   - type: markdown
@@ -32,12 +26,23 @@ body:
   - type: checkboxes
     id: preflight
     attributes:
-      label: "Before submitting"
-      description: "Complete these checks before opening a documentation request."
+      label: Before submitting
+      description: Confirm each item before submitting.
       options:
-        - label: "I checked the latest available documentation."
+        # Common checks
+        - label: I searched open and closed issues and did not find an existing report or request covering this submission.
           required: true
-        - label: "I searched existing issues for a similar documentation request."
+        - label: This submission does not disclose a security vulnerability; I will follow the repository's security policy to report vulnerabilities privately.
+          required: true
+        - label: I removed passwords, authentication tokens, personal data, and other sensitive information from this submission and its attachments.
+          required: true
+        - label: I agree to follow the project's Code of Conduct and contribution guidelines.
+          required: true
+
+        # Documentation-specific checks
+        - label: I checked the latest available documentation.
+          required: true
+        - label: This submission concerns documentation, not a software bug or support question.
           required: true
 
   # Scope
@@ -49,49 +54,49 @@ body:
   - type: dropdown
     id: request-type
     attributes:
-      label: "Documentation request type"
-      description: "What kind of documentation change is needed?"
+      label: Documentation request type
+      description: What kind of documentation change is needed?
       options:
-        - "Incorrect information"
-        - "Outdated information"
-        - "Missing information"
-        - "Unclear or confusing documentation"
-        - "Broken link"
-        - "Code or sample issue"
-        - "Typo or formatting issue"
-        - "New documentation request"
-        - "Other"
+        - Incorrect information
+        - Outdated information
+        - Missing information
+        - Unclear or confusing documentation
+        - Broken link
+        - Code or sample issue
+        - Typo or formatting issue
+        - New documentation request
+        - Other
     validations:
       required: true
 
   - type: dropdown
     id: documentation-area
     attributes:
-      label: "Documentation area"
-      description: "Which documentation areas are affected? Select all that apply."
+      label: Documentation area
+      description: Which documentation areas are affected? Select all that apply.
       multiple: true
       options:
-        - "Getting started"
-        - "Installation and setup"
-        - "API reference"
-        - "Guides and tutorials"
-        - "Kotlin"
-        - "Java"
-        - "Jetpack Compose"
-        - "Views and XML"
-        - "Gradle and build configuration"
-        - "Samples and examples"
-        - "Migration guide"
-        - "README"
-        - "Contributing documentation"
-        - "Other"
+        - Getting started
+        - Installation and setup
+        - API reference
+        - Guides and tutorials
+        - Kotlin
+        - Java
+        - Jetpack Compose
+        - Views and XML
+        - Gradle and build configuration
+        - Samples and examples
+        - Migration guide
+        - README
+        - Contributing documentation
+        - Other
     validations:
       required: true
 
   - type: input
     id: affected-documentation
     attributes:
-      label: "Affected documentation"
+      label: Affected documentation
       description: 'Provide the URL, repository file path, or section name. For completely new documentation, enter "N/A".'
       placeholder: "https://..., docs/guide.md, README section, or N/A"
     validations:
@@ -100,8 +105,8 @@ body:
   - type: input
     id: affected-version
     attributes:
-      label: "Affected version"
-      description: "If this request is version-specific, provide the affected app, library, SDK, API, or documentation version."
+      label: Affected version
+      description: If this request is version-specific, provide the affected app, library, SDK, API, or documentation version.
       placeholder: "Example: app 2.4.0, Android API level 35, documentation commit abc1234, or N/A"
 
   # The request
@@ -113,8 +118,8 @@ body:
   - type: textarea
     id: current-content
     attributes:
-      label: "Current documentation"
-      description: "Describe the relevant current documentation, if any. You may quote a short relevant section."
+      label: Current documentation
+      description: Describe the relevant current documentation, if any. You may quote a short relevant section.
       placeholder: |
         What does the documentation currently say or show?
 
@@ -123,8 +128,8 @@ body:
   - type: textarea
     id: documentation-request
     attributes:
-      label: "What needs to be changed?"
-      description: "Explain what is missing, incorrect, outdated, unclear, incomplete, or otherwise needs improvement."
+      label: What needs to be changed?
+      description: Explain what is missing, incorrect, outdated, unclear, incomplete, or otherwise needs improvement.
       placeholder: |
         Describe the documentation problem or request clearly.
 
@@ -139,8 +144,8 @@ body:
   - type: textarea
     id: desired-outcome
     attributes:
-      label: "What should the documentation explain or show?"
-      description: "Describe what you expected to learn, understand, or accomplish from the documentation."
+      label: What should the documentation explain or show?
+      description: Describe what you expected to learn, understand, or accomplish from the documentation.
       placeholder: |
         Explain the desired outcome.
 
@@ -157,8 +162,8 @@ body:
   - type: textarea
     id: references
     attributes:
-      label: "Examples and references"
-      description: "Add any relevant code examples, documentation links, specifications, related issues, pull requests, or other references."
+      label: Examples and references
+      description: Add any relevant code examples, documentation links, specifications, related issues, pull requests, or other references.
       placeholder: |
         Examples:
 
@@ -170,8 +175,8 @@ body:
   - type: upload
     id: attachments
     attributes:
-      label: "Screenshots or supporting files"
-      description: "If useful, upload screenshots or other files that help explain the documentation request. Do not upload private, confidential, or security-sensitive information."
+      label: Screenshots or supporting files
+      description: If useful, upload screenshots or other files that help explain the documentation request.
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.zip"
@@ -185,32 +190,16 @@ body:
   - type: dropdown
     id: contribution
     attributes:
-      label: "Would you like to contribute this documentation change?"
-      description: "This is optional and does not affect how your request is handled."
+      label: Would you like to contribute this documentation change?
+      description: This is optional and does not affect how your request is handled.
       options:
-        - "Yes, I would like to work on it"
-        - "Maybe, with guidance from maintainers"
-        - "No, not at this time"
+        - Yes, I would like to work on it
+        - Maybe, with guidance from maintainers
+        - No, not at this time
 
   - type: textarea
     id: additional-context
     attributes:
-      label: "Additional context"
-      description: "Add anything else that may help maintainers understand or evaluate this documentation request."
-      placeholder: "Any additional context, limitations, edge cases, or related information."
-
-  # Final acknowledgements
-  - type: markdown
-    attributes:
-      value: |
-        ## 🔏 Final acknowledgements
-
-  - type: checkboxes
-    id: acknowledgements
-    attributes:
-      label: "Acknowledgements"
-      options:
-        - label: "I agree to follow this project's Code of Conduct and contribution guidelines, where applicable."
-          required: true
-        - label: "I have not included passwords, authentication tokens, private data, or other sensitive information."
-          required: true
+      label: Additional context
+      description: Add anything else that may help maintainers understand or evaluate this documentation request.
+      placeholder: Any additional context, limitations, edge cases, or related information.
