@@ -4,13 +4,10 @@ title: "[Docs]: "
 labels:
   - documentation
   - needs-triage
-type: docs
+type: docs  
 
 body:
-  # ─────────────────────────────────────────────
   # Introduction
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
@@ -19,40 +16,35 @@ body:
         Use this form to report missing, incorrect, outdated, unclear, or incomplete documentation, or to request new documentation.
 
         Before submitting:
+
         - For software bugs, use the bug report template instead.
         - For security vulnerabilities, follow the repository's security reporting policy.
         - For small documentation fixes such as typos, you may submit a pull request directly.
 
-  # ─────────────────────────────────────────────
-  # Pre-submission
-  # ─────────────────────────────────────────────
+        > **Privacy:** Do not include passwords, authentication tokens, private data, internal information, or other sensitive material in the request or its attachments.
 
+  # Pre-submission
   - type: markdown
     attributes:
       value: |
-        ### ✅ Pre-submission
-        ---
+        ## ✅ Pre-submission
 
   - type: checkboxes
     id: preflight
     attributes:
       label: "Before submitting"
-      description: "Please complete these checks before opening a documentation request."
+      description: "Complete these checks before opening a documentation request."
       options:
-        - label: "I have checked the latest available documentation."
+        - label: "I checked the latest available documentation."
           required: true
-        - label: "I have searched existing issues for a similar documentation request."
+        - label: "I searched existing issues for a similar documentation request."
           required: true
 
-  # ─────────────────────────────────────────────
   # Scope
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 🧭 Scope
-        ---
+        ## 🧭 Scope
 
   - type: dropdown
     id: request-type
@@ -80,15 +72,15 @@ body:
       multiple: true
       options:
         - "Getting started"
-        - "Installation / setup"
+        - "Installation and setup"
         - "API reference"
-        - "Guides / tutorials"
+        - "Guides and tutorials"
         - "Kotlin"
         - "Java"
         - "Jetpack Compose"
-        - "Views / XML"
-        - "Gradle / build configuration"
-        - "Samples / examples"
+        - "Views and XML"
+        - "Gradle and build configuration"
+        - "Samples and examples"
         - "Migration guide"
         - "README"
         - "Contributing documentation"
@@ -110,17 +102,13 @@ body:
     attributes:
       label: "Affected version"
       description: "If this request is version-specific, provide the affected app, library, SDK, API, or documentation version."
-      placeholder: "Example: 2.4.0, Android API 35, latest, or N/A"
+      placeholder: "Example: app 2.4.0, Android API level 35, documentation commit abc1234, or N/A"
 
-  # ─────────────────────────────────────────────
   # The request
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 📖 The request
-        ---
+        ## 📖 The request
 
   - type: textarea
     id: current-content
@@ -141,9 +129,10 @@ body:
         Describe the documentation problem or request clearly.
 
         Include enough detail for maintainers to understand:
-        - what is wrong or missing
-        - where the confusion occurs
-        - why the documentation should be changed
+
+        - What is wrong or missing
+        - Where the confusion occurs
+        - Why the documentation should be changed
     validations:
       required: true
 
@@ -159,15 +148,11 @@ body:
     validations:
       required: true
 
-  # ─────────────────────────────────────────────
   # Supporting material
-  # ─────────────────────────────────────────────
-
   - type: markdown
     attributes:
       value: |
-        ### 📎 Supporting material
-        ---
+        ## 📎 Supporting material
 
   - type: textarea
     id: references
@@ -176,6 +161,7 @@ body:
       description: "Add any relevant code examples, documentation links, specifications, related issues, pull requests, or other references."
       placeholder: |
         Examples:
+
         - Related documentation
         - Code or API example
         - Related issue or pull request
@@ -185,20 +171,16 @@ body:
     id: attachments
     attributes:
       label: "Screenshots or supporting files"
-      description: "If useful, upload screenshots or other files that help explain the documentation request."
+      description: "If useful, upload screenshots or other files that help explain the documentation request. Do not upload private, confidential, or security-sensitive information."
     validations:
       required: false
       accept: ".png,.jpg,.jpeg,.gif,.webp,.svg,.pdf,.zip"
 
-  # ─────────────────────────────────────────────
-  # Contribution & context
-  # ─────────────────────────────────────────────
-
+  # Contribution and context
   - type: markdown
     attributes:
       value: |
-        ### 🤝 Contribution & context
-        ---
+        ## 🤝 Contribution and context
 
   - type: dropdown
     id: contribution
@@ -208,7 +190,7 @@ body:
       options:
         - "Yes, I would like to work on it"
         - "Maybe, with guidance from maintainers"
-        - "No / not at this time"
+        - "No, not at this time"
 
   - type: textarea
     id: additional-context
@@ -216,3 +198,19 @@ body:
       label: "Additional context"
       description: "Add anything else that may help maintainers understand or evaluate this documentation request."
       placeholder: "Any additional context, limitations, edge cases, or related information."
+
+  # Final acknowledgements
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔏 Final acknowledgements
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: "Acknowledgements"
+      options:
+        - label: "I agree to follow this project's Code of Conduct and contribution guidelines, where applicable."
+          required: true
+        - label: "I have not included passwords, authentication tokens, private data, or other sensitive information."
+          required: true
