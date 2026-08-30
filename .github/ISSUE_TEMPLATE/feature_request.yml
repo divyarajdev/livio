@@ -265,7 +265,7 @@ body:
   - type: checkboxes
     id: acknowledgements
     attributes:
-      label: Final acknowledgements
+      label: Acknowledgements
       options:
         - label: I agree to follow this project's Code of Conduct and contribution guidelines, where applicable.
           required: true
